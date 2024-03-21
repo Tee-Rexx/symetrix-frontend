@@ -12,7 +12,6 @@ const Header = () => {
     <div className="container-fluid mx-auto drawer lg-hidden">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
-        {/* Navbar */}
         <header className="text-gray-600 body-font">
           <div className="container-fluid mx-auto flex flex-wrap p-5 justify-between flex-row items-center">
             <div className="flex items-center">
@@ -38,7 +37,7 @@ const Header = () => {
                 </label>
               </div>
 
-              <a className="flex title-font font-medium items-center text-gray-900 ">
+              <Link href="/" className="flex title-font font-medium items-center text-gray-900 ">
                 <Image
                   src="/images/website logo/logo.png"
                   alt="Logo Image"
@@ -54,12 +53,12 @@ const Header = () => {
                 >
                   Symmetrix
                 </span>
-              </a>
+              </Link>
             </div>
 
             <div className="lg:flex hidden ">
               <nav className="md:ml-auto hidden lg:flex flex-wrap items-center text-base justify-center">
-                <Link href="/firstPage" passHref>
+                <Link href="/blogs" passHref>
                   <div
                     className={
                       resolvedTheme === "dark"
@@ -121,16 +120,16 @@ const Header = () => {
         >
           {/* Sidebar content here */}
           <li>
-            <a>First Link</a>
+            <Link href="/fourthPage">First Link</Link>
           </li>
           <li>
-            <a>Second Link</a>
+            <Link href="/fourthPage">Second Link</Link>
           </li>
           <li>
-            <a>Third Link</a>
+            <Link href="/fourthPage">Third Link</Link>
           </li>
           <li>
-            <a>Fourth Link</a>
+            <Link href="/fourthPage">Fourth Link</Link>
           </li>
         </ul>
       </div>
