@@ -37,7 +37,10 @@ const Header = () => {
                 </label>
               </div>
 
-              <Link href="/" className="flex title-font font-medium items-center text-gray-900 ">
+              <Link
+                href="/"
+                className="flex title-font font-medium items-center text-gray-900 "
+              >
                 <Image
                   src="/images/website logo/logo.png"
                   alt="Logo Image"
@@ -108,27 +111,36 @@ const Header = () => {
           </div>
         </header>
       </div>
-      <div className="drawer-side">
+      <div
+        className="drawer-side"
+      >
         <label
           htmlFor="my-drawer-3"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
         <ul
-          className="menu p-4 w-80 min-h-full text-white"
-          style={{ backgroundColor: "#191e24" }}
+          className="menu shadow-xl p-4 w-80 text-white"
+          style={{
+            borderTopRightRadius: 20,
+            borderBottomRightRadius: 20,
+            backgroundColor: "#191e24",
+            top: "calc(50% - 215px)",
+            height: "50vh",
+            position:'absolute'
+          }}
         >
           {/* Sidebar content here */}
-          <li>
-            <Link href="/fourthPage">First Link</Link>
+          <li className="py-2">
+            <Link href="/">First Link</Link>
           </li>
-          <li>
+          <li className="py-2">
             <Link href="/fourthPage">Second Link</Link>
           </li>
-          <li>
+          <li className="py-2">
             <Link href="/fourthPage">Third Link</Link>
           </li>
-          <li>
+          <li className="py-2">
             <Link href="/fourthPage">Fourth Link</Link>
           </li>
         </ul>

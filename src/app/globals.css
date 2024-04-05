@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.drawerSide {
+    top: calc(50% - 215px);
+  }
