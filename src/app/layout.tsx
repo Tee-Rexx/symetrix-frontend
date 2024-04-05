@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Providers } from "./providers";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import NextTopLoader from 'nextjs-toploader';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
+        <NextTopLoader color="#2299DD" zIndex={1600} />
           <Header />
           {children}
           <Footer />

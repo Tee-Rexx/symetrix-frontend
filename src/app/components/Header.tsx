@@ -126,7 +126,7 @@ const Header = () => {
             borderBottomRightRadius: 20,
             backgroundColor: "#191e24",
             top: "calc(50% - 215px)",
-            height: "50vh",
+            height: "auto",
             position:'absolute'
           }}
         >
@@ -142,6 +142,9 @@ const Header = () => {
           </li>
           <li className="py-2">
             <Link href="/fourthPage">Fourth Link</Link>
+          </li>
+          <li className="py-2">
+          <ThemeSwitch />
           </li>
         </ul>
       </div>
