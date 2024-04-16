@@ -4,9 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import ThemeSwitch from "./ThemeSwitch";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const { resolvedTheme } = useTheme();
+  const [theme, setTheme]= useState<any>()
+
+  useEffect(()=>{
+    setTheme(resolvedTheme)
+  },[resolvedTheme])
 
   return (
     <div className="container-fluid mx-auto drawer lg-hidden">
@@ -46,7 +52,7 @@ const Header = () => {
                 />
                 <span
                   className={
-                    resolvedTheme === "dark"
+                    theme === "dark"
                       ? "text-white ml-3 text-xl"
                       : "text-black ml-3 text-xl"
                   }
@@ -61,7 +67,7 @@ const Header = () => {
                 <Link href="/blogs" passHref>
                   <div
                     className={
-                      resolvedTheme === "dark"
+                      theme === "dark"
                         ? "text-white mr-5 hover:text-gray-400"
                         : "text-black mr-5 hover:text-gray-600"
                     }
@@ -72,7 +78,7 @@ const Header = () => {
                 <Link href="/secondPage" passHref>
                   <div
                     className={
-                      resolvedTheme === "dark"
+                      theme === "dark"
                         ? "text-white mr-5 hover:text-gray-400"
                         : "text-black mr-5 hover:text-gray-600"
                     }
@@ -80,21 +86,21 @@ const Header = () => {
                     Second Link
                   </div>
                 </Link>
-                <Link href="/thirdPage" passHref>
+                <Link href="/contactUs" passHref>
                   <div
                     className={
-                      resolvedTheme === "dark"
+                      theme === "dark"
                         ? "text-white mr-5 hover:text-gray-400"
                         : "text-black mr-5 hover:text-gray-600"
                     }
                   >
-                    Third Link
+                    Contact Us
                   </div>
                 </Link>
                 <Link href="/fourthPage" passHref>
                   <div
                     className={
-                      resolvedTheme === "dark"
+                      theme === "dark"
                         ? "text-white mr-5 hover:text-gray-400"
                         : "text-black mr-5 hover:text-gray-600"
                     }
