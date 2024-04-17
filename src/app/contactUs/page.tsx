@@ -60,7 +60,7 @@ const page = () => {
   return (
     <div>
       <section className="text-gray-600 body-font">
-        <div className="container flex flex-wrap px-5 py-24 mx-auto  items-center border-4">
+        <div className="container flex flex-wrap px-5 py-24 mx-auto  items-center">
           <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
               Gateway to seamless solutions
