@@ -283,7 +283,7 @@ const Footer = () => {
                 Symmetrix
               </span>
             </Link>
-            <p className="mt-2 text-sm text-gray-500">
+            <p className="mt-2 text-sm text-left text-gray-500 cursor-default">
               Air plant banjo lyft occupy retro adaptogen indego Lorem ipsum
               dolor sit amet consectetur adipisicing elit. Distinctio odit animi
               voluptas, quaerat labore adipisci ab debitis quibusdam, soluta
@@ -297,29 +297,29 @@ const Footer = () => {
               <h2
                 className={
                   theme === "dark"
-                    ? "text-white title-font font-medium tracking-widest text-sm mb-3"
-                    : "text-black title-font font-medium tracking-widest text-sm mb-3"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3 cursor-default"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3 cursor-default"
                 }
               >
                 Company Info
               </h2>
               <nav className="list-none mb-10">
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">About</a>
+                <li className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">About</a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">Contact</a>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">Contact</a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">FAQs</a>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">FAQs</a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
                     Terms & Conditions
                   </a>
                 </li>
@@ -330,30 +330,30 @@ const Footer = () => {
               <h2
                 className={
                   theme === "dark"
-                    ? "text-white title-font font-medium tracking-widest text-sm mb-3"
-                    : "text-black title-font font-medium tracking-widest text-sm mb-3"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3 cursor-default"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3 cursor-default"
                 }
               >
                 Resources
               </h2>
               <nav className="list-none mb-10">
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
                     First Link
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
                     Second Link
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
                     Third Link
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
                     Fourth Link
                   </a>
                 </li>
@@ -364,25 +364,25 @@ const Footer = () => {
               <h2
                 className={
                   theme === "dark"
-                    ? "text-white title-font font-medium tracking-widest text-sm mb-3"
-                    : "text-black title-font font-medium tracking-widest text-sm mb-3"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3 cursor-default"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3 cursor-default"
                 }
               >
                 Contact
               </h2>
               <nav className="list-none mb-10">
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
                     {234}567-8801
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
                     abc@abc.com
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800">dummy</a>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">dummy</a>
                 </li>
               </nav>
             </div>
@@ -390,7 +390,7 @@ const Footer = () => {
         </div>
         <div className="bg-gray-100">
           <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p className="text-gray-500 text-sm text-center sm:text-left">
+            <p className="text-gray-500 text-sm text-center sm:text-left cursor-default">
               COPYRIGHT©2024. All Rights Reserved
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
