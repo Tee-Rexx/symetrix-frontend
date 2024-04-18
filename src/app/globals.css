@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.drawerSide {
+    top: calc(50% - 215px);
+  }
+
+  .object {
+    animation: MoveUpDown 1s infinite;
+  }
+  
+  @keyframes MoveUpDown {
+    0%, 100% {
+      bottom: 0px;
+    }
+    50% {
+      bottom: 100px;
+    }
+  }
