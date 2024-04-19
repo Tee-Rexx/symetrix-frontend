@@ -74,7 +74,7 @@ const BlockchainBeyondBitcoin = () => {
                   organization&apos;s vision, goals, and objectives related to data
                   management, analytics, and governance, while a data roadmap
                   provides a structured plan for executing strategic initiatives
-                  and projects.
+                  and projects. 
                 </p>
 
                 <h2 className="text-2xl font-bold py-12">
