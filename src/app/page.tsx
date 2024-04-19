@@ -1,13 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import BlogCard from "./components/blogCard";
-import {
-  blogContentText,
-  blogContentTextWithMarginTop,
-  blogSectionHeading,
-} from "@/utils/blogStyle";
-
-import Image from "next/image";
 const Data = [
   {
     card_img: "https://dummyimage.com/720x400",
@@ -31,11 +24,10 @@ const Home = () => {
   const [screenWidth, setScreenWidth] = useState(0);
   const phrases: string[] = [
     "groundbreaking advancements.",
-    "groundbreaking advancements.",
-    // "revolutionary solutions.",
-    // "infinite possibilities.",
-    // "limitless growth.",
-    // "boundless creativity.",
+    "revolutionary solutions.",
+    "infinite possibilities.",
+    "limitless growth.",
+    "boundless creativity.",
   ];
   const [phraseIndex, setPhraseIndex] = useState<number>(0);
   const [isTyping, setIsTyping] = useState<boolean>(true);
@@ -104,7 +96,6 @@ const Home = () => {
               {text}|
             </p>
           </span>
-
         </div>
 
         {/* Wave Image */}
@@ -125,6 +116,11 @@ const Home = () => {
         >
           <source src="/gif/hero.mp4" type="video/mp4" />
         </video>
+
+        <img
+          className="absolute rotate-180 opacity-80 h-[50px] z-10 bottom-10 "
+          src="/gif/mouse_scroll.gif"
+        />
       </section>
 
       <div className="w-full h-full flex-wrap flex justify-center items-center">
