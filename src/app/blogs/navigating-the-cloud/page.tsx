@@ -24,7 +24,7 @@ const BlockchainBeyondBitcoin = () => {
             <div className="container mx-auto mt-6 px-6">
               <article className="prose lg:prose-xl">
                 <p>
-                  In today's digital era, cloud computing has emerged as a
+                  In today&apos;s digital era, cloud computing has emerged as a
                   cornerstone technology that is transforming the way businesses
                   operate, innovate, and scale. From startups to multinational
                   enterprises, organizations are increasingly adopting cloud
@@ -333,7 +333,7 @@ const BlockchainBeyondBitcoin = () => {
                 <p>
                   In conclusion, cloud computing has become a cornerstone
                   technology that empowers organizations to innovate, scale, and
-                  thrive in today's digital economy. By embracing cloud
+                  thrive in today&apos;s digital economy. By embracing cloud
                   computing solutions and best practices, businesses can
                   leverage scalable computing resources, enhance agility, and
                   drive digital transformation across industries.

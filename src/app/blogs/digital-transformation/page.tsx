@@ -24,7 +24,7 @@ const BlockchainBeyondBitcoin = () => {
             <div className="container mx-auto mt-6 px-6">
               <article className="prose lg:prose-xl">
                 <p>
-                  In today's rapidly evolving business landscape, digital
+                  In today&apos;s rapidly evolving business landscape, digital
                   transformation has become a critical imperative for
                   organizations seeking to remain competitive, agile, and
                   innovative. From adopting new technologies to reimagining

@@ -71,8 +71,8 @@ const BlockchainBeyondBitcoin = () => {
 
                 <br />
                 <p>
-                  <b>. Early Foundations (1950s-1970s):</b> The term "Artificial
-                  Intelligence" was coined in the 1950s by computer scientist
+                  <b>. Early Foundations (1950s-1970s):</b> The term &quot;Artificial
+                  Intelligence&quot; was coined in the 1950s by computer scientist
                   John McCarthy, who organized the seminal Dartmouth Conference
                   that laid the foundation for AI as a field of study. During
                   this period, early AI pioneers developed symbolic reasoning
@@ -83,7 +83,7 @@ const BlockchainBeyondBitcoin = () => {
                 <p>
                   <b>. AI Winter and Resurgence (1980s-1990s):</b> The field of
                   AI experienced periods of optimism and disillusionment known
-                  as "AI winters," characterized by setbacks in AI research due
+                  as &quot;AI winters&ldquo;&quot; characterized by setbacks in AI research due
                   to unrealistic expectations and technical limitations.
                   However, the emergence of machine learning algorithms, such as
                   neural networks and statistical models, led to a resurgence of
@@ -239,7 +239,7 @@ const BlockchainBeyondBitcoin = () => {
                 </p>
                 <p>
                   Remember, the journey of AI is just beginning, and the
-                  possibilities are limitless. Let's embark on this
+                  possibilities are limitless. Let&apos;s embark on this
                   transformative journey with curiosity, creativity, and a
                   commitment to ethical AI development that benefits
                   individuals, communities, and the world at large.
@@ -248,7 +248,7 @@ const BlockchainBeyondBitcoin = () => {
                   This blog aims to demystify AI and inspire a deeper
                   understanding of its potential, challenges, and ethical
                   considerations. As we continue to explore the frontiers of AI
-                  innovation, let's work together to shape a future where AI
+                  innovation, let&apos;s work together to shape a future where AI
                   serves as a force for positive change and human progress.
                 </p>
               </article>
