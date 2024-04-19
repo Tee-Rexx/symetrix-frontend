@@ -44,7 +44,7 @@ const BlockchainBeyondBitcoin = () => {
                   1. Supply Chain Management
                 </h2>
                 <p>
-                  Blockchain's immutable ledger system is revolutionizing supply
+                  Blockchain&apos;s immutable ledger system is revolutionizing supply
                   chain management by providing transparency and traceability.
                   Through blockchain, stakeholders can track the journey of
                   products from manufacturer to consumer, ensuring authenticity
@@ -66,13 +66,13 @@ const BlockchainBeyondBitcoin = () => {
                 </p>
 
                 <p>
-                  "By implementing blockchain in supply chain management,
+                  &quot;By implementing blockchain in supply chain management,
                   companies can ensure end-to-end visibility, streamline
                   processes, and reduce costs associated with fraud, theft, and
                   counterfeit goods. Moreover, consumers benefit from greater
                   transparency, as they can access detailed information about
                   the products they purchase, including their origin, production
-                  methods, and journey through the supply chain."
+                  methods, and journey through the supply chain.&quot;
                 </p>
 
                 <h2 className="text-2xl font-bold py-12">2. Healthcare</h2>
@@ -172,7 +172,7 @@ const BlockchainBeyondBitcoin = () => {
                   5. Intellectual Property Rights
                 </h2>
                 <p>
-                  Protecting intellectual property rights is crucial in today's
+                  Protecting intellectual property rights is crucial in today&apos;s
                   digital age, and blockchain offers a solution to combat piracy
                   and unauthorized use. By timestamping and encrypting digital
                   assets on a decentralized ledger, creators can prove ownership
