@@ -38,7 +38,7 @@ const BlockchainBeyondBitcoin = () => {
                 <p>
                   Edge computing represents a decentralized computing
                   infrastructure where data processing is performed closer to
-                  the data source, typically at the "edge" of the network,
+                  the data source, typically at the &apos;edge&apos; of the network,
                   rather than relying solely on centralized data centers or
                   cloud services. This approach minimizes latency, enhances
                   real-time data processing capabilities, and reduces the burden
@@ -252,7 +252,7 @@ const BlockchainBeyondBitcoin = () => {
                 <p>
                   The future of edge computing holds immense promise for
                   accelerating digital transformation, empowering intelligent
-                  systems, and redefining the boundaries of what's possible in
+                  systems, and redefining the boundaries of what&apos;s possible in
                   the era of connected devices and real-time analytics. By
                   embracing edge computing as a strategic enabler of innovation
                   and resilience, organizations can embark on a transformative
