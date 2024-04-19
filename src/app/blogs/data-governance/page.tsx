@@ -24,7 +24,7 @@ const BlockchainBeyondBitcoin = () => {
             <div className="container mx-auto mt-6 px-6">
               <article className="prose lg:prose-xl">
                 <p>
-                  In today's digital age, data has become one of the most
+                  In today&apos;s digital age, data has become one of the most
                   valuable assets for organizations across all industries. From
                   customer information and financial records to product
                   inventory and market insights, organizations rely on data to
