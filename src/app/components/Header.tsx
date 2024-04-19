@@ -4,15 +4,42 @@ import Link from "next/link";
 import Image from "next/image";
 import ThemeSwitch from "./ThemeSwitch";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const { resolvedTheme } = useTheme();
+  const [theme, setTheme]= useState<any>()
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [bgColor, setBgColor] = useState('transparent');
+
+  useEffect(()=>{
+    setTheme(resolvedTheme)
+  },[resolvedTheme])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+      
+      // Check if scroll position is greater than 5% of viewport height
+      if (position > window.innerHeight * 0.10) {
+        setBgColor('black');
+      } else {
+        setBgColor('transparent');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="container-fluid mx-auto drawer lg-hidden">
+    <div className="container-fluid mb-5 w-full h-full relative mx-auto drawer lg-hidden">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
-        {/* Navbar */}
+      <div className={`drawer-content bg-${bgColor} w-full bg-opacity-80 shadow-2xl -top-1 fixed flex flex-col transition-colors duration-300`}>
         <header className="text-gray-600 body-font">
           <div className="container-fluid mx-auto flex flex-wrap p-5 justify-between flex-row items-center">
             <div className="flex items-center">
@@ -38,7 +65,10 @@ const Header = () => {
                 </label>
               </div>
 
-              <a className="flex title-font font-medium items-center text-gray-900 ">
+              <Link
+                href="/"
+                className="flex title-font font-medium items-center text-gray-900 "
+              >
                 <Image
                   src="/images/website logo/logo.png"
                   alt="Logo Image"
@@ -47,22 +77,22 @@ const Header = () => {
                 />
                 <span
                   className={
-                    resolvedTheme === "dark"
+                    theme === "dark"
                       ? "text-white ml-3 text-xl"
                       : "text-black ml-3 text-xl"
                   }
                 >
                   Symmetrix
                 </span>
-              </a>
+              </Link>
             </div>
 
             <div className="lg:flex hidden ">
               <nav className="md:ml-auto hidden lg:flex flex-wrap items-center text-base justify-center">
-                <Link href="/firstPage" passHref>
+                <Link href="/blogs" passHref>
                   <div
                     className={
-                      resolvedTheme === "dark"
+                      theme === "dark"
                         ? "text-white mr-5 hover:text-gray-400"
                         : "text-black mr-5 hover:text-gray-600"
                     }
@@ -73,7 +103,7 @@ const Header = () => {
                 <Link href="/secondPage" passHref>
                   <div
                     className={
-                      resolvedTheme === "dark"
+                      theme === "dark"
                         ? "text-white mr-5 hover:text-gray-400"
                         : "text-black mr-5 hover:text-gray-600"
                     }
@@ -81,21 +111,21 @@ const Header = () => {
                     Second Link
                   </div>
                 </Link>
-                <Link href="/thirdPage" passHref>
+                <Link href="/contactUs" passHref>
                   <div
                     className={
-                      resolvedTheme === "dark"
+                      theme === "dark"
                         ? "text-white mr-5 hover:text-gray-400"
                         : "text-black mr-5 hover:text-gray-600"
                     }
                   >
-                    Third Link
+                    Contact Us
                   </div>
                 </Link>
                 <Link href="/fourthPage" passHref>
                   <div
                     className={
-                      resolvedTheme === "dark"
+                      theme === "dark"
                         ? "text-white mr-5 hover:text-gray-400"
                         : "text-black mr-5 hover:text-gray-600"
                     }
@@ -104,33 +134,46 @@ const Header = () => {
                   </div>
                 </Link>
               </nav>
-              <ThemeSwitch />
+              {/* <ThemeSwitch /> */}
             </div>
           </div>
         </header>
       </div>
-      <div className="drawer-side">
+      <div
+        className="drawer-side"
+      >
         <label
           htmlFor="my-drawer-3"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
         <ul
-          className="menu p-4 w-80 min-h-full text-white"
-          style={{ backgroundColor: "#191e24" }}
+          className="menu shadow-xl p-4 w-80 text-white"
+          style={{
+            borderTopRightRadius: 20,
+            borderBottomRightRadius: 20,
+            backgroundColor: "#191e24",
+            top: "calc(50% - 215px)",
+            height: "auto",
+            position:'absolute',
+            zIndex:99999
+          }}
         >
           {/* Sidebar content here */}
-          <li>
-            <a>First Link</a>
+          <li className="py-2">
+            <Link href="/">First Link</Link>
           </li>
-          <li>
-            <a>Second Link</a>
+          <li className="py-2">
+            <Link href="/fourthPage">Second Link</Link>
           </li>
-          <li>
-            <a>Third Link</a>
+          <li className="py-2">
+            <Link href="/fourthPage">Third Link</Link>
           </li>
-          <li>
-            <a>Fourth Link</a>
+          <li className="py-2">
+            <Link href="/fourthPage">Fourth Link</Link>
+          </li>
+          <li className="py-2">
+          {/* <ThemeSwitch /> */}
           </li>
         </ul>
       </div>

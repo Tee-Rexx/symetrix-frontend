@@ -1,100 +1,32 @@
 "use client";
 
 import { useTheme } from "next-themes";
-
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Footer = () => {
+  const { resolvedTheme } = useTheme();
 
-  const { resolvedTheme } = useTheme()
+  const [theme, setTheme] = useState<any>();
+
+  useEffect(() => {
+    setTheme(resolvedTheme);
+  }, [resolvedTheme]);
 
   return (
     <div>
-      <footer className="text-gray-600 body-font">
+      {/* <footer className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap md:text-left text-center order-first">
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className={ resolvedTheme === 'dark' ? 'text-white title-font font-medium tracking-widest text-sm mb-3' : 'text-black title-font font-medium tracking-widest text-sm mb-3' }>
-                CATEGORIES
-              </h2>
-              <nav className="list-none mb-10">
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    First Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    Second Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    Third Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    Fourth Link
-                  </a>
-                </li>
-              </nav>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className={ resolvedTheme === 'dark' ? 'text-white title-font font-medium tracking-widest text-sm mb-3' : 'text-black title-font font-medium tracking-widest text-sm mb-3' }>
-                CATEGORIES
-              </h2>
-              <nav className="list-none mb-10">
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    First Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    Second Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    Third Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    Fourth Link
-                  </a>
-                </li>
-              </nav>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className={ resolvedTheme === 'dark' ? 'text-white title-font font-medium tracking-widest text-sm mb-3' : 'text-black title-font font-medium tracking-widest text-sm mb-3' }>
-                CATEGORIES
-              </h2>
-              <nav className="list-none mb-10">
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    First Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    Second Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    Third Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800">
-                    Fourth Link
-                  </a>
-                </li>
-              </nav>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className={ resolvedTheme === 'dark' ? 'text-white title-font font-medium tracking-widest text-sm mb-3' : 'text-black title-font font-medium tracking-widest text-sm mb-3' }>
+              <h2
+                className={
+                  theme === "dark"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3"
+                }
+              >
                 SUBSCRIBE
               </h2>
               <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
@@ -115,21 +47,120 @@ const Footer = () => {
               </div>
               <p className="text-gray-500 text-sm mt-2 md:text-left text-center">
                 Bitters chicharrones fanny pack
-                <br className="lg:block hidden"/>
+                <br className="lg:block hidden" />
               </p>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2
+                className={
+                  theme === "dark"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3"
+                }
+              >
+                CATEGORIES
+              </h2>
+              <nav className="list-none mb-10">
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    First Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    Second Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    Third Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    Fourth Link
+                  </a>
+                </li>
+              </nav>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2
+                className={
+                  theme === "dark"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3"
+                }
+              >
+                CATEGORIES
+              </h2>
+              <nav className="list-none mb-10">
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    First Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    Second Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    Third Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    Fourth Link
+                  </a>
+                </li>
+              </nav>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2
+                className={
+                  theme === "dark"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3"
+                }
+              >
+                CATEGORIES
+              </h2>
+              <nav className="list-none mb-10">
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    First Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    Second Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    Third Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800">
+                    Fourth Link
+                  </a>
+                </li>
+              </nav>
             </div>
           </div>
         </div>
-        <div className={ resolvedTheme === 'dark' ? 'bg-gray-500' : 'bg-gray-100' }>
+        <div className={theme === "dark" ? "bg-gray-500" : "bg-gray-100"}>
           <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
                 viewBox="0 0 24 24"
               >
@@ -137,7 +168,13 @@ const Footer = () => {
               </svg>
               <span className="ml-3 text-xl">Tailblocks</span>
             </a>
-            <p className={ resolvedTheme === 'dark' ? 'text-gray-300 text-sm sm:ml-6 sm:mt-0 mt-4' : ' text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4' } >
+            <p
+              className={
+                theme === "dark"
+                  ? "text-gray-300 text-sm sm:ml-6 sm:mt-0 mt-4"
+                  : " text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4"
+              }
+            >
               © 2020 Tailblocks —
               <a
                 href="https://twitter.com/knyttneve"
@@ -149,37 +186,47 @@ const Footer = () => {
               </a>
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-              <a className={ resolvedTheme === 'dark' ? 'text-gray-300' : 'text-gray-500' }>
+              <a
+                className={theme === "dark" ? "text-gray-300" : "text-gray-500"}
+              >
                 <svg
                   fill="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                 </svg>
               </a>
-              <a className={ resolvedTheme === 'dark' ? 'text-gray-300 ml-3' : 'text-gray-500 ml-3' }>
+              <a
+                className={
+                  theme === "dark" ? "text-gray-300 ml-3" : "text-gray-500 ml-3"
+                }
+              >
                 <svg
                   fill="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
                   <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                 </svg>
               </a>
-              <a className={ resolvedTheme === 'dark' ? 'text-gray-300 ml-3' : 'text-gray-500 ml-3' }>
+              <a
+                className={
+                  theme === "dark" ? "text-gray-300 ml-3" : "text-gray-500 ml-3"
+                }
+              >
                 <svg
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
@@ -187,13 +234,211 @@ const Footer = () => {
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
                 </svg>
               </a>
-              <a className={ resolvedTheme === 'dark' ? 'text-gray-300 ml-3' : 'text-gray-500 ml-3' }>
+              <a
+                className={
+                  theme === "dark" ? "text-gray-300 ml-3" : "text-gray-500 ml-3"
+                }
+              >
                 <svg
                   fill="currentColor"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="0"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="none"
+                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                  ></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </footer> */}
+
+      <footer className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+          <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+            <Link
+              href="/"
+              className="flex title-font font-medium items-center text-gray-900 "
+            >
+              <Image
+                src="/images/website logo/logo.png"
+                alt="Logo Image"
+                width={50}
+                height={30}
+              />
+              <span
+                className={
+                  theme === "dark"
+                    ? "text-white ml-3 text-xl"
+                    : "text-black ml-3 text-xl"
+                }
+              >
+                Symmetrix
+              </span>
+            </Link>
+            <p className="mt-2 text-sm text-left text-gray-500 cursor-default">
+              Air plant banjo lyft occupy retro adaptogen indego Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Distinctio odit animi
+              voluptas, quaerat labore adipisci ab debitis quibusdam, soluta
+              deserunt iure quasi nisi consequuntur? Sapiente, nemo. Culpa
+              debitis ab officiis.
+            </p>
+          </div>
+          <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
+              <h2
+                className={
+                  theme === "dark"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3 cursor-default"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3 cursor-default"
+                }
+              >
+                Company Info
+              </h2>
+              <nav className="list-none mb-10">
+                <li className="text-gray-600 hover:text-gray-800">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">About</a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">Contact</a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">FAQs</a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                    Terms & Conditions
+                  </a>
+                </li>
+              </nav>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
+              <h2
+                className={
+                  theme === "dark"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3 cursor-default"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3 cursor-default"
+                }
+              >
+                Resources
+              </h2>
+              <nav className="list-none mb-10">
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                    First Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                    Second Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                    Third Link
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                    Fourth Link
+                  </a>
+                </li>
+              </nav>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
+              <h2
+                className={
+                  theme === "dark"
+                    ? "text-white title-font font-medium tracking-widest text-sm mb-3 cursor-default"
+                    : "text-black title-font font-medium tracking-widest text-sm mb-3 cursor-default"
+                }
+              >
+                Contact
+              </h2>
+              <nav className="list-none mb-10">
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                    {234}567-8801
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                    abc@abc.com
+                  </a>
+                </li>
+                <li>
+                  <a className="text-gray-600 hover:text-gray-800 cursor-default">dummy</a>
+                </li>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div className="bg-gray-100">
+          <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+            <p className="text-gray-500 text-sm text-center sm:text-left cursor-default">
+              COPYRIGHT©2024. All Rights Reserved
+            </p>
+            <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+              <a className="text-gray-500">
+                <svg
+                  fill="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a className="ml-3 text-gray-500">
+                <svg
+                  fill="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a className="ml-3 text-gray-500">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a className="ml-3 text-gray-500">
+                <svg
+                  fill="currentColor"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="0"
                   className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
