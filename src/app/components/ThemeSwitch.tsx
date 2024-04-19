@@ -12,6 +12,7 @@ export default function ThemeSwitch() {
   const { setTheme, resolvedTheme } = useTheme()
 
   useEffect(() =>  setMounted(true), [])
+  useEffect(() =>  setTheme('dark'), [])
 
   if (!mounted) return <Switch {...label} />;
 

@@ -2,19 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.drawerSide {
-    top: calc(50% - 215px);
-  }
 
-  .object {
-    animation: MoveUpDown 1s infinite;
+@layer base{
+  body {
+      @apply dark:bg-black
   }
-  
-  @keyframes MoveUpDown {
-    0%, 100% {
-      bottom: 0px;
-    }
-    50% {
-      bottom: 100px;
-    }
-  }
+}
+
+.sphere {
+  height: 300px;
+  width: 300px;
+  filter: blur(80px);
+}
+
+.waves {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

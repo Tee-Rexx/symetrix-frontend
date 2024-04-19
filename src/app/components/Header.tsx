@@ -9,15 +9,37 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const { resolvedTheme } = useTheme();
   const [theme, setTheme]= useState<any>()
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [bgColor, setBgColor] = useState('transparent');
 
   useEffect(()=>{
     setTheme(resolvedTheme)
   },[resolvedTheme])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+      
+      // Check if scroll position is greater than 5% of viewport height
+      if (position > window.innerHeight * 0.10) {
+        setBgColor('black');
+      } else {
+        setBgColor('transparent');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="container-fluid mx-auto drawer lg-hidden">
+    <div className="container-fluid mb-5 w-full h-full relative mx-auto drawer lg-hidden">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
+      <div className={`drawer-content bg-${bgColor} w-full bg-opacity-80 shadow-2xl -top-1 fixed flex flex-col transition-colors duration-300`}>
         <header className="text-gray-600 body-font">
           <div className="container-fluid mx-auto flex flex-wrap p-5 justify-between flex-row items-center">
             <div className="flex items-center">
@@ -112,7 +134,7 @@ const Header = () => {
                   </div>
                 </Link>
               </nav>
-              <ThemeSwitch />
+              {/* <ThemeSwitch /> */}
             </div>
           </div>
         </header>
@@ -133,7 +155,8 @@ const Header = () => {
             backgroundColor: "#191e24",
             top: "calc(50% - 215px)",
             height: "auto",
-            position:'absolute'
+            position:'absolute',
+            zIndex:99999
           }}
         >
           {/* Sidebar content here */}
@@ -150,7 +173,7 @@ const Header = () => {
             <Link href="/fourthPage">Fourth Link</Link>
           </li>
           <li className="py-2">
-          <ThemeSwitch />
+          {/* <ThemeSwitch /> */}
           </li>
         </ul>
       </div>
