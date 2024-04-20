@@ -5,7 +5,6 @@ import { Providers } from "./providers";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NextTopLoader from "nextjs-toploader";
-import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,14 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-      <link
-      rel="stylesheet"
-      href="node_modules/keen-slider/keen-slider.min.css"
-    />
-      </head>
       <body className={inter.className}>
-      <script src="node_modules/keen-slider/keen-slider.js"></script>
         <Providers>
           <NextTopLoader color="#2299DD" zIndex={1600} />
           <Header />
