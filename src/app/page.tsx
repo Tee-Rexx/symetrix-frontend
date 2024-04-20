@@ -188,7 +188,7 @@ const Home = () => {
               ></div>
 
               <p className="text-lg w-[92%] mt-10">
-                Facilitating our clients' journey towards realizing their
+                Facilitating our clients journey towards realizing their
                 aspirations through the deployment of innovative solutions
                 tailored to their unique requirements, thus paving the way for
                 their remarkable accomplishments.
