@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base{
   body {
       @apply dark:bg-black
@@ -18,4 +17,17 @@
 .waves {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+
+.carousel-card{
+  height: 275px !important;
+  width: 275px !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.slick-slide div {
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
 }

@@ -1,6 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import BlogCard from "./components/blogCard";
+import { useKeenSlider } from "keen-slider/react";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { NextButton, PrevButton } from "./components/carouselButtons";
 const Data = [
   {
     card_img: "https://dummyimage.com/720x400",
@@ -20,6 +26,16 @@ const Data = [
 ];
 
 const Home = () => {
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      slideChanged() {
+        console.log("slide changed");
+      },
+    },
+    [
+      // add plugins here
+    ]
+  );
   const [text, setText] = useState<string>("");
   const [screenWidth, setScreenWidth] = useState(0);
   const phrases: string[] = [
@@ -71,13 +87,45 @@ const Home = () => {
     };
   }, [text, isTyping, isDeleting]); // Use only one dependency
 
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <NextButton />,
+    prevArrow: <PrevButton />,
+    responsive: [
+      {
+        breakpoint: 1330,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 599,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ]
+  };
+
   return (
     <>
       <section className="h-[90vh] lg:h-screen w-full -z-50 relative flex items-center justify-center">
-
-      <div className="rounded-full sphere absolute top-0 start5 md:start-20 bg-violet-600 opacity-15"></div>
-      <div className="rounded-full sphere absolute bottom-0 end-14 lg:top-10 lg:end-72 bg-violet-600 opacity-15"></div>
-      <div className="h-screen w-[90%] block lg:hidden bg-black absolute opacity-15"></div>
+        <div className="rounded-full sphere absolute top-0 start5 md:start-20 bg-violet-600 opacity-15"></div>
+        <div className="rounded-full sphere absolute bottom-0 end-14 lg:top-10 lg:end-72 bg-violet-600 opacity-15"></div>
+        <div className="h-screen w-[90%] block lg:hidden bg-black absolute opacity-15"></div>
         <div className="container px-3 lg:px-0 flex relative justify-center items-center lg:items-start h-100 flex-col ">
           <span
             style={{ lineHeight: 1.25 }}
@@ -123,6 +171,50 @@ const Home = () => {
         />
       </section>
 
+      <section className="h-[60vh] lg:h-[380px] w-full mt-18 bg-gray-50 relative flex  justify-center">
+        <div className="w-full items-center flex flex-col ">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 container mt-16 ">
+            <h4 className=" text-2xl px-10 sm:text-4xl sm:px-3 text-center lg:text-left font-bold ">
+              We specialize in providing cutting-edge technology solutions to a
+              variety of industries
+            </h4>
+
+            <div className="px-3 hidden lg:block">
+              <div
+                className="w-full h-[10px] mt-2 rounded-xl"
+                style={{
+                  background: "linear-gradient(to right, #02f0f1, #024868)",
+                }}
+              ></div>
+
+              <p className="text-lg w-[92%] mt-10">
+                Facilitating our clients' journey towards realizing their
+                aspirations through the deployment of innovative solutions
+                tailored to their unique requirements, thus paving the way for
+                their remarkable accomplishments.
+              </p>
+            </div>
+          </div>
+
+          <div className="container mt-28 lg:mt-14 flex justify-center items-center">
+            <Slider className="flex w-full justify-center" {...settings}>
+              <div className=" carousel-card drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md">
+
+              </div>
+              <div className=" carousel-card drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md">
+
+              </div>
+              <div className=" carousel-card drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md">
+
+              </div>
+              <div className=" carousel-card drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md">
+
+              </div>
+            </Slider>
+          </div>
+        </div>
+      </section>
+
       <div className="w-full h-full flex-wrap flex justify-center items-center">
         <div className="container flex-wrap flex justify-evenly">
           {Data.map((item, index) => (
@@ -141,10 +233,12 @@ const Home = () => {
 
 export default Home;
 
+{
+  /* Left Stach Badges */
+}
 
-{/* Left Stach Badges */}
-
-          {/* <Image
+{
+  /* <Image
             src="/images/stack_badges/tailwind.png"
             width={80}
             height={80}
@@ -178,11 +272,15 @@ export default Home;
             height={80}
             alt="Android Logo"
             className="absolute shadow-2xl animate-bounce-delayed  start-8 top-72 object-contain bg-white p-3 rounded-full"
-          /> */}
+          /> */
+}
 
-          {/* Right Stach Badges */}
+{
+  /* Right Stach Badges */
+}
 
-          {/* <Image
+{
+  /* <Image
         src="/images/stack_badges/angular.png"
         width={80}
         height={70}
@@ -216,4 +314,5 @@ export default Home;
         height={80}
         alt="Bootstrap Logo"
         className="absolute shadow-2xl animate-bounce-delayed  end-20 top-72 py-3 object-contain bg-white p-3 rounded-full"
-      /> */}
+      /> */
+}
