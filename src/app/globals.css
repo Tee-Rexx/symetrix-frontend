@@ -23,11 +23,15 @@
   height: 275px !important;
   width: 275px !important;
   display: flex !important;
-  justify-content: center !important;
 }
 
 .slick-slide div {
   width: 100%;
   display: flex !important;
   justify-content: center !important;
+}
+
+.mini_blogs_icon_container svg {
+  height: 40px;
+  width: 40px;
 }

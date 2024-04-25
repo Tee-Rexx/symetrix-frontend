@@ -1,12 +1,20 @@
 "use client";
 import { useState, useEffect } from "react";
 import BlogCard from "./components/blogCard";
-import { useKeenSlider } from "keen-slider/react";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NextButton, PrevButton } from "./components/carouselButtons";
+import {
+  FiBox,
+  FiGlobe,
+  FiCpu,
+  FiDatabase,
+  FiCloud,
+  FiArrowUpRight,
+} from "react-icons/fi";
+import Link from "next/link";
+import ClientReviews from "./sections/reviews";
 const Data = [
   {
     card_img: "https://dummyimage.com/720x400",
@@ -25,19 +33,46 @@ const Data = [
   },
 ];
 
+const someBlogs = [
+  {
+    id: 1,
+    heading: "Blockchain Beyond Bitcoin",
+    route: "blockchain-beyond-bitcoin",
+    para: "Blockchain technology, initially popularized by Bitcoin, has transcended its origins as a cryptocurrency backbone, evolving into a versatile platform for diverse applications.",
+    icon_name: FiBox,
+  },
+  {
+    id: 2,
+    heading: "Cybersecurity In The Remote Work Era",
+    route: "cybersecurity-in-the-remote-work-era",
+    para: "In recent years, remote work has transformed the landscape, shifting traditional office dynamics with advancements in communication technology and changing attitudes toward work-life balance.",
+    icon_name: FiGlobe,
+  },
+  {
+    id: 3,
+    heading: "Data Governance",
+    route: "data-governance",
+    para: "Data emerges as a paramount asset, driving organizational strategies across diverse sectors. Effective data governance becomes imperative and usability in the ever-expanding data landscape.",
+    icon_name: FiCpu,
+  },
+  {
+    id: 4,
+    heading: "Demystifying AI",
+    route: "demystifying-AI",
+    para: "Artificial Intelligence (AI) is heralded as a transformative force, with the potential to revolutionize industries, reshape economies, and fundamentally redefine how we live and work in society.",
+    icon_name: FiDatabase,
+  },
+  {
+    id: 5,
+    heading: "Digital Transformation",
+    route: "digital-transformation",
+    para: "In today's dynamic business landscape, marked by rapid change and innovation, digital transformation is imperative for organizations to stay competitive, agile, and relevant in the ever-evolving market.",
+    icon_name: FiCloud,
+  },
+];
+
 const Home = () => {
-  const [sliderRef, instanceRef] = useKeenSlider(
-    {
-      slideChanged() {
-        console.log("slide changed");
-      },
-    },
-    [
-      // add plugins here
-    ]
-  );
   const [text, setText] = useState<string>("");
-  const [screenWidth, setScreenWidth] = useState(0);
   const phrases: string[] = [
     "groundbreaking advancements.",
     "revolutionary solutions.",
@@ -46,9 +81,11 @@ const Home = () => {
     "boundless creativity.",
   ];
   const [phraseIndex, setPhraseIndex] = useState<number>(0);
+  const [client_reviews, client_reviews_arr] = useState<any>([]);
   const [isTyping, setIsTyping] = useState<boolean>(true);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+
 
   useEffect(() => {
     const type = () => {
@@ -89,7 +126,7 @@ const Home = () => {
 
   var settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -101,23 +138,23 @@ const Home = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 599,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-        }
+        },
       },
-    ]
+    ],
   };
 
   return (
@@ -196,24 +233,44 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="container mt-28 lg:mt-14 flex justify-center items-center">
-            <Slider className="flex w-full justify-center" {...settings}>
-              <div className=" carousel-card drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md">
+          <div className="container mt-28 lg:mt-14 flex items-start ">
+            <Slider
+              className="flex w-full items-start text-left "
+              {...settings}
+            >
+              {someBlogs.map((data, index) => (
+                <div
+                  key={index}
+                  className="carousel-card relative drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md"
+                >
+                  <span className="px-4 pt-4 content-between flex flex-col">
+                    <span className="flex flex-col">
+                    <span className="w-full items-center flex justify-between">
+                      <h4 className="text-lg pe-1 h-[50px] items-center flex font-semibold">
+                        {data.heading}
+                      </h4>
+                      <span className="mini_blogs_icon_container">
+                        <data.icon_name />
+                      </span>
+                    </span>
+                    <p className="pt-2 text-sm">{data.para}</p>
+                    </span>
 
-              </div>
-              <div className=" carousel-card drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md">
-
-              </div>
-              <div className=" carousel-card drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md">
-
-              </div>
-              <div className=" carousel-card drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md">
-
-              </div>
+                    <Link href={ '/blogs/' + data.route} className="flex absolute items-center bottom-8 cursor-pointer duration-100">
+                      <p className="border-b-2 border-black text-sm">Read More</p>
+                      <span className="readmore_icon ms-1">
+                        <FiArrowUpRight />
+                      </span>
+                    </Link>
+                  </span>
+                </div>
+              ))}
             </Slider>
           </div>
         </div>
       </section>
+
+    <ClientReviews/>
 
       <div className="w-full h-full flex-wrap flex justify-center items-center">
         <div className="container flex-wrap flex justify-evenly">
