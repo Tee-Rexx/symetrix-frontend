@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import BlogCard from "./components/blogCard";
 import Slider from "react-slick";
@@ -15,6 +16,7 @@ import {
 } from "react-icons/fi";
 import Link from "next/link";
 import ClientReviews from "./sections/reviews";
+
 const Data = [
   {
     card_img: "https://dummyimage.com/720x400",
@@ -38,35 +40,35 @@ const someBlogs = [
     id: 1,
     heading: "Blockchain Beyond Bitcoin",
     route: "blockchain-beyond-bitcoin",
-    para: "Blockchain technology, initially popularized by Bitcoin, has transcended its origins as a cryptocurrency backbone, evolving into a versatile platform for diverse applications.",
+    para: "Blockchain technology, initially popularized by Bitcoin, has transcended its origins ...",
     icon_name: FiBox,
   },
   {
     id: 2,
     heading: "Cybersecurity In The Remote Work Era",
     route: "cybersecurity-in-the-remote-work-era",
-    para: "In recent years, remote work has transformed the landscape, shifting traditional office dynamics with advancements in communication technology and changing attitudes toward work-life balance.",
+    para: "In recent years, remote work has transformed the landscape, shifting traditional office ...",
     icon_name: FiGlobe,
   },
   {
     id: 3,
     heading: "Data Governance",
     route: "data-governance",
-    para: "Data emerges as a paramount asset, driving organizational strategies across diverse sectors. Effective data governance becomes imperative and usability in the ever-expanding data landscape.",
+    para: "Data emerges as a paramount asset, driving organizational strategies across diverse ...",
     icon_name: FiCpu,
   },
   {
     id: 4,
     heading: "Demystifying AI",
     route: "demystifying-AI",
-    para: "Artificial Intelligence (AI) is heralded as a transformative force, with the potential to revolutionize industries, reshape economies, and fundamentally redefine how we live and work in society.",
+    para: "Artificial Intelligence (AI) is heralded as a transformative force, with the potential to ...",
     icon_name: FiDatabase,
   },
   {
     id: 5,
     heading: "Digital Transformation",
     route: "digital-transformation",
-    para: "In today's dynamic business landscape, marked by rapid change and innovation, digital transformation is imperative for organizations to stay competitive, agile, and relevant in the ever-evolving market.",
+    para: "In today's dynamic business landscape, marked by rapid change and innovation, digital transformation ...",
     icon_name: FiCloud,
   },
 ];
@@ -85,7 +87,6 @@ const Home = () => {
   const [isTyping, setIsTyping] = useState<boolean>(true);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
-
 
   useEffect(() => {
     const type = () => {
@@ -208,10 +209,10 @@ const Home = () => {
         />
       </section>
 
-      <section className="h-[60vh] lg:h-[380px] w-full mt-18 bg-gray-50 relative flex  justify-center">
+      <section className="h-[530px] lg:h-[550px] 2xl:h-[550px] w-full mt-22 bg-gray-50 relative flex  justify-center">
         <div className="w-full items-center flex flex-col ">
           <div className="w-full grid grid-cols-1 lg:grid-cols-2 container mt-16 ">
-            <h4 className=" text-2xl px-10 sm:text-4xl sm:px-3 text-center lg:text-left font-bold ">
+            <h4 className=" text-2xl px-3 sm:text-4xl sm:px-3 text-center lg:text-left font-bold ">
               We specialize in providing cutting-edge technology solutions to a
               variety of industries
             </h4>
@@ -233,7 +234,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="container mt-28 lg:mt-14 flex items-start ">
+          <div className="container mt-20 sm:mt-20  lg:mt-16 flex items-start ">
             <Slider
               className="flex w-full items-start text-left "
               {...settings}
@@ -241,24 +242,29 @@ const Home = () => {
               {someBlogs.map((data, index) => (
                 <div
                   key={index}
-                  className="carousel-card relative drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md"
+                  className="mt-4 carousel-card relative drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md"
                 >
                   <span className="px-4 pt-4 content-between flex flex-col">
                     <span className="flex flex-col">
-                    <span className="w-full items-center flex justify-between">
-                      <h4 className="text-lg pe-1 h-[50px] items-center flex font-semibold">
-                        {data.heading}
-                      </h4>
-                      <span className="mini_blogs_icon_container">
-                        <data.icon_name />
+                      <span className="w-full items-center flex justify-between">
+                        <h4 className="text-lg pe-1 h-[50px] items-center flex font-semibold leading-tight m-0 p-0">
+                          {data.heading}
+                        </h4>
+                        <span className="mini_blogs_icon_container">
+                          <data.icon_name />
+                        </span>
                       </span>
-                    </span>
-                    <p className="pt-2 text-sm">{data.para}</p>
+                      <p className="pt-4 text-sm">{data.para}</p>
                     </span>
 
-                    <Link href={ '/blogs/' + data.route} className="flex absolute items-center bottom-8 cursor-pointer duration-100">
-                      <p className="border-b-2 border-black text-sm">Read More</p>
-                      <span className="readmore_icon ms-1">
+                    <Link
+                      href={"/blogs/" + data.route}
+                      className="flex absolute items-center bottom-8 cursor-pointer duration-100 top-36"
+                    >
+                      <p className="border-b-2 border-black text-sm mt-12">
+                        Read More
+                      </p>
+                      <span className="readmore_icon ms-1 mt-12">
                         <FiArrowUpRight />
                       </span>
                     </Link>
@@ -270,7 +276,7 @@ const Home = () => {
         </div>
       </section>
 
-    <ClientReviews/>
+      <ClientReviews />
 
       <div className="w-full h-full flex-wrap flex justify-center items-center">
         <div className="container flex-wrap flex justify-evenly">

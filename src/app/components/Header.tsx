@@ -76,13 +76,9 @@ const Header = () => {
                   height={30}
                 />
                 <span
-                  className={
-                    theme === "dark"
-                      ? "text-white ml-3 text-xl"
-                      : "text-black ml-3 text-xl"
-                  }
+                  className="text-white ml-3 text-xl"
                 >
-                  Symmetrix
+                  Symetrix
                 </span>
               </Link>
             </div>
@@ -91,44 +87,28 @@ const Header = () => {
               <nav className="md:ml-auto hidden lg:flex flex-wrap items-center text-base justify-center">
                 <Link href="/blogs" passHref>
                   <div
-                    className={
-                      theme === "dark"
-                        ? "text-white mr-5 hover:text-gray-400"
-                        : "text-black mr-5 hover:text-gray-600"
-                    }
+                    className="text-white ml-3 text-xl"
                   >
                     First Link
                   </div>
                 </Link>
                 <Link href="/secondPage" passHref>
                   <div
-                    className={
-                      theme === "dark"
-                        ? "text-white mr-5 hover:text-gray-400"
-                        : "text-black mr-5 hover:text-gray-600"
-                    }
+                    className="text-white ml-3 text-xl"
                   >
                     Second Link
                   </div>
                 </Link>
                 <Link href="/contactUs" passHref>
                   <div
-                    className={
-                      theme === "dark"
-                        ? "text-white mr-5 hover:text-gray-400"
-                        : "text-black mr-5 hover:text-gray-600"
-                    }
+                   className="text-white ml-3 text-xl"
                   >
                     Contact Us
                   </div>
                 </Link>
                 <Link href="/fourthPage" passHref>
                   <div
-                    className={
-                      theme === "dark"
-                        ? "text-white mr-5 hover:text-gray-400"
-                        : "text-black mr-5 hover:text-gray-600"
-                    }
+                    className="text-white ml-3 text-xl"
                   >
                     Fourth Link
                   </div>
