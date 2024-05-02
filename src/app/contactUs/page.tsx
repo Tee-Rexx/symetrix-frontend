@@ -4,47 +4,101 @@ import { SetStateAction, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import SendIcon from "@mui/icons-material/Send";
+import emailjs from "@emailjs/browser";
 
 const page = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [fname, setFName] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [lname, setLName] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [email, setEmail] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [phone, setPhone] = useState<number | "">("");
+  // const [phone, setPhone] = useState<number | "">("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [emailError, setEmailError] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [phoneError, setPhoneError] = useState("");
+  // const [phoneError, setPhoneError] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [message, setMessage] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [formComplete, setFormComplete] = useState(true); // State to track form completion
 
   const handleEmailChange = (e: {
     target: { value: SetStateAction<string> };
   }) => {
     setEmail(e.target.value);
+    // Reset email error when user types in the email field
+    setEmailError("");
   };
 
-  const handlePhoneChange = (e: { target: { value: string } }) => {
-    const value = e.target.value;
-    // Remove non-digit characters before setting the state
-    const normalizedPhone = value.replace(/\D/g, ''); // Remove non-numeric characters
-    setPhone(normalizedPhone === '' ? '' : parseInt(normalizedPhone));
-  };
+  // const handlePhoneChange = (e: { target: { value: string } }) => {
+  //   const value = e.target.value;
+  //   // Remove non-digit characters before setting the state
+  //   const normalizedPhone = value.replace(/\D/g, ""); // Remove non-numeric characters
+  //   setPhone(normalizedPhone === "" ? "" : parseInt(normalizedPhone));
+  // };
 
-  const handleFormSubmit = (e: { preventDefault: () => void }) => {
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Validate email before submitting the form
     if (!validateEmail(email)) {
       setEmailError("Please enter a valid email address.");
-    } else {
-      setEmailError("");
+      return; // Do not proceed with form submission
     }
 
-    if (!validatePhone(phone)) {
-      setPhoneError("Please enter a valid phone number.");
-    } else {
-      setPhoneError("");
+    if (!validateForm()) {
+      // If form is incomplete, set formComplete to false
+      setFormComplete(false);
+      return;
     }
+
+    // if (!validatePhone(phone)) {
+    //   setPhoneError("Please enter a valid phone number.");
+    // } else {
+    //   setPhoneError("");
+    // }
 
     // Handle form submission logic here if needed
+
+    const serviceId: string = "service_pwtrv1z";
+    const templateId: string = "template_5y6afgs";
+    const publicKey: string = "VURwmCwyXSVYDqwmG";
+
+    const templateParams = {
+      from_name: fname + ' ' + lname,
+      from_email: email,
+      to_name: "Symmetrix Solution",
+      message: message,
+    };
+
+    //Send the email using Emailjs
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log("Email sent successfully", response);
+        setFName("");
+        setLName("");
+        setEmail("");
+        setMessage("");
+        setFormComplete(true); // Set formComplete to true after successful submission
+        alert("Form submitted successfully!");
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
+  };
+
+  const validateForm = () => {
+    // Check if fname, lname, email, and message are not empty
+    const isFNameValid = fname.trim() !== ""; // Check if First Name is not empty
+    const isLNameValid = lname.trim() !== ""; // Check if Last Name is not empty
+    const isEmailValid = validateEmail(email); // Check if Email is valid
+    const isMessageValid = message.trim() !== ""; // Check if Message is not empty
+  
+    return isFNameValid && isLNameValid && isEmailValid && isMessageValid;
   };
 
   const validateEmail = (email: string) => {
@@ -52,17 +106,17 @@ const page = () => {
     return re.test(email);
   };
 
-  const validatePhone = (phone: number | "") => {
-    const re = /^\d{10}$/; // Assuming a 10-digit phone number format
-    return typeof phone === 'number' && re.test(phone.toString());
-  };
+  // const validatePhone = (phone: number | "") => {
+  //   const re = /^\d{10}$/; // Assuming a 10-digit phone number format
+  //   return typeof phone === "number" && re.test(phone.toString());
+  // };
 
   return (
     <div>
       <section className="text-gray-600 body-font">
         <div className="container flex flex-wrap px-5 py-24 mx-auto  items-center">
           <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
               Gateway to seamless solutions
             </h1>
             <p className="leading-relaxed text-base">
@@ -71,90 +125,77 @@ const page = () => {
               with us today and pave the path to success
             </p>
           </div>
-          <div className="flex flex-col md:w-2/4 ">
-            <div className="container px-5 py-24 mx-auto">
-              <div className="lg:w-3/5 md:w-2/3 mx-auto">
-                <div className="flex flex-wrap -m-2">
+          <div className="flex flex-col md:w-2/4">
+            <div className="container flex justify-center px-5 my-4 py-20 mx-auto">
+              <div className="lg:w-4/5 md:w-2/3 p-7 rounded-lg bg-slate-300 ">
+                <form
+                  className="flex flex-wrap -m-2"
+                  onSubmit={handleFormSubmit}
+                >
                   <div className="p-2 w-1/2">
                     <div className="relative">
-                      <Box
-                        component="form"
+                      <TextField
+                        id="standard-basic"
+                        label="First Name"
+                        variant="standard"
                         sx={{
-                          "& > :not(style)": { mt: 2 },
+                          "& .MuiInputBase-input": {
+                            color: "black", // Set color of input text
+                            fontSize: "18px", // Set color of input text
+                          },
+                          "& .MuiInputLabel-root": {
+                            color: "black", // Set color of input text
+                            fontSize: "18px", // Set color of input label
+                          },
                         }}
-                        noValidate
-                        autoComplete="off"
-                      >
-                        <TextField
-                          id="standard-basic"
-                          label="First Name"
-                          variant="standard"
-                        />
-                      </Box>
+                        value={fname}
+                        onChange={(e) => setFName(e.target.value)}
+                      />
                     </div>
                   </div>
                   <div className="p-2 w-1/2">
                     <div className="relative">
-                      <Box
-                        component="form"
+                      <TextField
+                        id="standard-basic"
+                        label="Last Name"
+                        variant="standard"
                         sx={{
-                          "& > :not(style)": { mt: 2 },
+                          "& .MuiInputBase-input": {
+                            color: "black", // Set color of input text
+                            fontSize: "18px", // Set color of input text
+                          },
+                          "& .MuiInputLabel-root": {
+                            color: "black", // Set color of input text
+                            fontSize: "18px", // Set color of input label
+                          },
                         }}
-                        noValidate
-                        autoComplete="off"
-                      >
-                        <TextField
-                          id="standard-basic"
-                          label="Last Name"
-                          variant="standard"
-                        />
-                      </Box>
+                        value={lname}
+                        onChange={(e) => setLName(e.target.value)}
+                      />
                     </div>
                   </div>
                   <div className="p-2 w-full">
                     <div className="relative">
-                      <Box
-                        component="form"
+                      <TextField
+                        id="email"
+                        label="Your email"
+                        value={email}
+                        onChange={handleEmailChange}
+                        error={Boolean(emailError)}
+                        helperText={emailError}
+                        variant="standard"
+                        className="w-full"
                         sx={{
-                          "& > :not(style)": { mt: 2 },
+                          "& .MuiInputBase-input": {
+                            color: "black", // Set color of input text
+                            fontSize: "18px", // Set color of input text
+                          },
+                          "& .MuiInputLabel-root": {
+                            color: "black", // Set color of input text
+                            fontSize: "18px", // Set color of input label
+                          },
                         }}
-                        noValidate
-                        autoComplete="off"
-                      >
-                        <TextField
-                          id="email"
-                          label="Your email"
-                          value={email}
-                          onChange={handleEmailChange}
-                          error={Boolean(emailError)}
-                          helperText={emailError}
-                          variant="standard"
-                          className="w-full"
-                        />
-                      </Box>
-                    </div>
-                  </div>
-                  <div className="p-2 w-full">
-                    <div className="relative">
-                      <Box
-                        component="form"
-                        sx={{
-                          "& > :not(style)": { mt: 2 },
-                        }}
-                        noValidate
-                        autoComplete="off"
-                      >
-                        <TextField
-                          id="phone"
-                          label="Phone No."
-                          value={phone}
-                          variant="standard"
-                          className="w-full"
-                          onChange={handlePhoneChange}
-                          error={Boolean(phoneError)}
-                          helperText={phoneError}
-                        />
-                      </Box>
+                      />
                     </div>
                   </div>
                   <div className="p-2 w-full">
@@ -166,22 +207,43 @@ const page = () => {
                         rows={4}
                         variant="standard"
                         className="w-full"
+                        sx={{
+                          "& .MuiInputBase-input": {
+                            color: "black", // Set color of input text
+                            fontSize: "18px", // Set color of input text
+                          },
+                          "& .MuiInputLabel-root": {
+                            color: "black", // Set color of input text
+                            fontSize: "18px", // Set color of input label
+                          },
+                        }}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                       />
                     </div>
                   </div>
-                  <div className="p-2 mt-4">
-                    <form onSubmit={handleFormSubmit}>
-                      <Button
-                        className="w-[170px] bg-blue-600"
-                        variant="contained"
-                        endIcon={<SendIcon />}
-                        type="submit"
+                  <div className="p-2 mt-2">
+                    {/* Button for form submission */}
+                    <Button
+                      className="w-full submit-btn"
+                      variant="contained"
+                      type="submit"
+                    >
+                      Send
+                    </Button>
+                    {!formComplete && (
+                      <p
+                        style={{
+                          color: "red",
+                          backgroundColor: "lightpink",
+                          padding: "8px",
+                        }}
                       >
-                        Send
-                      </Button>
-                    </form>
+                        Kindly fill all fields.
+                      </p>
+                    )}
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -192,6 +254,4 @@ const page = () => {
 };
 
 export default page;
-function validatePhone(phone: string) {
-  throw new Error("Function not implemented.");
-}
+

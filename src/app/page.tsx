@@ -160,14 +160,14 @@ const Home = () => {
 
   return (
     <>
-      <section className="h-[90vh] lg:h-screen w-full -z-50 relative flex items-center justify-center">
+      <section className="h-[90vh] lg:h-screen w-full -z-50 relative flex items-center justify-center overflow-hidden">
         <div className="rounded-full sphere absolute top-0 start5 md:start-20 bg-violet-600 opacity-15"></div>
         <div className="rounded-full sphere absolute bottom-0 end-14 lg:top-10 lg:end-72 bg-violet-600 opacity-15"></div>
         <div className="h-screen w-[90%] block lg:hidden bg-black absolute opacity-15"></div>
-        <div className="container px-3 lg:px-0 flex relative justify-center items-center lg:items-start h-100 flex-col ">
+        <div className="container px-3 lg:px-0 flex relative justify-center items-center lg:items-start h-100 flex-col">
           <span
             style={{ lineHeight: 1.25 }}
-            className=" text-4xl sm:text-6xl z-0 text-white text-center lg:text-left h-[256px] sm:mb-16 lg:mb-0 lg:ms-8 lg:text-5xl w-full md:w-[90%] lg:w-5/12 font-extrabold"
+            className="text-4xl md:text-4xl sm:text-6xl z-0 text-white text-center lg:text-left h-[256px] sm:mb-16 lg:mb-24 lg:ms-8 lg:text-5xl w-full md:w-[90%] lg:w-5/12 font-extrabold"
           >
             Learn how to use technology in order to{" "}
             <p
@@ -177,7 +177,7 @@ const Home = () => {
                 color: "transparent",
                 lineHeight: 1.25,
               }}
-              className="text-4xl sm:text-6xl lg:text-5xl font-extrabold"
+              className="text-4xl sm:text-6xl md:text-4xl lg:text-5xl font-extrabold overflow-hidden"
             >
               {text}|
             </p>
@@ -278,7 +278,7 @@ const Home = () => {
 
       <ClientReviews />
 
-      <div className="w-full h-full flex-wrap flex justify-center items-center">
+      <div className="w-full h-full flex-wrap flex justify-center items-center overflow-hidden">
         <div className="container flex-wrap flex justify-evenly">
           {Data.map((item, index) => (
             <BlogCard

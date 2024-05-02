@@ -1,5 +1,8 @@
 "use client";
-import { NextButton, PrevButton } from "@/app/components/carouselButtons";
+import {
+  FeedbackPreviousButton,
+  FeedbackNextButton,
+} from "@/app/components/carouselButtons";
 import Slider from "react-slick";
 
 const settings = {
@@ -8,8 +11,8 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  nextArrow: <NextButton />,
-  prevArrow: <PrevButton />,
+  nextArrow: <FeedbackNextButton />,
+  prevArrow: <FeedbackPreviousButton />,
   duration: 500,
 };
 

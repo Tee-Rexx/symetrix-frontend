@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
-              <h2 className="text-white ml-3 text-xl">Company Info</h2>
+              <h2 className="text-white text-xl">Company Info</h2>
               <nav className="list-none mb-10">
                 <li className="text-gray-600 hover:text-gray-800">
                   <a className="text-gray-600 hover:text-gray-800 cursor-default">
@@ -73,7 +73,7 @@ const Footer = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
-              <h2 className="text-white ml-3 text-xl">Resources</h2>
+              <h2 className="text-white text-xl">Resources</h2>
               <nav className="list-none mb-10">
                 <li>
                   <a className="text-gray-600 hover:text-gray-800 cursor-default">
@@ -99,7 +99,7 @@ const Footer = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
-              <h2 className="text-white ml-3 text-xl">Contact</h2>
+              <h2 className="text-white text-xl">Contact</h2>
               <nav className="list-none mb-10">
                 <li>
                   <a className="text-gray-600 hover:text-gray-800 cursor-default">

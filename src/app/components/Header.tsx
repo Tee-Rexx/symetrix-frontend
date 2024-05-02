@@ -87,28 +87,28 @@ const Header = () => {
               <nav className="md:ml-auto hidden lg:flex flex-wrap items-center text-base justify-center">
                 <Link href="/blogs" passHref>
                   <div
-                    className="text-white ml-3 text-xl"
+                    className="text-white ml-3 text-md"
                   >
                     First Link
                   </div>
                 </Link>
                 <Link href="/secondPage" passHref>
                   <div
-                    className="text-white ml-3 text-xl"
+                    className="text-white ml-3 text-md"
                   >
                     Second Link
                   </div>
                 </Link>
                 <Link href="/contactUs" passHref>
                   <div
-                   className="text-white ml-3 text-xl"
+                   className="text-white ml-3 text-md"
                   >
                     Contact Us
                   </div>
                 </Link>
                 <Link href="/fourthPage" passHref>
                   <div
-                    className="text-white ml-3 text-xl"
+                    className="text-white ml-3 text-md"
                   >
                     Fourth Link
                   </div>
