@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body style={{backgroundColor:'#000'}} className={inter.className}>
         <Providers>
           <NextTopLoader color="#2299DD" zIndex={1600} />
           <Header />

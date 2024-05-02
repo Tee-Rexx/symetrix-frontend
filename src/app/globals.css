@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {
   body {
-      @apply dark:bg-black
+    @apply dark:bg-black;
   }
 }
 
@@ -19,15 +19,74 @@
   transform: scaleX(-1);
 }
 
-.carousel-card{
+.carousel-card {
   height: 275px !important;
   width: 275px !important;
   display: flex !important;
-  justify-content: center !important;
 }
 
 .slick-slide div {
   width: 100%;
   display: flex !important;
   justify-content: center !important;
+}
+
+.mini_blogs_icon_container svg {
+  height: 40px;
+  width: 40px;
+}
+
+.submit-btn {
+  padding: 10px 40px;
+  background: linear-gradient(to right, #02f0f1, #024868);
+  border: 0;
+  color: #fff;
+  text-transform: capitalize;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  letter-spacing: 3px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  display: block;
+}
+
+.submit-btn::after,
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.submit-btn::after {
+  width: 30px;
+  height: 1px;
+  background: white;
+  transform: translateX(-3px);
+  margin-top: 0px;
+}
+
+.submit-btn::before {
+  content: "";
+  transform: rotate(-135deg) translateX(50%);
+  width: 11px;
+  height: 11px;
+  background: transparent;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-top: -1px;
+}
+
+.submit-btn:hover {
+  padding: 10px 60px 10px 20px;
+}
+
+.submit-btn:hover::after,
+.submit-btn:hover::before {
+  opacity: 1;
+  right: 15px;
 }
