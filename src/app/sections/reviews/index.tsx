@@ -121,30 +121,3 @@ const ClientReviews = () => {
 
 export default ClientReviews;
 
-// {
-//   client_reviews_arr?.map((data, index): any => (
-//     <div
-//       key={index}
-//       className="carousel-card relative drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md"
-//     >
-//       <span className="px-4 pt-4 content-between flex flex-col">
-//         <span className="flex flex-col">
-//           <span className="w-full items-center flex justify-between">
-//             <h4 className="text-lg pe-1 h-[50px] items-center flex font-semibold">
-//               {data.client_name}
-//             </h4>
-//             =
-//           </span>
-//           <p className="pt-2 text-sm">{data.review}</p>
-//         </span>
-
-//         <span className="flex absolute items-center bottom-8 cursor-pointer duration-100">
-//           <p className="border-b-2 border-black text-sm">Read More</p>
-//           <span className="readmore_icon ms-1">
-//             <FiArrowUpRight />
-//           </span>
-//         </span>
-//       </span>
-//     </div>
-//   ));
-// }

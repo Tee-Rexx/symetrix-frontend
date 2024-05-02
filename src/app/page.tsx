@@ -16,6 +16,7 @@ import {
 } from "react-icons/fi";
 import Link from "next/link";
 import ClientReviews from "./sections/reviews";
+import Image from "next/image";
 
 const Data = [
   {
@@ -74,7 +75,6 @@ const someBlogs = [
 ];
 
 const Home = () => {
-  const [text, setText] = useState<string>("");
   const phrases: string[] = [
     "groundbreaking advancements.",
     "revolutionary solutions.",
@@ -82,11 +82,35 @@ const Home = () => {
     "limitless growth.",
     "boundless creativity.",
   ];
+  const [text, setText] = useState<string>("");
   const [phraseIndex, setPhraseIndex] = useState<number>(0);
-  const [client_reviews, client_reviews_arr] = useState<any>([]);
   const [isTyping, setIsTyping] = useState<boolean>(true);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset;
+    if (scrollTop > 400) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     const type = () => {
@@ -290,92 +314,108 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      <div>
+        <section className="bg-white body-font">
+          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+              <img
+                className="object-cover object-center rounded"
+                alt="hero"
+                src="/images/svgs/picture_1.jpg"
+              />
+              {/* <Image
+                  src="/images/svgs/consultant_pic.jpg"
+                  alt="hero"
+                  // width={50}
+                  // height={30}
+                  className="object-cover object-center rounded"
+                /> */}
+            </div>
+            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+              <h1 className="title-font sm:text-4xl text-6xl mb-4 font-medium text-black">
+                Arrange a free Consultation
+              </h1>
+              <p className="mb-8 leading-relaxed text-gray-600">
+                Unlock the full potential of your business with a complimentary
+                consultation. Our team of experts will provide valuable insights
+                and recommendations tailored to your specific needs. Don’t miss
+                out on this opportunity to take your business to the next level.
+                Schedule your free consultancy today and discover the benefits
+                of working with us.
+              </p>
+              <div className="flex w-full md:justify-start justify-center items-end">
+                <button
+                  style={{
+                    background: "linear-gradient(to right, #02f0f1, #024868)",
+                  }}
+                  className="inline-flex text-white border-0 py-2 px-6 focus:outline-none rounded text-lg"
+                >
+                  Start your journey to business success
+                </button>
+              </div>
+              <p className="text-sm mt-2 text-gray-500 mb-8 w-full">
+                Neutra shabby chic ramps, viral fixie.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="flex flex-col items-center justify-center min-h-screen text-white px-4 sm:px-6 lg:px-8">
+      <h1
+        className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
+        style={{
+          backgroundImage: "linear-gradient(to right, #02f0f1, #024868)",
+          WebkitTextFillColor: "transparent", // Hide default text color
+          WebkitBackgroundClip: "text", // Clip the gradient to the text
+          color: "transparent", // Set the text color as transparent
+        }}
+      >
+        Let’s get started
+      </h1>
+      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-center">
+        Ready to embark on your technical journey?
+      </h2>
+      <p className="text-md sm:text-xl lg:text-md font-thin text-center">
+        Take the first step towards success, reach out to us today and let’s
+        schedule a consultation to discuss your vision.
+      </p>
+      <div
+        className="w-full sm:h-1 lg:h-2 mt-8"
+        style={{
+          background: "linear-gradient(to right, #02f0f1, #024868)",
+        }}
+      ></div>
+    </div>
+
+
+      <button
+        style={{
+          background: "linear-gradient(to right, #02f0f1, #024868)",
+        }}
+        onClick={scrollToTop}
+        className={`${
+          isVisible ? "block" : "hidden"
+        } fixed bottom-8 right-8 w-12 h-12 text-white rounded-full shadow-xl flex items-center justify-center transition-colors duration-300 ease-in-out`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+      </button>
     </>
   );
 };
 
 export default Home;
-
-{
-  /* Left Stach Badges */
-}
-
-{
-  /* <Image
-            src="/images/stack_badges/tailwind.png"
-            width={80}
-            height={80}
-            alt="Tailwind Logo"
-            className="absolute shadow-2xl animate-bounce-slow  start-2 -top-20 py-5 object-contain bg-white p-3 rounded-full"
-          />
-          <Image
-            src="/images/stack_badges/vue.png"
-            width={70}
-            height={50}
-            alt="Vue Logo"
-            className="absolute shadow-2xl animate-bounce-delayed  -start-14 top-11 py-4 px-3 object-contain bg-white p-3 rounded-full"
-          />
-          <Image
-            src="/images/stack_badges/react.png"
-            width={70}
-            height={70}
-            alt="React Logo"
-            className="absolute shadow-2xl animate-bounce-slow  start-14 top-28 object-contain bg-white p-3 rounded-full"
-          />
-          <Image
-            src="/images/stack_badges/python.png"
-            width={60}
-            height={60}
-            alt="Python Logo"
-            className="absolute shadow-2xl animate-bounce-veryslow  -start-8 top-52 object-contain bg-white p-3 rounded-full"
-          />
-          <Image
-            src="/images/stack_badges/android.png"
-            width={80}
-            height={80}
-            alt="Android Logo"
-            className="absolute shadow-2xl animate-bounce-delayed  start-8 top-72 object-contain bg-white p-3 rounded-full"
-          /> */
-}
-
-{
-  /* Right Stach Badges */
-}
-
-{
-  /* <Image
-        src="/images/stack_badges/angular.png"
-        width={80}
-        height={70}
-        alt="Angular Logo"
-        className="absolute shadow-2xl animate-bounce-veryslow  -end-14 -top-20 object-contain bg-white p-3 rounded-full"
-      />
-        <Image
-        src="/images/stack_badges/php.png"
-        width={80}
-        height={80}
-        alt="Php Logo"
-        className="absolute shadow-2xl animate-bounce-delayed  end-28 top-2 py-6 object-contain bg-white p-3 rounded-full"
-      />
-        <Image
-        src="/images/stack_badges/apple.png"
-        width={80}
-        height={80}
-        alt="Apple Logo"
-        className="absolute shadow-2xl animate-bounce-veryslow  end-1 top-28 py-3 object-contain bg-white p-3 rounded-full"
-      />
-        <Image
-        src="/images/stack_badges/node.png"
-        width={60}
-        height={60}
-        alt="Node Logo"
-        className="absolute shadow-2xl animate-bounce-slow  -end-12 top-56 py-3 object-contain bg-white p-3 rounded-full"
-      />
-        <Image
-        src="/images/stack_badges/bootstrap.png"
-        width={80}
-        height={80}
-        alt="Bootstrap Logo"
-        className="absolute shadow-2xl animate-bounce-delayed  end-20 top-72 py-3 object-contain bg-white p-3 rounded-full"
-      /> */
-}
