@@ -36,9 +36,9 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="container-fluid mb-5 w-full h-full relative mx-auto drawer lg-hidden">
+    <div className="container-fluid mb-5 w-full z-50 h-12 relative mx-auto drawer lg-hidden">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className={`drawer-content bg-${bgColor} w-full bg-opacity-80 shadow-2xl -top-1 fixed flex flex-col transition-colors duration-300`}>
+      <div className={`drawer-content bg-${bgColor} w-full z-50 shadow-2xl fixed flex flex-col`}>
         <header className="text-gray-600 body-font">
           <div className="container-fluid mx-auto flex flex-wrap p-5 justify-between flex-row items-center">
             <div className="flex items-center">
@@ -91,11 +91,11 @@ const Header = () => {
                     First Link
                   </div>
                 </Link>
-                <Link href="/secondPage" passHref>
+                <Link href="/ourServices" passHref>
                   <div
                     className="text-white ml-3 text-md"
                   >
-                    Second Link
+                    Our Services
                   </div>
                 </Link>
                 <Link href="/contactUs" passHref>

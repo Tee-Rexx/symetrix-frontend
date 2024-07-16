@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   body {
     @apply dark:bg-black;
@@ -23,6 +27,20 @@
   height: 275px !important;
   width: 275px !important;
   display: flex !important;
+}
+
+.projects-card {
+  height: 360px !important;
+  width: 320px !important;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  &:hover {
+    background-color: #e5e7eb;
+
+    .projects-link-button-container {
+      opacity: 1;
+    }
+  }
 }
 
 .slick-slide div {
@@ -89,4 +107,52 @@
 .submit-btn:hover::before {
   opacity: 1;
   right: 15px;
+}
+
+
+.our-service-bg {
+  background-image: url('/images/pngs/inner-bg.jpg');
+  background-origin: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.projects-card {
+  position: relative;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #e5e7eb;
+
+    .projects-link-button-container {
+      opacity: 1;
+    }
+  }
+
+  .projects-link-button-container {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .projects-link-button {
+    background: linear-gradient(to right, #02f0f1, #024868);
+    transition: background-color 0.3s ease-in-out;
+    color: #ffffff !important;
+    font-size: 21px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

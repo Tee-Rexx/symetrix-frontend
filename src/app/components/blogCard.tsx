@@ -15,7 +15,7 @@ const BlogCard = ({ card_img, card_heading, card_text }: BlogData) => {
 
   return (
     <div className="text-gray-600 body-font">
-      <div className="mt-52 px-5 py-24 mx-auto">
+      <div className="mt-8 px-4 py-16 mx-auto">
         <div className="flex flex-wrap -m-4">
           <div className="p-4 w-full">
             <div className="h-full bg-gray-100 shadow-xl rounded-2xl overflow-hidden">

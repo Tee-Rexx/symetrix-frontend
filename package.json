@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@types/css-modules": "^1.0.5",
+    "@types/jquery": "^3.5.30",
     "@types/locomotive-scroll": "^4.1.3",
     "@types/node": "^20",
     "@types/react": "^18",
