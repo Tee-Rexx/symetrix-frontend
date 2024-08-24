@@ -53,15 +53,15 @@ const Page = () => {
   const [expanded1, setExpanded1] = useState(false);
   const [expanded2, setExpanded2] = useState(false);
 
-  const handleAccordionChange = (event, isExpanded) => {
+  const handleAccordionChange = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded(isExpanded);
   };
 
-  const handleAccordionChange1 = (event, isExpanded) => {
+  const handleAccordionChange1 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded1(isExpanded);
   };
 
-  const handleAccordionChange2 = (event, isExpanded) => {
+  const handleAccordionChange2 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded2(isExpanded);
   };
 
