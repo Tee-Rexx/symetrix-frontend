@@ -73,7 +73,7 @@ export const FeedbackPreviousButton = ({ onClick }: carousel) => {
 export const FeedbackNextButton = ({ onClick }: carousel) => {
   return (
     <div
-      className="absolute rounded-full left-[95vw] md:left-[94vw] sm:left-[91vw] top-36 bottom-6"
+      className="absolute rounded-full left-[85vw] md:left-[94vw] sm:left-[91vw] top-36 bottom-6"
       onClick={onClick}
     >
       <div className="duration-200 h-[50px] w-[50px] rounded-full grid place-items-center cursor-pointer">

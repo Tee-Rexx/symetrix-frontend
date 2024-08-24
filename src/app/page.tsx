@@ -17,22 +17,27 @@ import {
 import Link from "next/link";
 import ClientReviews from "./sections/reviews";
 import "./globals.css";
+import ServiceProviderSection from "./sections/service-provide";
+import { motion, useAnimation } from 'framer-motion';
+import React from "react";
+import { useInView } from 'react-intersection-observer';
 
 const Data = [
   {
-    card_img: "https://dummyimage.com/720x400",
-    card_heading: "The",
-    card_text: "lorem ipsum dolar",
+    card_img: "/images/svgs/06-img-7.svg",
+    card_heading: "Creative Idea",
+    card_text:
+      "Innovative software solutions tailored for your business success.",
   },
   {
-    card_img: "https://dummyimage.com/720x400",
-    card_heading: "Symetrix",
-    card_text: "lorem ipsum dolar",
+    card_img: "/images/svgs/07-img-7.svg",
+    card_heading: "Successful Project",
+    card_text: "Delivering successful projects that exceed expectations.",
   },
   {
-    card_img: "https://dummyimage.com/720x400",
-    card_heading: "Solution",
-    card_text: "lorem ipsum dolar",
+    card_img: "/images/svgs/08-img-7.svg",
+    card_heading: "Time Management",
+    card_text: "Efficient time management to meet every deadline.",
   },
 ];
 
@@ -182,6 +187,17 @@ const Home = () => {
     ],
   };
 
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  React.useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
     <>
       <section className="h-[90vh] lg:h-screen w-full -z-50 relative flex items-center justify-center overflow-hidden">
@@ -228,7 +244,7 @@ const Home = () => {
         </video>
 
         <img
-          className="absolute rotate-180 opacity-80 h-[50px] z-10 bottom-10 "
+          className="absolute rotate-180 md:rotate-0 opacity-80 h-[50px] z-10 bottom-10 "
           src="/gif/mouse_scroll.gif"
         />
       </section>
@@ -302,8 +318,18 @@ const Home = () => {
 
       <ClientReviews />
 
-      <div className="w-full h-full flex-wrap flex justify-center items-center overflow-hidden">
-        <div className="container flex-wrap flex justify-evenly">
+      <div className="w-full h-full py-10 flex-wrap flex justify-center items-center flex-col overflow-hidden">
+        <div>
+          <h1
+            className="text-center color-sub-heading font-bold text-md my-6"
+          >
+            Featured Services
+          </h1>
+          <h2 className="text-white text-center font-normal px-3 sm:px-0 text-3xl sm:text-4xl mt-4">
+            Engaging Creative Minds via Technology
+          </h2>
+        </div>
+        <div className="container flex-wrap flex justify-around">
           {Data.map((item, index) => (
             <BlogCard
               key={index}
@@ -315,6 +341,71 @@ const Home = () => {
         </div>
       </div>
 
+      <ServiceProviderSection/>
+
+      <div className="bg-white">
+        <section className="text-gray-600 body-font">
+          <div className="container mx-auto flex lg:px-5 py-24 lg:flex-row flex-col items-center">
+            <div className="lg:max-w-sm lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+              <img
+                className="object-cover object-center rounded"
+                alt="hero"
+                src="/images/svgs/19-min-7-600x624.svg"
+              />
+            </div>
+            <div className="lg:flex-grow px-3 sm:px-5 lg:w-1/2 xl:pl-24 lg:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+              <h1
+                className="text-center font-semibold text-md my-6"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, #02f0f1, #024868)",
+                  WebkitTextFillColor: "transparent", // Hide default text color
+                  WebkitBackgroundClip: "text", // Clip the gradient to the text
+                  color: "transparent", // Set the text color as transparent
+                }}
+              >
+                Corporate Ideas
+              </h1>
+              <h1 className="title-font font-semibold sm:text-4xl text-xl mb-4 text-gray-900">
+                Perfect Technology solution for all medium business
+              </h1>
+              <p className="text-xs">
+                Discover the perfect technology solution designed to streamline
+                operations and boost efficiency for medium-sized businesses. Our
+                tailored services ensure seamless integration and scalable
+                growth, making success attainable
+              </p>
+              <div className="container1">
+                <div className="skill-box">
+                  <span className="title">Business Goal</span>
+                  <div className="skill-bar">
+                    <span className="skill-per html">
+                      <span className="tooltip">85%</span>
+                    </span>
+                  </div>
+                </div>
+                <div className="skill-box">
+                  <span className="title">Traffic Growth</span>
+                  <div className="skill-bar">
+                    <span className="skill-per css">
+                      <span className="tooltip">90%</span>
+                    </span>
+                  </div>
+                </div>
+                <div className="skill-box">
+                  <span className="title">Competitor Research</span>
+                  <div className="skill-bar">
+                    <span className="skill-per javascript">
+                      <span className="tooltip">75%</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <div>
         {/* Wave Image */}
         <img
@@ -322,33 +413,30 @@ const Home = () => {
           src="/images/pngs/waves1.png"
           className="absolute -z-22 waves hidden lg:block -bottom-18 h-[250px] opacity-50"
           alt="Blue color Waves"
+          
         />
+
         <section className="bg-white body-font">
-          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+          <div className="container mx-auto flex px-5 pb-16 lg:py-24 lg:flex-row flex-col items-center">
+            <div className="lg:max-w-lg xl:w-full lg:w-1/2 w-5/6 mb-10 md:mb-0">
               <img
-                className="object-cover object-center rounded"
+                className="object-cover  z-30 relative object-center rounded"
                 alt="hero"
                 src="/images/svgs/picture_1.png"
               />
             </div>
-            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-              <h1 className="title-font sm:text-4xl text-6xl mb-4 font-medium text-black">
+            <div className="lg:flex-grow lg:w-1/2 xl:pl-24 lg:pl-16 pt-5 lg:pt-0 flex flex-col md:items-start md:text-left items-center text-center">
+              <div className="flex flex-wrap justify-center mb-3 lg:mb-0 sm:justify-start items-center">
+
+              <h1 className="title-font text-2xl sm:text-3xl pe-2 font-medium text-black z-10">
                 Arrange a free{" "}
-                <div
-                  className="font-bold text-5xl"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, #02f0f1, #024868)",
-                    WebkitTextFillColor: "transparent", // Hide default text color
-                    WebkitBackgroundClip: "text", // Clip the gradient to the text
-                    color: "transparent", // Set the text color as transparent
-                  }}
-                >
+              </h1>
+                <h1
+                  className="font-bold text-2xl pt-1 color-sub-heading sm:text-3xl">
                   {" "}
                   Consultation{" "}
-                </div>
-              </h1>
+                </h1>
+                    </div>
               <p className="mb-8 leading-relaxed text-gray-600">
                 Unlock the full potential of your business with a complimentary
                 consultation. Our team of experts will provide valuable insights
@@ -374,7 +462,7 @@ const Home = () => {
         </section>
       </div>
 
-      <div className="flex flex-col items-center justify-center min-h-screen text-white px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center justify-center min-h-screen text-white mx-12 sm:px-6 lg:px-8">
         {/* Wave Image */}
         <img
           style={{ width: "100vw" }}
@@ -408,14 +496,23 @@ const Home = () => {
         ></div>
       </div>
 
-      <button
+      <motion.button
         style={{
           background: "linear-gradient(to right, #02f0f1, #024868)",
+          zIndex:10000
         }}
         onClick={scrollToTop}
         className={`${
           isVisible ? "block" : "hidden"
         } fixed bottom-8 right-8 w-12 h-12 text-white rounded-full shadow-xl flex items-center justify-center`}
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={{
+          hidden: { opacity: 0, x: 50 },
+          visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+        }}
+        whileHover={{ y: -10, transition: { type: 'spring', stiffness: 300 } }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -431,7 +528,7 @@ const Home = () => {
             d="M5 15l7-7 7 7"
           />
         </svg>
-      </button>
+      </motion.button>
     </>
   );
 };
