@@ -18,7 +18,7 @@ const Footer = () => {
     <div>
       <footer className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-          <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+          <div className="md:w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
             <Link
               href="/"
               className="flex title-font font-medium items-center text-gray-900 "
@@ -29,14 +29,14 @@ const Footer = () => {
                 width={50}
                 height={30}
               />
-              <span className="text-white ml-3 text-xl">Symmetrix</span>
+              <span className="text-white ml-3 text-xl">Symetrix</span>
             </Link>
-            <p className="mt-2 text-sm text-left text-gray-500 cursor-default">
-              Air plant banjo lyft occupy retro adaptogen indego Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Distinctio odit animi
-              voluptas, quaerat labore adipisci ab debitis quibusdam, soluta
-              deserunt iure quasi nisi consequuntur? Sapiente, nemo. Culpa
-              debitis ab officiis.
+            <p className="mt-2 pr-4 w-full text-sm text-justify text-gray-500 cursor-default">
+              We believe in turning bold ideas into reality through innovative
+              technology. We specialize in crafting tailored solutions that
+              drive efficiency, enhance user experience, and empower businesses
+              to reach new heights. We transform complex challenges into
+              seamless, intuitive software.
             </p>
           </div>
           <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
@@ -45,75 +45,83 @@ const Footer = () => {
               <h2 className="text-white text-xl">Company Info</h2>
               <nav className="list-none mb-10">
                 <li className="text-gray-600 hover:text-gray-800">
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                  <Link
+                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    href="/blogs"
+                    passHref
+                  >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    Contact
-                  </a>
+                  <Link
+                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    href="/contactUs"
+                    passHref
+                  >
+                    Contact Us
+                  </Link>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                  <Link
+                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    href="/faq"
+                    passHref
+                  >
                     FAQs
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    Terms & Conditions
-                  </a>
+                  </Link>
                 </li>
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
-              <h2 className="text-white text-xl">Resources</h2>
+              <h2 className="text-white text-xl">Quick Links</h2>
               <nav className="list-none mb-10">
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    First Link
-                  </a>
+                  <Link
+                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    href="/ourServices"
+                    passHref
+                  >
+                    Our Services
+                  </Link>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    Second Link
-                  </a>
+                  <Link
+                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    href="/contactUs"
+                    passHref
+                  >
+                    Contact Us
+                  </Link>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    Third Link
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    Fourth Link
-                  </a>
+                  <Link
+                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    href="/portfolio"
+                    passHref
+                  >
+                    Portfolio
+                  </Link>
                 </li>
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
               <h2 className="text-white text-xl">Contact</h2>
               <nav className="list-none mb-10">
                 <li>
                   <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    {234}567-8801
+                    {+92}334-3739391
                   </a>
                 </li>
                 <li>
                   <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    abc@abc.com
+                    nabeelshahzad752@gmail.com
                   </a>
                 </li>
                 <li>
                   <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    dummy
+                    Islamabad,Pakistan
                   </a>
                 </li>
               </nav>

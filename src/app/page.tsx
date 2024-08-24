@@ -16,22 +16,28 @@ import {
 } from "react-icons/fi";
 import Link from "next/link";
 import ClientReviews from "./sections/reviews";
+import "./globals.css";
+import ServiceProviderSection from "./sections/service-provide";
+import { motion, useAnimation } from 'framer-motion';
+import React from "react";
+import { useInView } from 'react-intersection-observer';
 
 const Data = [
   {
-    card_img: "https://dummyimage.com/720x400",
-    card_heading: "The",
-    card_text: "lorem ipsum dolar",
+    card_img: "/images/svgs/06-img-7.svg",
+    card_heading: "Creative Idea",
+    card_text:
+      "Innovative software solutions tailored for your business success.",
   },
   {
-    card_img: "https://dummyimage.com/720x400",
-    card_heading: "Symetrix",
-    card_text: "lorem ipsum dolar",
+    card_img: "/images/svgs/07-img-7.svg",
+    card_heading: "Successful Project",
+    card_text: "Delivering successful projects that exceed expectations.",
   },
   {
-    card_img: "https://dummyimage.com/720x400",
-    card_heading: "Solution",
-    card_text: "lorem ipsum dolar",
+    card_img: "/images/svgs/08-img-7.svg",
+    card_heading: "Time Management",
+    card_text: "Efficient time management to meet every deadline.",
   },
 ];
 
@@ -74,7 +80,6 @@ const someBlogs = [
 ];
 
 const Home = () => {
-  const [text, setText] = useState<string>("");
   const phrases: string[] = [
     "groundbreaking advancements.",
     "revolutionary solutions.",
@@ -82,11 +87,35 @@ const Home = () => {
     "limitless growth.",
     "boundless creativity.",
   ];
+  const [text, setText] = useState<string>("");
   const [phraseIndex, setPhraseIndex] = useState<number>(0);
-  const [client_reviews, client_reviews_arr] = useState<any>([]);
   const [isTyping, setIsTyping] = useState<boolean>(true);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    if (scrollTop > 200) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Optional: smooth scrolling animation
+    });
+  };
 
   useEffect(() => {
     const type = () => {
@@ -158,6 +187,17 @@ const Home = () => {
     ],
   };
 
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  React.useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
     <>
       <section className="h-[90vh] lg:h-screen w-full -z-50 relative flex items-center justify-center overflow-hidden">
@@ -204,7 +244,7 @@ const Home = () => {
         </video>
 
         <img
-          className="absolute rotate-180 opacity-80 h-[50px] z-10 bottom-10 "
+          className="absolute rotate-180 md:rotate-0 opacity-80 h-[50px] z-10 bottom-10 "
           src="/gif/mouse_scroll.gif"
         />
       </section>
@@ -278,8 +318,18 @@ const Home = () => {
 
       <ClientReviews />
 
-      <div className="w-full h-full flex-wrap flex justify-center items-center overflow-hidden">
-        <div className="container flex-wrap flex justify-evenly">
+      <div className="w-full h-full py-10 flex-wrap flex justify-center items-center flex-col overflow-hidden">
+        <div>
+          <h1
+            className="text-center color-sub-heading font-bold text-md my-6"
+          >
+            Featured Services
+          </h1>
+          <h2 className="text-white text-center font-normal px-3 sm:px-0 text-3xl sm:text-4xl mt-4">
+            Engaging Creative Minds via Technology
+          </h2>
+        </div>
+        <div className="container flex-wrap flex justify-around">
           {Data.map((item, index) => (
             <BlogCard
               key={index}
@@ -290,92 +340,197 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      <ServiceProviderSection/>
+
+      <div className="bg-white">
+        <section className="text-gray-600 body-font">
+          <div className="container mx-auto flex lg:px-5 py-24 lg:flex-row flex-col items-center">
+            <div className="lg:max-w-sm lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+              <img
+                className="object-cover object-center rounded"
+                alt="hero"
+                src="/images/svgs/19-min-7-600x624.svg"
+              />
+            </div>
+            <div className="lg:flex-grow px-3 sm:px-5 lg:w-1/2 xl:pl-24 lg:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+              <h1
+                className="text-center font-semibold text-md my-6"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, #02f0f1, #024868)",
+                  WebkitTextFillColor: "transparent", // Hide default text color
+                  WebkitBackgroundClip: "text", // Clip the gradient to the text
+                  color: "transparent", // Set the text color as transparent
+                }}
+              >
+                Corporate Ideas
+              </h1>
+              <h1 className="title-font font-semibold sm:text-4xl text-xl mb-4 text-gray-900">
+                Perfect Technology solution for all medium business
+              </h1>
+              <p className="text-xs">
+                Discover the perfect technology solution designed to streamline
+                operations and boost efficiency for medium-sized businesses. Our
+                tailored services ensure seamless integration and scalable
+                growth, making success attainable
+              </p>
+              <div className="container1">
+                <div className="skill-box">
+                  <span className="title">Business Goal</span>
+                  <div className="skill-bar">
+                    <span className="skill-per html">
+                      <span className="tooltip">85%</span>
+                    </span>
+                  </div>
+                </div>
+                <div className="skill-box">
+                  <span className="title">Traffic Growth</span>
+                  <div className="skill-bar">
+                    <span className="skill-per css">
+                      <span className="tooltip">90%</span>
+                    </span>
+                  </div>
+                </div>
+                <div className="skill-box">
+                  <span className="title">Competitor Research</span>
+                  <div className="skill-bar">
+                    <span className="skill-per javascript">
+                      <span className="tooltip">75%</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        {/* Wave Image */}
+        <img
+          style={{ width: "100vw" }}
+          src="/images/pngs/waves1.png"
+          className="absolute -z-22 waves hidden lg:block -bottom-18 h-[250px] opacity-50"
+          alt="Blue color Waves"
+          
+        />
+
+        <section className="bg-white body-font">
+          <div className="container mx-auto flex px-5 pb-16 lg:py-24 lg:flex-row flex-col items-center">
+            <div className="lg:max-w-lg xl:w-full lg:w-1/2 w-5/6 mb-10 md:mb-0">
+              <img
+                className="object-cover  z-30 relative object-center rounded"
+                alt="hero"
+                src="/images/svgs/picture_1.png"
+              />
+            </div>
+            <div className="lg:flex-grow lg:w-1/2 xl:pl-24 lg:pl-16 pt-5 lg:pt-0 flex flex-col md:items-start md:text-left items-center text-center">
+              <div className="flex flex-wrap justify-center mb-3 lg:mb-0 sm:justify-start items-center">
+
+              <h1 className="title-font text-2xl sm:text-3xl pe-2 font-medium text-black z-10">
+                Arrange a free{" "}
+              </h1>
+                <h1
+                  className="font-bold text-2xl pt-1 color-sub-heading sm:text-3xl">
+                  {" "}
+                  Consultation{" "}
+                </h1>
+                    </div>
+              <p className="mb-8 leading-relaxed text-gray-600">
+                Unlock the full potential of your business with a complimentary
+                consultation. Our team of experts will provide valuable insights
+                and recommendations tailored to your specific needs. Don’t miss
+                out on this opportunity to take your business to the next level.
+                Schedule your free consultancy today and discover the benefits
+                of working with us.
+              </p>
+              <div className="flex w-full md:justify-start justify-center items-end">
+                <Link href="/contactUs" passHref>
+                  <button
+                    style={{
+                      background: "linear-gradient(to right, #02f0f1, #024868)",
+                    }}
+                    className="inline-flex text-white border-0 py-2 px-5 focus:outline-none rounded text-lg"
+                  >
+                    Start your journey to business success
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="flex flex-col items-center justify-center min-h-screen text-white mx-12 sm:px-6 lg:px-8">
+        {/* Wave Image */}
+        <img
+          style={{ width: "100vw" }}
+          src="/images/pngs/waves.png"
+          className="absolute -z-8 waves hidden lg:block -bottom-18 h-[250px] opacity-20"
+          alt="Blue color Waves"
+        />
+        <h1
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 pb-4"
+          style={{
+            backgroundImage: "linear-gradient(to right, #02f0f1, #024868)",
+            WebkitTextFillColor: "transparent", // Hide default text color
+            WebkitBackgroundClip: "text", // Clip the gradient to the text
+            color: "transparent", // Set the text color as transparent
+          }}
+        >
+          Let’s get started
+        </h1>
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-center">
+          Ready to embark on your technical journey?
+        </h2>
+        <p className="text-md sm:text-xl lg:text-md font-thin text-center">
+          Take the first step towards success, reach out to us today and let’s
+          schedule a consultation to discuss your vision.
+        </p>
+        <div
+          className="w-full sm:h-1 lg:h-2 mt-8"
+          style={{
+            background: "linear-gradient(to right, #02f0f1, #024868)",
+          }}
+        ></div>
+      </div>
+
+      <motion.button
+        style={{
+          background: "linear-gradient(to right, #02f0f1, #024868)",
+          zIndex:10000
+        }}
+        onClick={scrollToTop}
+        className={`${
+          isVisible ? "block" : "hidden"
+        } fixed bottom-8 right-8 w-12 h-12 text-white rounded-full shadow-xl flex items-center justify-center`}
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={{
+          hidden: { opacity: 0, x: 50 },
+          visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+        }}
+        whileHover={{ y: -10, transition: { type: 'spring', stiffness: 300 } }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+      </motion.button>
     </>
   );
 };
 
 export default Home;
-
-{
-  /* Left Stach Badges */
-}
-
-{
-  /* <Image
-            src="/images/stack_badges/tailwind.png"
-            width={80}
-            height={80}
-            alt="Tailwind Logo"
-            className="absolute shadow-2xl animate-bounce-slow  start-2 -top-20 py-5 object-contain bg-white p-3 rounded-full"
-          />
-          <Image
-            src="/images/stack_badges/vue.png"
-            width={70}
-            height={50}
-            alt="Vue Logo"
-            className="absolute shadow-2xl animate-bounce-delayed  -start-14 top-11 py-4 px-3 object-contain bg-white p-3 rounded-full"
-          />
-          <Image
-            src="/images/stack_badges/react.png"
-            width={70}
-            height={70}
-            alt="React Logo"
-            className="absolute shadow-2xl animate-bounce-slow  start-14 top-28 object-contain bg-white p-3 rounded-full"
-          />
-          <Image
-            src="/images/stack_badges/python.png"
-            width={60}
-            height={60}
-            alt="Python Logo"
-            className="absolute shadow-2xl animate-bounce-veryslow  -start-8 top-52 object-contain bg-white p-3 rounded-full"
-          />
-          <Image
-            src="/images/stack_badges/android.png"
-            width={80}
-            height={80}
-            alt="Android Logo"
-            className="absolute shadow-2xl animate-bounce-delayed  start-8 top-72 object-contain bg-white p-3 rounded-full"
-          /> */
-}
-
-{
-  /* Right Stach Badges */
-}
-
-{
-  /* <Image
-        src="/images/stack_badges/angular.png"
-        width={80}
-        height={70}
-        alt="Angular Logo"
-        className="absolute shadow-2xl animate-bounce-veryslow  -end-14 -top-20 object-contain bg-white p-3 rounded-full"
-      />
-        <Image
-        src="/images/stack_badges/php.png"
-        width={80}
-        height={80}
-        alt="Php Logo"
-        className="absolute shadow-2xl animate-bounce-delayed  end-28 top-2 py-6 object-contain bg-white p-3 rounded-full"
-      />
-        <Image
-        src="/images/stack_badges/apple.png"
-        width={80}
-        height={80}
-        alt="Apple Logo"
-        className="absolute shadow-2xl animate-bounce-veryslow  end-1 top-28 py-3 object-contain bg-white p-3 rounded-full"
-      />
-        <Image
-        src="/images/stack_badges/node.png"
-        width={60}
-        height={60}
-        alt="Node Logo"
-        className="absolute shadow-2xl animate-bounce-slow  -end-12 top-56 py-3 object-contain bg-white p-3 rounded-full"
-      />
-        <Image
-        src="/images/stack_badges/bootstrap.png"
-        width={80}
-        height={80}
-        alt="Bootstrap Logo"
-        className="absolute shadow-2xl animate-bounce-delayed  end-20 top-72 py-3 object-contain bg-white p-3 rounded-full"
-      /> */
-}
