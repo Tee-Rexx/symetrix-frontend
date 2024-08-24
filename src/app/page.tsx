@@ -244,12 +244,12 @@ const Home = () => {
         </video>
 
         <img
-          className="absolute rotate-180 md:rotate-0 opacity-80 h-[50px] z-10 bottom-10 "
+          className="absolute rotate-180 opacity-80 h-[50px] z-10 bottom-10 "
           src="/gif/mouse_scroll.gif"
         />
       </section>
 
-      <section className="h-[530px] lg:h-[550px] 2xl:h-[550px] w-full mt-22 bg-gray-50 relative flex  justify-center">
+      <section className="h-[530px] lg:h-[550px] 2xl:h-[550px] w-full mt-22 bg-gray-50 relative flex -z-10 justify-center">
         <div className="w-full items-center flex flex-col ">
           <div className="w-full grid grid-cols-1 lg:grid-cols-2 container mt-16 ">
             <h4 className=" text-2xl px-3 sm:text-4xl sm:px-3 text-center lg:text-left font-bold ">
@@ -318,7 +318,7 @@ const Home = () => {
 
       <ClientReviews />
 
-      <div className="w-full h-full py-10 flex-wrap flex justify-center items-center flex-col overflow-hidden">
+      <div className="w-full h-full py-10 relative -z-40 flex-wrap flex justify-center items-center flex-col overflow-hidden">
         <div>
           <h1
             className="text-center color-sub-heading font-bold text-md my-6"
@@ -343,12 +343,12 @@ const Home = () => {
 
       <ServiceProviderSection/>
 
-      <div className="bg-white">
-        <section className="text-gray-600 body-font">
+      <div className="bg-white relative -z-10">
+        <section className="text-gray-600 relative z-20 body-font">
           <div className="container mx-auto flex lg:px-5 py-24 lg:flex-row flex-col items-center">
             <div className="lg:max-w-sm lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
               <img
-                className="object-cover object-center rounded"
+                className="object-cover z-50 object-center rounded"
                 alt="hero"
                 src="/images/svgs/19-min-7-600x624.svg"
               />
@@ -406,17 +406,16 @@ const Home = () => {
         </section>
       </div>
 
-      <div>
+
+        <section className="bg-white relative -z-10 body-font">
         {/* Wave Image */}
         <img
           style={{ width: "100vw" }}
           src="/images/pngs/waves1.png"
           className="absolute -z-22 waves hidden lg:block -bottom-18 h-[250px] opacity-50"
           alt="Blue color Waves"
-          
         />
 
-        <section className="bg-white body-font">
           <div className="container mx-auto flex px-5 pb-16 lg:py-24 lg:flex-row flex-col items-center">
             <div className="lg:max-w-lg xl:w-full lg:w-1/2 w-5/6 mb-10 md:mb-0">
               <img
@@ -460,7 +459,6 @@ const Home = () => {
             </div>
           </div>
         </section>
-      </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen text-white mx-12 sm:px-6 lg:px-8">
         {/* Wave Image */}

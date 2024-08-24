@@ -81,7 +81,7 @@ const client_reviews_arr = [
 
 const ClientReviews = () => {
   return (
-    <section className="h-full mt-64 lg:mt-64 xl:mt-56 bg-white">
+    <section className="h-full mt-64 relative -z-40 lg:mt-64 xl:mt-56 bg-white">
       <div className="flex flex-row w-full relative items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ const ClientReviews = () => {
             <section className="text-gray-600 body-font flex flex-col">
               <div className="container px-5 mt-24 mb-20 mx-auto">
                 <div className="xl:w-1/2 lg:w-3/4 w-full flex flex-col items-center mx-auto text-center">
-                  <p className="leading-relaxed text-lg">{data.review}</p>
+                  <p className="leading-relaxed w-[80%] md:w-full text-lg">{data.review}</p>
                   <span
                     className="w-10 h-[6px] my-2 rounded-xl"
                     style={{
