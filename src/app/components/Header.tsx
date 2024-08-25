@@ -113,6 +113,7 @@ const Header = () => {
             borderBottomRightRadius: 20,
             backgroundColor: "#191e24",
             height: "100vh",
+            width:'80%',
             position: "absolute",
             zIndex: 99999999,
           }}
