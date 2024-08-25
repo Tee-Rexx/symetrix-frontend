@@ -4,45 +4,46 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { SIDEBAR_MENU } from "@/utils/constants/header.constants";
+import Icon  from '../../utils/Icons'
 
 const Header = () => {
   const { resolvedTheme } = useTheme();
   const [theme, setTheme] = useState<any>();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [bgColor, setBgColor] = useState("transparent");
-
+  const [activeLink, setActiveLink] = useState<string>('');
   useEffect(() => {
     setTheme(resolvedTheme);
   }, [resolvedTheme]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const position = window.scrollY;
-      setScrollPosition(position);
-
-      // Check if scroll position is greater than 5% of viewport height
-      if (position > window.innerHeight * 0.1) {
-        setBgColor("black");
-      } else {
-        setBgColor("transparent");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    getActiveLink()
   }, []);
 
+  const getActiveLink = () => {
+    setActiveLink(window.location.pathname ?? '/')
+  }
+
+  const handleLinkClick = (url: string) => {
+    const checkbox = document.getElementById("my-drawer-3") as HTMLInputElement;
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+    if(url){
+      setActiveLink(url); // Set the active link when a link is clicked
+    }
+  };
+
+
   return (
-    <div className="container-fluid mb-5 w-full h-12 relative mx-auto drawer lg-hidden">
+    <div className="container-fluid mb-5 w-full h-12 relative z-10 mx-auto drawer lg-hidden">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div
-        className={`drawer-content bg-${bgColor} w-full shadow-2xl fixed flex flex-col`}
+        className={`drawer-content bg-black w-full shadow-2xl fixed flex flex-col`}
       >
-        <header className="text-gray-600 relative -z-50 body-font">
-          <div className="container-fluid mx-auto px-0 md:px-20 flex flex-wrap p-5 justify-between flex-row items-center">
+        <header className="text-gray-600 relative body-font">
+          <div className="container-fluid mx-auto px-0 md:px-20 flex flex-wrap py-3 sm:p-5 justify-between flex-row items-center">
             <div className="flex items-center">
               <div className="flex-none lg:hidden">
                 <label
@@ -68,6 +69,7 @@ const Header = () => {
 
               <Link
                 href="/"
+                onClick={() => handleLinkClick('/')}
                 className="flex title-font font-medium items-center text-gray-900 "
               >
                 <Image
@@ -111,34 +113,46 @@ const Header = () => {
           style={{
             borderTopRightRadius: 20,
             borderBottomRightRadius: 20,
-            backgroundColor: "#191e24",
-            height: "100vh",
-            width:'80%',
+            backgroundColor: "#191e24f2",
+            height: "100%",
+            width: "70%",
             position: "absolute",
             zIndex: 99999999,
           }}
         >
+          <div className="flex ps-3 mb-12 mt-3 flex-row flex-nowrap justify-between items-center">
+
+            <span className="flex items-center">
+
+            <Image
+              src="/images/website logo/logo.png"
+              alt="Logo Image"
+              width={50}
+              height={30}
+              />
+              <span className="text-white ml-3 text-md">Symetrix</span>
+              </span>
+
+            <span onClick={() => handleLinkClick('')}> 
+            <Icon iconName={'chevron_left'} height={34} width={34} color={"#afafaf"} />
+              </span>
+          </div>
+
           {/* Sidebar content here */}
-                <li>
-                  <Link className="py-4" href="/blogs" passHref>
-                  Blogs
-                </Link>
-                </li>
-                <li>
-                  <Link className="py-4" href="/ourServices" passHref>
-                  Our Services
-                </Link>
-                </li>
-                <li>
-                  <Link className="py-4" href="/contactUs" passHref>
-                  Contact Us
-                </Link>
-                </li>
-                <li>
-                  <Link className="py-4" href="/portfolio" passHref>
-                  Portfolio
-                </Link>
-                </li>
+
+          {SIDEBAR_MENU.map((menu, index) => (
+            <li key={index}>
+              <Link
+                className={`py-4 flex ${activeLink === menu.menu_url ? 'bg-slate-700' : 'hover:bg-slate-500'}`}
+                href={menu.menu_url}
+                passHref
+                onClick={() => handleLinkClick(menu.menu_url)}
+              >
+                <Icon iconName={menu.icon} height={34} width={34} color={"#afafaf"} />
+                {menu.menu}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

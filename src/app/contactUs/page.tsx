@@ -112,8 +112,22 @@ const page = () => {
   // };
 
   return (
-    <div>
       <section className="text-gray-600 body-font">
+      <div className="container-fluid mx-auto our-service-bg py-32 w-full items-center justify-center flex">
+        <div className="text-left container relative w-full">
+          <div className="flex ms-5 md:ms-0 items-center">
+            <div
+              className="h-6 mb-2 w-1 mr-2"
+              style={{
+                background: "linear-gradient(to right, #02f0f1, #024868)",
+              }}
+            ></div>
+            <p className="text-3xl text-gray-900 font-medium title-font mb-2">
+              Contact Us
+            </p>
+          </div>
+        </div>
+      </div>
         <div className="container flex flex-wrap px-5 py-24 mx-auto  items-center">
           <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
@@ -125,19 +139,19 @@ const page = () => {
               with us today and pave the path to success
             </p>
           </div>
-          <div className="flex flex-col md:w-2/4">
-            <div className="container flex justify-center px-5 my-4 py-20 mx-auto">
-              <div className="lg:w-4/5 md:w-2/3 p-7 rounded-lg bg-slate-300 ">
+          <div className="flex flex-col w-full md:w-2/4">
+            <div className="container w-full flex justify-center px-0 md:px-5 my-4 py-20 mx-auto">
+              <div className="lg:w-4/5 w-full md:w-2/3 p-7 rounded-lg bg-slate-300 ">
                 <form
-                  className="flex flex-wrap -m-2"
+                  className="flex flex-col md:flex-row flex-wrap -m-2"
                   onSubmit={handleFormSubmit}
                 >
-                  <div className="p-2 w-1/2">
-                    <div className="relative">
+                  <div className="p-2 w-full md:w-1/2">
                       <TextField
                         id="standard-basic"
                         label="First Name"
                         variant="standard"
+                        className="w-full"
                         sx={{
                           "& .MuiInputBase-input": {
                             color: "black", // Set color of input text
@@ -151,14 +165,13 @@ const page = () => {
                         value={fname}
                         onChange={(e) => setFName(e.target.value)}
                       />
-                    </div>
                   </div>
-                  <div className="p-2 w-1/2">
-                    <div className="relative">
+                  <div className="p-2 w-full md:w-1/2">
                       <TextField
                         id="standard-basic"
                         label="Last Name"
                         variant="standard"
+                        className="w-full"
                         sx={{
                           "& .MuiInputBase-input": {
                             color: "black", // Set color of input text
@@ -172,7 +185,6 @@ const page = () => {
                         value={lname}
                         onChange={(e) => setLName(e.target.value)}
                       />
-                    </div>
                   </div>
                   <div className="p-2 w-full">
                     <div className="relative">
@@ -225,7 +237,7 @@ const page = () => {
                   <div className="p-2 mt-2">
                     {/* Button for form submission */}
                     <Button
-                      className="w-full submit-btn"
+                      className="w-full title-font submit-btn"
                       variant="contained"
                       type="submit"
                     >
@@ -249,7 +261,6 @@ const page = () => {
           </div>
         </div>
       </section>
-    </div>
   );
 };
 

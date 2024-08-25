@@ -290,11 +290,22 @@ html {
 .card {
   color: var(--clr-neutral-100);
   background-size: cover;
-  padding: 10rem 0 0;
-  max-width: 25vw;
+  padding: 7.8rem 0 ;
+  width: 350px;
   border-radius: 0.5rem;
   overflow: hidden;
   transition: transform 500ms ease;
+  height: 450px;
+  position: relative;
+  @media (max-width : 1279px) {
+    width: 300px;
+  };
+  @media (max-width : 1024px) {
+    width: 350px;
+  }
+  @media (max-width : 576px) {
+    width: 100%;
+  }
 }
 
 .card:hover,
@@ -306,10 +317,11 @@ html {
   --padding: 1.0rem;
   padding: var(--padding);
   background: linear-gradient(
-    hsl(0 0% 0% / 0),
-    hsl(20 0% 0% / 0.3) 20%,
-    hsl(0 0% 0% / 1)
+    hsla(0, 0%, 25%, 0.05), /* Shadow color at the top */
+    hsl(20 0% 0% / 0.6) 20%, /* Gradient start */
+    hsl(0 0% 0% / 1) /* Gradient end */
   );
+  min-height: 230%;
 }
 
 .card-title {

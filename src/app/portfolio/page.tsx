@@ -21,7 +21,7 @@ const Page = () => {
       backgroundImage: "url(/images/pngs/petmeds.png)",
       title: "24Petmeds Store",
       body: "24Petmeds is a dynamic platform, a marketplace connecting vendors and customers for seamless transactions.",
-      url: "https://petmedscity.24vetsupport.com/#/",
+      url: "https://vetsupport.24vetsupport.com/#/",
       buttonText: "Learn More",
     },
     {
@@ -43,14 +43,22 @@ const Page = () => {
   return (
     <div style={{ overflowX: "hidden" }}>
       <section className="text-gray-600 body-font">
-        <div className="h-64 overflow-hidden w-full bg-white">
-          <img
-            alt="content"
-            className="object-cover object-center h-full w-full opacity-60"
-            src="/images/pngs/marvin-meyer-SYTO3xs06fU-unsplash.jpg"
-          />
+      <div className="container-fluid mx-auto our-service-bg py-32 w-full items-center justify-center flex">
+        <div className="text-left container relative w-full">
+          <div className="flex ms-5 md:ms-0 items-center">
+            <div
+              className="h-6 mb-2 w-1 mr-2"
+              style={{
+                background: "linear-gradient(to right, #02f0f1, #024868)",
+              }}
+            ></div>
+            <p className="text-3xl text-gray-900 font-medium title-font mb-2">
+              Portfolio
+            </p>
+          </div>
         </div>
-        <div className="container w-full mx-auto px-5">
+      </div>
+        <div className="container w-full mx-auto">
           <div className="border-4">
             <motion.p
               ref={ref}
@@ -60,7 +68,7 @@ const Page = () => {
                 hidden: { opacity: 0, x: 800 },
                 visible: { opacity: 1, x: 0, transition: { duration: 1.0 } },
               }}
-              className="text-justify px-32 py-32"
+              className="text-justify px-3 sm:px-32 py-32"
             >
               Welcome to Symetrix, where innovation meets excellence. As a
               leading software development company, we specialize in crafting
@@ -85,24 +93,26 @@ const Page = () => {
             </motion.p>
           </div>
           <div className="w-full mx-auto my-16">
-            <div className="flex flex-wrap gap-8 justify-start">
+            <div className="flex flex-col px-3 sm:px-0 lg:flex-row flex-wrap gap-8 items-center md:justify-between">
               {cardData.map((card, index) => (
                 <div
                   key={index}
-                  className="card max-w-sm rounded overflow-hidden shadow-lg group"
+                  className="card max-w-sm rounded overflow-hidden mb-5 shadow-lg group"
                   style={{
                     backgroundImage: card.backgroundImage,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
+                    boxShadow: "inset 0px 10px 15px rgba(0, 0, 0, 0.07)"
                   }}
                 >
                   <div className="card-content p-6 bg-white bg-opacity-80">
-                    <h2 className="card-title text-xl font-bold mb-2 transition-colors group-hover:duration-1000 group-hover:text-gray-700">
+                    <h2 className="card-title text-xl font-bold mb-2 transition-colors ">
                       {card.title}
                     </h2>
                     <p className="card-body text-sm text-white">{card.body}</p>
                     <a
-                      href="#"
+                      href={card.url}
+                      target="_blank"
                       className="button mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                     >
                       {card.buttonText}

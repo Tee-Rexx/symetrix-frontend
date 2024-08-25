@@ -200,14 +200,14 @@ const Home = () => {
 
   return (
     <>
-      <section className="h-[90vh] lg:h-screen w-full -z-50 relative flex items-center justify-center overflow-hidden">
+      <section className="h-[90vh] lg:h-screen w-full relative flex items-center justify-center overflow-hidden">
         <div className="rounded-full sphere absolute top-0 start5 md:start-20 bg-violet-600 opacity-15"></div>
         <div className="rounded-full sphere absolute bottom-0 end-14 lg:top-10 lg:end-72 bg-violet-600 opacity-15"></div>
         <div className="h-screen w-[90%] block lg:hidden bg-black absolute opacity-15"></div>
         <div className="container px-3 lg:px-0 flex relative justify-center items-center lg:items-start h-100 flex-col">
           <span
             style={{ lineHeight: 1.25 }}
-            className="text-4xl md:text-4xl sm:text-6xl z-0 text-white text-center lg:text-left h-[256px] sm:mb-16 lg:mb-24 lg:ms-8 lg:text-5xl w-full md:w-[90%] lg:w-5/12 font-extrabold"
+            className="text-4xl md:text-4xl sm:text-6xl text-white text-center lg:text-left h-[256px] sm:mb-16 lg:mb-24 lg:ms-8 lg:text-5xl w-full md:w-[90%] lg:w-5/12 font-extrabold"
           >
             Learn how to use technology in order to{" "}
             <p
@@ -228,14 +228,14 @@ const Home = () => {
         <img
           style={{ width: "100vw" }}
           src="/images/pngs/waves.png"
-          className="absolute -z-30 waves hidden lg:block -bottom-28 h-[250px] opacity-10"
+          className="absolute waves hidden lg:block -bottom-28 h-[250px] opacity-10"
           alt="Blue color Waves"
         />
 
         {/* Gif Video here */}
 
         <video
-          className="absolute opacity-30 lg:opacity-100 h-[80%] lg:right-0 -z-50 lg:top-12 mix-blend-lighten "
+          className="absolute opacity-30 lg:opacity-100 h-[80%] lg:right-0 lg:top-12 mix-blend-lighten "
           muted
           autoPlay
           loop
@@ -244,12 +244,12 @@ const Home = () => {
         </video>
 
         <img
-          className="absolute rotate-180 opacity-80 h-[50px] z-10 bottom-10 "
+          className="absolute rotate-180 opacity-80 h-[50px] bottom-10 "
           src="/gif/mouse_scroll.gif"
         />
       </section>
 
-      <section className="h-[530px] lg:h-[550px] 2xl:h-[550px] w-full mt-22 bg-gray-50 relative flex -z-10 justify-center">
+      <section className="h-[530px] lg:h-[550px] 2xl:h-[550px] w-full mt-22 bg-gray-50 relative flex justify-center">
         <div className="w-full items-center flex flex-col ">
           <div className="w-full grid grid-cols-1 lg:grid-cols-2 container mt-16 ">
             <h4 className=" text-2xl px-3 sm:text-4xl sm:px-3 text-center lg:text-left font-bold ">
@@ -318,7 +318,7 @@ const Home = () => {
 
       <ClientReviews />
 
-      <div className="w-full h-full py-10 relative -z-40 flex-wrap flex justify-center items-center flex-col overflow-hidden">
+      <div className="w-full h-full py-10 relative flex-wrap flex justify-center items-center flex-col overflow-hidden">
         <div>
           <h1
             className="text-center color-sub-heading font-bold text-md my-6"
@@ -343,12 +343,12 @@ const Home = () => {
 
       <ServiceProviderSection/>
 
-      <div className="bg-white relative -z-10">
-        <section className="text-gray-600 relative z-20 body-font">
+      <div className="bg-white relative">
+        <section className="text-gray-600 relative body-font">
           <div className="container mx-auto flex lg:px-5 py-24 lg:flex-row flex-col items-center">
             <div className="lg:max-w-sm lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
               <img
-                className="object-cover z-50 object-center rounded"
+                className="object-cover object-center rounded"
                 alt="hero"
                 src="/images/svgs/19-min-7-600x624.svg"
               />
@@ -407,19 +407,19 @@ const Home = () => {
       </div>
 
 
-        <section className="bg-white relative -z-10 body-font">
+        <section className="bg-white relative body-font">
         {/* Wave Image */}
         <img
           style={{ width: "100vw" }}
           src="/images/pngs/waves1.png"
-          className="absolute -z-22 waves hidden lg:block -bottom-18 h-[250px] opacity-50"
+          className="absolute waves hidden lg:block -bottom-18 h-[250px] opacity-50"
           alt="Blue color Waves"
         />
 
           <div className="container mx-auto flex px-5 pb-16 lg:py-24 lg:flex-row flex-col items-center">
             <div className="lg:max-w-lg xl:w-full lg:w-1/2 w-5/6 mb-10 md:mb-0">
               <img
-                className="object-cover  z-30 relative object-center rounded"
+                className="object-cover relative object-center rounded"
                 alt="hero"
                 src="/images/svgs/picture_1.png"
               />
@@ -427,7 +427,7 @@ const Home = () => {
             <div className="lg:flex-grow lg:w-1/2 xl:pl-24 lg:pl-16 pt-5 lg:pt-0 flex flex-col md:items-start md:text-left items-center text-center">
               <div className="flex flex-wrap justify-center mb-3 lg:mb-0 sm:justify-start items-center">
 
-              <h1 className="title-font text-2xl sm:text-3xl pe-2 font-medium text-black z-10">
+              <h1 className="title-font text-2xl sm:text-3xl pe-2 font-medium text-black">
                 Arrange a free{" "}
               </h1>
                 <h1
@@ -465,7 +465,7 @@ const Home = () => {
         <img
           style={{ width: "100vw" }}
           src="/images/pngs/waves.png"
-          className="absolute -z-8 waves hidden lg:block -bottom-18 h-[250px] opacity-20"
+          className="absolute waves hidden lg:block -bottom-18 h-[250px] opacity-20"
           alt="Blue color Waves"
         />
         <h1
