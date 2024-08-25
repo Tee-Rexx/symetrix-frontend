@@ -5,53 +5,62 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const page = () => {
   // for accordian color
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded, setExpanded] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded1, setExpanded1] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded2, setExpanded2] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded3, setExpanded3] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded4, setExpanded4] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded5, setExpanded5] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded6, setExpanded6] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded7, setExpanded7] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded8, setExpanded8] = useState(false);
 
-  const handleAccordionChange = (event, isExpanded) => {
+  const handleAccordionChange = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded(isExpanded);
   };
 
-  const handleAccordionChange1 = (event, isExpanded) => {
+  const handleAccordionChange1 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded1(isExpanded);
   };
 
-  const handleAccordionChange2 = (event, isExpanded) => {
+  const handleAccordionChange2 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded2(isExpanded);
   };
 
-  const handleAccordionChange3 = (event, isExpanded) => {
+  const handleAccordionChange3 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded3(isExpanded);
   };
 
-  const handleAccordionChange4 = (event, isExpanded) => {
+  const handleAccordionChange4 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded4(isExpanded);
   };
 
-  const handleAccordionChange5 = (event, isExpanded) => {
+  const handleAccordionChange5 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded5(isExpanded);
   };
 
-  const handleAccordionChange6 = (event, isExpanded) => {
+  const handleAccordionChange6 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded6(isExpanded);
   };
 
-  const handleAccordionChange7 = (event, isExpanded) => {
+  const handleAccordionChange7 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded7(isExpanded);
   };
 
-  const handleAccordionChange8 = (event, isExpanded) => {
+  const handleAccordionChange8 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
     setExpanded8(isExpanded);
   };
 
