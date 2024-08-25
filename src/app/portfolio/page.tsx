@@ -13,6 +13,8 @@ const Page = () => {
   React.useEffect(() => {
     if (inView) {
       controls.start("visible");
+    } else {
+      controls.start("visible");
     }
   }, [controls, inView]);
 
@@ -59,7 +61,6 @@ const Page = () => {
         </div>
       </div>
         <div className="container w-full mx-auto">
-          <div className="border-4">
             <motion.p
               ref={ref}
               initial="hidden"
@@ -91,7 +92,7 @@ const Page = () => {
               unlock the full potential of technology to drive growth and
               innovation in your organization.
             </motion.p>
-          </div>
+          
           <div className="w-full mx-auto my-16">
             <div className="flex flex-col px-3 sm:px-0 lg:flex-row flex-wrap gap-8 items-center md:justify-between">
               {cardData.map((card, index) => (
