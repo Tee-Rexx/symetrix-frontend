@@ -37,21 +37,7 @@ const Page = () => {
       body: "GoPinit is an innovative platform, a mobile app creating a HUB for outdoor advertisers and their customers to connect and do business better.",
       url: "https://gopinit.com/",
       buttonText: "Read More",
-    },
-    {
-      backgroundImage:
-        "url(https://media.contentapi.ea.com/content/dam/eacom/images/2020/09/ea-featured-image-ea-desktop-beta.jpg.adapt.crop191x100.1200w.jpg)",
-      title: "Something Awesome 4",
-      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, culpa.",
-      buttonText: "Explore More",
-    },
-    {
-      backgroundImage:
-        "url(https://media.contentapi.ea.com/content/dam/eacom/images/2020/09/ea-featured-image-ea-desktop-beta.jpg.adapt.crop191x100.1200w.jpg)",
-      title: "Something Awesome 5",
-      body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, culpa.",
-      buttonText: "Find Out More",
-    },
+    }
   ];
 
   return (
