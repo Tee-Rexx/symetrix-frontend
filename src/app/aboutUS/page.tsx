@@ -74,6 +74,12 @@ const Page = () => {
         opacity: 1,
         transition: { duration: 1, ease: "easeOut" },
       });
+    } else {
+      controls.start({
+        x: 0, // Example starting position
+        opacity: 0,
+        transition: { duration: 0.5, ease: "easeOut" },
+      });
     }
   }, [controls, inView]);
 
@@ -96,7 +102,13 @@ const Page = () => {
         x: 0,
         y: 0,
         opacity: 1,
-        transition: { ease: "easeOut" },
+        transition: { duration: 0.8,  ease: "easeOut" },
+      });
+    } else {
+      controls.start({
+        x: 0, // Example starting position
+        opacity: 0,
+        transition: { duration: 0.5, ease: "easeOut" },
       });
     }
   }, [controls2, inView2]);
@@ -108,7 +120,7 @@ const Page = () => {
           <motion.div
             className="lg:max-w-sm lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0"
             ref={ref}
-            initial="hidden"
+            initial={{ x: 0, opacity: 0, y:90 }}
             animate={controls}
             variants={{
               hidden: { opacity: 0, x: -200 }, // Reduced distance from the left
@@ -226,7 +238,7 @@ const Page = () => {
         </div>
 
         {/* three hozizontal cards */}
-        <div className="flex justify-center space-x-4 p-5">
+        <div className="flex flex-col px-3 md:flex-row flex-wrap justify-center md:space-x-4 md:p-5">
           {cardData.map((card, index) => {
             let initial, animate;
             if (index === 1) {
@@ -245,7 +257,7 @@ const Page = () => {
                 initial={initial}
                 animate={animate}
                 transition={{ duration: 0.7 }} // Staggered animation
-                className="flex p-5 rounded border shadow-xl hover:bg-blue-900 hover:text-white transition duration-300 w-80"
+                className="flex mb-10 p-5 rounded border shadow-xl hover:bg-blue-900 hover:text-white transition duration-300 w-full md:w-80"
               >
                 <div className="flex-shrink-0 mr-4 ">
                   <img

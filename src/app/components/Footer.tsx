@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+        <div className="container px-3 sm:px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="md:w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
             <Link
               href="/"
@@ -40,7 +40,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
               <h2 className="text-white text-xl">Company Info</h2>
               <nav className="list-none mb-10">
@@ -73,7 +73,7 @@ const Footer = () => {
                 </li>
               </nav>
             </div>
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
               <h2 className="text-white text-xl">Quick Links</h2>
               <nav className="list-none mb-10">
@@ -106,7 +106,7 @@ const Footer = () => {
                 </li>
               </nav>
             </div>
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
               <h2 className="text-white text-xl">Contact</h2>
               <nav className="list-none mb-10">
                 <li>

@@ -1,0 +1,1 @@
+export type ICONS_NAME = 'home' | 'chevron_left' | 'contact_us' | 'blog' | 'briefcase' | 'laptop_mobile' | 'group';

@@ -53,21 +53,12 @@ const Page: React.FC = () => {
     triggerOnce: true,
   });
 
-  useEffect(() => {
-    if (inView) {
-      controls.start({
-        x: 0,
-        opacity: 1,
-        transition: { duration: 1, ease: "easeOut" },
-      });
-    }
-  }, [controls, inView]);
 
   return (
     <>
       <div className="container-fluid mx-auto our-service-bg py-32 w-full items-center justify-center flex">
-        <div className="text-left container relative z-10 w-full">
-          <div className="flex items-center">
+        <div className="text-left container relative w-full">
+          <div className="flex ms-5 md:ms-0 items-center">
             <div
               className="h-6 mb-2 w-1 mr-2"
               style={{
@@ -82,13 +73,13 @@ const Page: React.FC = () => {
       </div>
 
       <div className="container-fluid flex items-center mt-32 justify-center">
-        <div className="flex justify-between container flex-wrap">
+        <div className="flex flex-col items-center md:flex-row justify-between container flex-wrap">
           {cards.map((card, index) => (
             <div
               key={index}
-              className="w-56 py-6 rounded-lg bg-gray-200 border-opacity-60 text-center"
+              className="w-56 py-6 min-h-[330px] mb-7 md:mb-0 rounded-lg bg-gray-200 border-opacity-60 text-center"
             >
-              <div className="w-12 h-10 inline-flex items-center justify-center rounded-full text-gray-900 mb-5 flex-shrink-0">
+              <div className="w-12 inline-flex items-center justify-center rounded-full text-gray-900 mt-5 flex-shrink-0">
                 {card.title === "Cloud Solutions" ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -235,11 +226,11 @@ const Page: React.FC = () => {
         </p>
       </div>
 
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
 
       <ClientReviews />
 
-      <div className="bg-white">
+      {/* <div className="bg-white">
         <motion.div
           ref={ref}
           initial={{ x: "-100%", opacity: 0 }}
@@ -256,7 +247,7 @@ const Page: React.FC = () => {
             Hover over the box!
           </motion.h1>
         </motion.div>
-      </div>
+      </div> */}
       
     </>
   );
