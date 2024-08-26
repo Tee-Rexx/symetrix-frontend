@@ -460,7 +460,7 @@ const Home = () => {
           </div>
         </section>
 
-      <div className="flex flex-col items-center justify-center min-h-screen text-white mx-12 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center justify-center min-h-screen text-white mx-4 sm:mx-12 sm:px-6 lg:px-8">
         {/* Wave Image */}
         <img
           style={{ width: "100vw" }}
@@ -469,7 +469,7 @@ const Home = () => {
           alt="Blue color Waves"
         />
         <h1
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 pb-4"
+          className="text-3xl sm:text-4xl text-center lg:text-5xl font-bold mb-4 pb-4"
           style={{
             backgroundImage: "linear-gradient(to right, #02f0f1, #024868)",
             WebkitTextFillColor: "transparent", // Hide default text color
