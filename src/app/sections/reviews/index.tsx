@@ -81,7 +81,7 @@ const client_reviews_arr = [
 
 const ClientReviews = () => {
   return (
-    <section className="h-full mt-64 relative -z-40 lg:mt-64 xl:mt-56 bg-white">
+    <section className="h-full mt-64 relative lg:mt-64 xl:mt-56 bg-white">
       <div className="flex flex-row w-full relative items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -60,7 +60,10 @@ export const NomralNextButton = ({ onClick }: carousel) => {
 export const FeedbackPreviousButton = ({ onClick }: carousel) => {
   return (
     <div
-      className="absolute z-10 rounded-full start-3 lg:start-3 md:start-3 sm:start-3 top-36 "
+    style={{
+      zIndex:1
+    }}
+      className="absolute rounded-full start-3 lg:start-3 md:start-3 sm:start-3 top-36 "
       onClick={onClick}
     >
       <div className="  duration-200 h-[50px] w-[50px] rounded-full grid place-items-center cursor-pointer">

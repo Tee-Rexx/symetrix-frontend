@@ -89,7 +89,9 @@ const ServiceProviderSection = () => {
         </div>
       </section>
 
-      <section className="flex flex-col -z-10 relative pt-40 pb-10 bg-white container-fluid w-full items-center justify-center">
+      <section style={{
+        zIndex:9
+      }} className="flex flex-col relative pt-40 pb-10 bg-white container-fluid w-full items-center justify-center">
         <img
           draggable="false"
           className="absolute object-contain top-10 left-0"
