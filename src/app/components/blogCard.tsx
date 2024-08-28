@@ -18,7 +18,7 @@ const BlogCard = ({ card_img, card_heading, card_text }: BlogData) => {
           <div className=" sm:h-72 sm:w-72">
             <div className="h-full bg-white shadow-2xl rounded-md overflow-hidden shadow-slate-600 transform transition-transform duration-300 hover:-translate-y-2">
               <div className="flex justify-center mt-4 items-center">
-                <img className="lg:h-36 pt-4" src={card_img} alt="blog" />
+                <img className="lg:h-36 w-full pt-4" src={card_img} alt="blog" />
               </div>
               <div className="p-6">
                 <h1 className="title-font text-center text-sm font-semibold text-gray-900 mb-3">

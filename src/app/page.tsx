@@ -24,18 +24,18 @@ import { useInView } from 'react-intersection-observer';
 
 const Data = [
   {
-    card_img: "/images/svgs/06-img-7.svg",
+    card_img: "/images/pngs/55-creative-marketing-ideas-for-your-product-or-business.png",
     card_heading: "Creative Idea",
     card_text:
       "Innovative software solutions tailored for your business success.",
   },
   {
-    card_img: "/images/svgs/07-img-7.svg",
+    card_img: "/images/svgs/700600p546EDNmainimg-project-success.jpg",
     card_heading: "Successful Project",
     card_text: "Delivering successful projects that exceed expectations.",
   },
   {
-    card_img: "/images/svgs/08-img-7.svg",
+    card_img: "/images/svgs/time-management.svg",
     card_heading: "Time Management",
     card_text: "Efficient time management to meet every deadline.",
   },
@@ -479,9 +479,11 @@ const Home = () => {
         >
           Let’s get started
         </h1>
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-center">
-          Ready to embark on your technical journey?
-        </h2>
+        <p style={{
+          lineHeight:1.4
+        }} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-center">
+          Ready to embark on your technical journey ?
+        </p>
         <p className="text-md sm:text-xl lg:text-md font-thin text-center">
           Take the first step towards success, reach out to us today and let’s
           schedule a consultation to discuss your vision.
