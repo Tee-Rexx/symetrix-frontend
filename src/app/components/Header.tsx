@@ -3,38 +3,46 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { SIDEBAR_MENU } from "@/utils/constants/header.constants";
-import Icon  from '../../utils/Icons'
+import Icon from "../../utils/Icons";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const { resolvedTheme } = useTheme();
   const [theme, setTheme] = useState<any>();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [bgColor, setBgColor] = useState("transparent");
-  const [activeLink, setActiveLink] = useState<string>('');
+  const [activeLink, setActiveLink] = useState<string>("");
+  
+
+  const handleLinkClick1 = (link: SetStateAction<string>) => {
+    setActiveLink(link);
+  };
+
+  const pathname = usePathname();
+
   useEffect(() => {
     setTheme(resolvedTheme);
   }, [resolvedTheme]);
 
   useEffect(() => {
-    getActiveLink()
+    getActiveLink();
   }, []);
 
   const getActiveLink = () => {
-    setActiveLink(window.location.pathname ?? '/')
-  }
+    setActiveLink(window.location.pathname ?? "/");
+  };
 
   const handleLinkClick = (url: string) => {
     const checkbox = document.getElementById("my-drawer-3") as HTMLInputElement;
     if (checkbox) {
       checkbox.checked = false;
     }
-    if(url){
+    if (url) {
       setActiveLink(url); // Set the active link when a link is clicked
     }
   };
-
 
   return (
     <div className="container-fluid mb-5 w-full h-12 relative z-10 mx-auto drawer lg-hidden">
@@ -43,7 +51,7 @@ const Header = () => {
         className={`drawer-content bg-black w-full shadow-2xl fixed flex flex-col`}
       >
         <header className="text-gray-600 relative body-font">
-          <div className="container-fluid mx-auto px-0 md:px-20 flex flex-wrap py-3 sm:p-5 justify-between flex-row items-center">
+          <div className="container-fluid mx-auto container flex flex-wrap py-6 justify-between flex-row items-center">
             <div className="flex items-center">
               <div className="flex-none lg:hidden">
                 <label
@@ -69,7 +77,7 @@ const Header = () => {
 
               <Link
                 href="/"
-                onClick={() => handleLinkClick('/')}
+                onClick={() => handleLinkClick("/")}
                 className="flex title-font font-medium items-center text-gray-900 "
               >
                 <Image
@@ -82,23 +90,96 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="lg:flex hidden ">
+            {/* <div className="lg:flex hidden">
               <nav className="md:ml-auto hidden lg:flex flex-wrap items-center text-base justify-center">
                 <Link href="/aboutUS" passHref>
-                  <div className="text-white text-md">About</div>
+                  <div
+                    className={`text-md text-white group relative ${
+                      pathname === "/aboutUS" ? "active" : ""
+                    }`}
+                  >
+                    <span
+                      className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent`}
+                    >
+                      About
+                    </span>
+                    <span
+                      className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}
+                    ></span>
+                  </div>
                 </Link>
                 <Link href="/ourServices" passHref>
-                  <div className="text-white ml-7 text-md">Services</div>
+                  <div className="text-md text-white ml-7 group relative">
+                    <span className="group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent">
+                      Services
+                    </span>
+                    <span className="absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  </div>
                 </Link>
                 <Link href="/contactUs" passHref>
-                  <div className="text-white ml-7 text-md">Contact</div>
+                  <div className="text-md text-white ml-7 group relative">
+                    <span className="group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent">
+                      Contact
+                    </span>
+                    <span className="absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  </div>
                 </Link>
                 <Link href="/portfolio" passHref>
-                  <div className="text-white ml-7 text-md">Portfolio</div>
+                  <div className="text-md text-white ml-7 group relative">
+                    <span className="group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent">
+                      Portfolio
+                    </span>
+                    <span className="absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  </div>
                 </Link>
               </nav>
-              {/* <ThemeSwitch /> */}
-            </div>
+            </div> */}
+            <div className="lg:flex hidden">
+      <nav className="md:ml-auto hidden lg:flex flex-wrap items-center text-base justify-center">
+        
+        <Link href="/" passHref onClick={() => handleLinkClick1('home')}>
+          <div className={`text-md text-white ml-7 group relative ${activeLink === 'home' ? 'active' : ''}`}>
+            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'home' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
+             Home
+            </span>
+            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'home' ? 'scale-x-100' : ''}`}></span>
+          </div>
+        </Link>
+        <Link href="/ourServices" passHref onClick={() => handleLinkClick1('ourServices')}>
+          <div className={`text-md text-white ml-7 group relative ${activeLink === 'ourServices' ? 'active' : ''}`}>
+            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'ourServices' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
+             Our Services
+            </span>
+            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'ourServices' ? 'scale-x-100' : ''}`}></span>
+          </div>
+        </Link>
+        <Link href="/portfolio" passHref onClick={() => handleLinkClick1('portfolio')}>
+          <div className={`text-md text-white ml-7 group relative ${activeLink === 'portfolio' ? 'active' : ''}`}>
+            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'portfolio' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
+              Portfolio
+            </span>
+            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'portfolio' ? 'scale-x-100' : ''}`}></span>
+          </div>
+        </Link>
+        <Link href="/aboutUS" passHref onClick={() => handleLinkClick1('aboutUS')}>
+          <div className={`text-md text-white ml-7 group relative ${activeLink === 'aboutUS' ? 'active' : ''}`}>
+            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'aboutUS' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
+              About
+            </span>
+            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'aboutUS' ? 'scale-x-100' : ''}`}></span>
+          </div>
+        </Link>
+        <Link href="/contactUs" passHref onClick={() => handleLinkClick1('contactUs')}>
+          <div className={`text-md text-white ml-7 group relative ${activeLink === 'contactUs' ? 'active' : ''}`}>
+            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'contactUs' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
+              Contact
+            </span>
+            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'contactUs' ? 'scale-x-100' : ''}`}></span>
+          </div>
+        </Link>
+        
+      </nav>
+    </div>
           </div>
         </header>
       </div>
@@ -121,21 +202,24 @@ const Header = () => {
           }}
         >
           <div className="flex ps-3 mb-12 mt-3 flex-row flex-nowrap justify-between items-center">
-
             <span className="flex items-center">
-
-            <Image
-              src="/images/website logo/logo.png"
-              alt="Logo Image"
-              width={50}
-              height={30}
+              <Image
+                src="/images/website logo/logo.png"
+                alt="Logo Image"
+                width={50}
+                height={30}
               />
               <span className="text-white ml-3 text-md">Symetrix</span>
-              </span>
+            </span>
 
-            <span onClick={() => handleLinkClick('')}> 
-            <Icon iconName={'chevron_left'} height={34} width={34} color={"#afafaf"} />
-              </span>
+            <span onClick={() => handleLinkClick("")}>
+              <Icon
+                iconName={"chevron_left"}
+                height={34}
+                width={34}
+                color={"#afafaf"}
+              />
+            </span>
           </div>
 
           {/* Sidebar content here */}
@@ -143,12 +227,21 @@ const Header = () => {
           {SIDEBAR_MENU.map((menu, index) => (
             <li key={index}>
               <Link
-                className={`py-4 flex ${activeLink === menu.menu_url ? 'bg-slate-700' : 'hover:bg-slate-500'}`}
+                className={`py-4 flex ${
+                  activeLink === menu.menu_url
+                    ? "bg-slate-700"
+                    : "hover:bg-slate-500"
+                }`}
                 href={menu.menu_url}
                 passHref
                 onClick={() => handleLinkClick(menu.menu_url)}
               >
-                <Icon iconName={menu.icon} height={34} width={34} color={"#afafaf"} />
+                <Icon
+                  iconName={menu.icon}
+                  height={34}
+                  width={34}
+                  color={"#afafaf"}
+                />
                 {menu.menu}
               </Link>
             </li>

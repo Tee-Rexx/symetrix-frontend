@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 
+
+.gradient-text {
+  background-image: linear-gradient(to right, #02f0f1, #024868);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 :root {
   --clr-neutral-900: hsl(207, 19%, 9%);
   --clr-neutral-100: hsl(0, 0%, 100%);

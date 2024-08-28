@@ -53,15 +53,24 @@ const Page = () => {
   const [expanded1, setExpanded1] = useState(false);
   const [expanded2, setExpanded2] = useState(false);
 
-  const handleAccordionChange = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded(isExpanded);
   };
 
-  const handleAccordionChange1 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange1 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded1(isExpanded);
   };
 
-  const handleAccordionChange2 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange2 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded2(isExpanded);
   };
 
@@ -84,7 +93,7 @@ const Page = () => {
         transition: { duration: 1, ease: "easeOut" },
       });
     }
-    console.log(controls1)
+    console.log(controls1);
   }, [controls1, inView1]);
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -94,7 +103,7 @@ const Page = () => {
         x: 0,
         y: 0,
         opacity: 1,
-        transition: { duration: 0.8,  ease: "easeOut" },
+        transition: { duration: 0.8, ease: "easeOut" },
       });
     } else {
       controls.start({
@@ -120,9 +129,9 @@ const Page = () => {
             }}
           >
             <img
-              className="object-cover object-center rounded"
+              className="object-cover object-center rounded-md shadow-2xl"
               alt="hero"
-              src="/images/svgs/Vector01-7.svg"
+              src="/images/svgs/it solutions.jpeg"
             />
           </motion.div>
           <div className="lg:flex-grow px-3 sm:px-5 lg:w-1/2 xl:pl-24 lg:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
@@ -136,11 +145,11 @@ const Page = () => {
               }}
               ref={ref}
               initial={{ y: "90%", opacity: 0 }}
-            animate={controls}
-            variants={{
-              hidden: { opacity: 0, x: 100 }, // Reduced distance from the left
-              visible: { opacity: 1, x: 0, transition: { duration: 0.2 } },
-            }}
+              animate={controls}
+              variants={{
+                hidden: { opacity: 0, x: 100 }, // Reduced distance from the left
+                visible: { opacity: 1, x: 0, transition: { duration: 0.2 } },
+              }}
             >
               About Company
             </motion.h1>
@@ -172,46 +181,60 @@ const Page = () => {
             </motion.p>
 
             <motion.div
-      className="flex flex-col md:flex-row items-center md:items-start pt-8 mt-2 space-y-4 md:space-y-0 md:space-x-4 rounded-lg"
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { x: '-100%', opacity: 0 },
-        visible: { x: 0, opacity: 1, transition: { duration: 0.9, ease: 'easeInOut' } },
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {/* First div with icon */}
-      <motion.div
-        className="flex justify-center items-center w-12 bg-gray-200 rounded-full"
-        animate={isHovered ? { x: -5 } : { x: 0 }}
-        transition={{ duration: 0.2, ease: 'easeInOut' }}
-      >
-        <img draggable="false" src="images/pngs/tick-7.png" alt="Tick Icon" />
-      </motion.div>
+              className="flex flex-col md:flex-row items-center md:items-start pt-8 mt-2 space-y-4 md:space-y-0 md:space-x-4 rounded-lg"
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={{
+                hidden: { x: "-100%", opacity: 0 },
+                visible: {
+                  x: 0,
+                  opacity: 1,
+                  transition: { duration: 0.9, ease: "easeInOut" },
+                },
+              }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {/* First div with icon */}
+              <motion.div
+                className="flex justify-center items-center w-12 bg-gray-200 rounded-full"
+                animate={isHovered ? { x: -5 } : { x: 0 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+              >
+                <img
+                  draggable="false"
+                  src="images/pngs/tick-7.png"
+                  alt="Tick Icon"
+                />
+              </motion.div>
 
-      {/* Second div with heading and text */}
-      <div className="flex flex-col justify-center text-center md:text-left">
-        <h2 className="text-sm font-bold text-black mb-2">
-          Seamless Management
-        </h2>
-        <p className="text-gray-600 text-xs">
-          Effortlessly streamline operations with integrated tools for smooth and efficient management. Enhance productivity through consistent and cohesive processes that minimize disruptions.
-        </p>
-      </div>
-    </motion.div>
+              {/* Second div with heading and text */}
+              <div className="flex flex-col justify-center text-center md:text-left">
+                <h2 className="text-sm font-bold text-black mb-2">
+                  Seamless Management
+                </h2>
+                <p className="text-gray-600 text-xs">
+                  Effortlessly streamline operations with integrated tools for
+                  smooth and efficient management. Enhance productivity through
+                  consistent and cohesive processes that minimize disruptions.
+                </p>
+              </div>
+            </motion.div>
 
             <motion.div
               className="flex flex-col md:flex-row items-center md:items-start pt-8 space-y-4 md:space-y-0 md:space-x-4 rounded-lg"
               ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { x: '-100%', opacity: 0 },
-        visible: { x: 0, opacity: 1, transition: { duration: 0.9, ease: 'easeInOut' } },
-      }}
+              initial="hidden"
+              animate={controls}
+              variants={{
+                hidden: { x: "-100%", opacity: 0 },
+                visible: {
+                  x: 0,
+                  opacity: 1,
+                  transition: { duration: 0.9, ease: "easeInOut" },
+                },
+              }}
               onMouseEnter={() => setIsHovered2(true)}
               onMouseLeave={() => setIsHovered2(false)}
             >
@@ -281,7 +304,10 @@ const Page = () => {
       </section>
 
       <section className="text-gray-600 body-font">
-        <div ref={ref1} className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div
+          ref={ref1}
+          className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+        >
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <motion.h1
               className="text-center font-semibold text-md my-4"
@@ -400,24 +426,27 @@ const Page = () => {
             }}
           >
             <img
-              className="object-cover object-center rounded"
+              className="object-cover object-center rounded-md shadow-2xl"
               alt="hero"
-              src="/images/svgs/Vector077-7.svg"
+              src="/images/svgs/colabration.svg"
             />
           </motion.div>
         </div>
       </section>
 
       <section className="text-gray-600 body-font">
-        <div  className="container mr-14 flex  py-24 md:flex-row flex-col items-center">
+        <div className="container mr-14 flex  py-24 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-screen md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              className="object-cover object-center rounded"
+              className="object-cover object-center rounded-md shadow-2xl"
               alt="hero"
-              src="/images/svgs/Vector08-1.svg"
+              src="/images/svgs/faq.svg"
             />
           </div>
-          <div ref={ref2} className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+          <div
+            ref={ref2}
+            className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center"
+          >
             <motion.h1
               className="text-center font-semibold text-md my-4"
               style={{
