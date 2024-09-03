@@ -2,9 +2,8 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ClientReviews from "../sections/reviews";
-import ProjectsSection from "../sections/projects";
-import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, { useState } from "react";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 interface Card {
@@ -15,6 +14,7 @@ interface Card {
 }
 
 const Page: React.FC = () => {
+  
   const cards: Card[] = [
     {
       img: "/images/card1.jpg",
@@ -47,7 +47,7 @@ const Page: React.FC = () => {
   ];
 
   const [isHovered, setIsHovered] = useState(false);
-
+  
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -192,7 +192,7 @@ const Page: React.FC = () => {
               <h2 className="text-md sm:text-md text-gray-900 font-extrabold mb-2">
                 {card.title}
               </h2>
-              <p className="leading-relaxed px-3 text-xs font-medium mb-4">
+              <p className="leading-relaxed px-3 text-sm text-center font-medium mb-4">
                 {card.description}
               </p>
             </div>

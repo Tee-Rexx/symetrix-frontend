@@ -68,8 +68,8 @@ const ServiceProviderSection = () => {
 
           <img
             draggable="false"
-            className="object-contain px-4 sm:px-11 z-30 mt-14"
-            src="images/pngs/12-7.png"
+            className="object-contain h-[350px] rounded-xl shadow-2xl z-30 mt-14"
+            src="images/svgs/Top-10-Retail-Software-Development-Companies-for-2021.jpg"
             alt="service-provide-main-img"
           />
 
@@ -89,9 +89,7 @@ const ServiceProviderSection = () => {
         </div>
       </section>
 
-      <section style={{
-        zIndex:9
-      }} className="flex flex-col relative pt-40 pb-10 bg-white container-fluid w-full items-center justify-center">
+      <section className="flex flex-col relative pt-40 pb-10 bg-white container-fluid w-full items-center justify-center">
         <img
           draggable="false"
           className="absolute object-contain top-10 left-0"
@@ -99,7 +97,7 @@ const ServiceProviderSection = () => {
           src="images/pngs/rightblob.png"
         />
 
-        <div className="container relative z-20 flex flex-col items-center w-full">
+        <div className="container relative flex flex-col items-center w-full">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-center md:justify-between w-full">
 

@@ -115,9 +115,9 @@ const Page = () => {
             }}
           >
             <img
-              className="object-cover object-center rounded"
+              className="object-cover object-center rounded-md shadow-2xl"
               alt="hero"
-              src="/images/svgs/Vector01-7.svg"
+              src="/images/svgs/it solutions.jpeg"
             />
           </motion.div>
           <div className="lg:flex-grow px-3 sm:px-5 lg:w-1/2 xl:pl-24 lg:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
@@ -412,9 +412,9 @@ const Page = () => {
             }}
           >
             <img
-              className="object-cover object-center rounded"
+              className="object-cover object-center rounded-md shadow-2xl"
               alt="hero"
-              src="/images/svgs/Vector077-7.svg"
+              src="/images/svgs/colabration.svg"
             />
           </motion.div>
         </div>
@@ -424,9 +424,9 @@ const Page = () => {
         <div className="container mr-14 flex  py-24 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-screen md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              className="object-cover object-center rounded"
+              className="object-cover object-center rounded-md shadow-2xl"
               alt="hero"
-              src="/images/svgs/Vector08-1.svg"
+              src="/images/svgs/faq.svg"
             />
           </div>
           <div

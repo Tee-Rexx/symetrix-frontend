@@ -17,11 +17,11 @@ const Footer = () => {
   return (
     <div>
       <footer className="text-gray-600 body-font">
-        <div className="container px-3 sm:px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-          <div className="md:w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <div className="container py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+          <div className="md:w-96 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
             <Link
               href="/"
-              className="flex title-font font-medium items-center text-gray-900 "
+              className="flex title-font font-medium mb-6 items-center text-gray-900 "
             >
               <Image
                 src="/images/website logo/logo.png"
@@ -29,9 +29,9 @@ const Footer = () => {
                 width={50}
                 height={30}
               />
-              <span className="text-white ml-3 text-xl">Symetrix</span>
+              <span className="text-white ml-3 text-2xl">Symetrix</span>
             </Link>
-            <p className="mt-2 pr-4 w-full text-sm text-justify text-gray-500 cursor-default">
+            <p style={{lineHeight:1.7}} className="mt-2 pr-4 w-full text-sm text-gray-500">
               We believe in turning bold ideas into reality through innovative
               technology. We specialize in crafting tailored solutions that
               drive efficiency, enhance user experience, and empower businesses
@@ -42,20 +42,20 @@ const Footer = () => {
           <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
             <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
-              <h2 className="text-white text-xl">Company Info</h2>
+              <h2 className="text-white mb-6  text-xl">Company Info</h2>
               <nav className="list-none mb-10">
-                <li className="text-gray-600 hover:text-gray-800">
+                <li className="text-gray-600 mb-2 hover:text-gray-800">
                   <Link
-                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    className="text-gray-600 hover:text-gray-800 cursor-pointer"
                     href="/blogs"
                     passHref
                   >
                     About
                   </Link>
                 </li>
-                <li>
+                <li className="mb-2">
                   <Link
-                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    className="text-gray-600 hover:text-gray-800 cursor-pointer"
                     href="/contactUs"
                     passHref
                   >
@@ -64,7 +64,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    className="text-gray-600 hover:text-gray-800 cursor-pointer"
                     href="/faq"
                     passHref
                   >
@@ -75,20 +75,20 @@ const Footer = () => {
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
-              <h2 className="text-white text-xl">Quick Links</h2>
+              <h2 className="text-white mb-6  text-xl">Quick Links</h2>
               <nav className="list-none mb-10">
-                <li>
+                <li className="mb-2">
                   <Link
-                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    className="text-gray-600 hover:text-gray-800 cursor-pointer"
                     href="/ourServices"
                     passHref
                   >
                     Our Services
                   </Link>
                 </li>
-                <li>
+                <li className="mb-2">
                   <Link
-                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    className="text-gray-600 hover:text-gray-800 cursor-pointer"
                     href="/contactUs"
                     passHref
                   >
@@ -97,7 +97,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 hover:text-gray-800 cursor-default"
+                    className="text-gray-600 hover:text-gray-800 cursor-pointer"
                     href="/portfolio"
                     passHref
                   >
@@ -107,20 +107,20 @@ const Footer = () => {
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
-              <h2 className="text-white text-xl">Contact</h2>
+              <h2 className="text-white mb-6  text-xl">Contact</h2>
               <nav className="list-none mb-10">
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
-                    {+92}334-3739391
+                <li className="mb-2">
+                  <a href="tel:+923343739391" className="text-gray-600 hover:text-gray-800 cursor-pointer">
+                    (+92)334 3739391
                   </a>
                 </li>
-                <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                <li className="mb-2">
+                  <a href="mailto:nabeelshahzad752@gmail.com" className="text-gray-600 hover:text-gray-800 cursor-pointer">
                     nabeelshahzad752@gmail.com
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-600 hover:text-gray-800 cursor-default">
+                  <a className="text-gray-600 hover:text-gray-800 cursor-pointer">
                     Islamabad,Pakistan
                   </a>
                 </li>
@@ -130,7 +130,7 @@ const Footer = () => {
         </div>
         <div className="bg-gray-100">
           <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p className="text-gray-500 text-sm text-center sm:text-left cursor-default">
+            <p className="text-gray-500 text-sm text-center sm:text-left">
               COPYRIGHT©2024. All Rights Reserved
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
