@@ -71,7 +71,7 @@ const Page = () => {
               }}
               className="text-justify px-3 sm:px-32 py-32"
             >
-              Welcome to Symetrix, where innovation meets excellence. As a
+              Welcome to Naxiums, where innovation meets excellence. As a
               leading software development company, we specialize in crafting
               bespoke digital solutions tailored to meet the unique needs of our
               diverse clientele. Our team of experienced developers, designers,
@@ -83,7 +83,7 @@ const Page = () => {
               secure. Our agile development process ensures flexibility and
               responsiveness, enabling us to adapt to changing requirements and
               deliver high-quality software on time and within budget. At
-              Symetrix, we are committed to building lasting partnerships with
+              Naxiums, we are committed to building lasting partnerships with
               our clients by providing continuous support and maintenance,
               ensuring your software evolves with your business. Explore our
               portfolio to discover how we have empowered businesses across

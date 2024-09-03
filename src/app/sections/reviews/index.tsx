@@ -21,61 +21,61 @@ const client_reviews_arr = [
     client_name: "Jonathan Nguyen",
     client_company: "InnovateTech Solutions",
     review:
-      "Symetrix Solutions revolutionized our healthcare systems, providing seamless integration and enhanced data security. Their expertise in healthcare IT made our transition smooth and efficient. Highly recommended for medical institutions!",
+      "Naxiums revolutionized our healthcare systems, providing seamless integration and enhanced data security. Their expertise in healthcare IT made our transition smooth and efficient. Highly recommended for medical institutions!",
   },
   {
     client_name: "Mark Thompson",
     client_company: "PetTech Dynamics",
     review:
-      "Transformed our outdated systems into a seamless network of efficiency. Symetrix Solutions' team's dedication and expertise exceeded our expectations. Highly recommended!",
+      "Transformed our outdated systems into a seamless network of efficiency. Naxiums team's dedication and expertise exceeded our expectations. Highly recommended!",
   },
   {
     client_name: "Sarah Patel",
     client_company: "CyberSphere Solutions",
     review:
-      "Symetrix Solutions provided cutting-edge solutions to optimize our agricultural data management. Their expertise in agri-tech helped us streamline operations and increase productivity on the farm. Highly impressed!",
+      "Naxiums provided cutting-edge solutions to optimize our agricultural data management. Their expertise in agri-tech helped us streamline operations and increase productivity on the farm. Highly impressed!",
   },
   {
     client_name: "David Roberts",
     client_company: "Nexus Technologies",
     review:
-      "Provided unparalleled support throughout our project. Symetrix Solutions' team's expertise and professionalism were evident in every interaction. We're thrilled with the outcome!",
+      "Provided unparalleled support throughout our project. Naxiums' team's expertise and professionalism were evident in every interaction. We're thrilled with the outcome!",
   },
   {
     client_name: "Olivia Baker",
     client_company: "FreshFlour Bakery",
     review:
-      "Symetrix Solutions helped us modernize our bakery operations, from inventory management to customer ordering. Their intuitive solutions and responsive support have been instrumental in our success. Highly recommended for bakeries!",
+      "Naxiums helped us modernize our bakery operations, from inventory management to customer ordering. Their intuitive solutions and responsive support have been instrumental in our success. Highly recommended for bakeries!",
   },
   {
     client_name: "Ryan Garcia",
     client_company: "FitFusion Dynamics",
     review:
-      "Provided innovative technology solutions that transformed our fitness studio operations. Symetrix Solutions' tailored approach and strategic insights helped us streamline our services and attract more clients. Highly recommended for fitness businesses!",
+      "Provided innovative technology solutions that transformed our fitness studio operations. Naxiums' tailored approach and strategic insights helped us streamline our services and attract more clients. Highly recommended for fitness businesses!",
   },
   {
     client_name: "Rachel Clark",
     client_company: "PillBox Pharmacy",
     review:
-      "Understood the unique challenges of our pharmacy operations and provided customized solutions that improved efficiency and compliance. Symetrix Solutions' dedication to quality and customer satisfaction sets them apart. Highly recommended for pharmacies!",
+      "Understood the unique challenges of our pharmacy operations and provided customized solutions that improved efficiency and compliance. Naxiums' dedication to quality and customer satisfaction sets them apart. Highly recommended for pharmacies!",
   },
   {
     client_name: "Amanda Wilson",
     client_company: "Visionary Technologies",
     review:
-      "Delivered exceptional technology solutions that streamlined our biomedical research processes. Symetrix Solutions' expertise in data management and analysis significantly accelerated our research projects. Highly recommended for biomedical companies!",
+      "Delivered exceptional technology solutions that streamlined our biomedical research processes. Naxiums' expertise in data management and analysis significantly accelerated our research projects. Highly recommended for biomedical companies!",
   },
   {
     client_name: "Emily Johnson",
     client_company: "TechPro Innovations",
     review:
-      "Symetrix Solutions exceeded our expectations in every way. From the initial consultation to the final implementation, their team demonstrated professionalism and expertise. We're thrilled with the results!",
+      "Naxiums exceeded our expectations in every way. From the initial consultation to the final implementation, their team demonstrated professionalism and expertise. We're thrilled with the results!",
   },
   {
     client_name: "Daniel Brown",
     client_company: "Quantum Innovations",
     review:
-      "Symetrix Solutions helped us implement a comprehensive inventory management system for our pharmacy, improving accuracy and efficiency. Their attention to detail and commitment to delivering quality solutions made them a valuable partner. Highly recommend their services!",
+      "Naxiums helped us implement a comprehensive inventory management system for our pharmacy, improving accuracy and efficiency. Their attention to detail and commitment to delivering quality solutions made them a valuable partner. Highly recommend their services!",
   },
 ];
 
