@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NextTopLoader from "nextjs-toploader";
+import Head from 'next/head';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,6 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        {/* Add Google Site Verification Meta Tag */}
+        <meta name="google-site-verification" content="uGCL4ABi-ogOn9cCTFy0Nzv5UEpOJ_oMixjP9Cq7wZw" />
+        {/* You can also include other meta tags or link tags here */}
+      </Head>
       <body style={{backgroundColor:'#000'}} className={inter.className}>
         <Providers>
           <NextTopLoader color="#2299DD" zIndex={1600} />
