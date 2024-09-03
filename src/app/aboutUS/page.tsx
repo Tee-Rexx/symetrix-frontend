@@ -8,6 +8,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { FAQ_ACCORDIAN } from "@/utils/constants/accordian.constants";
 
 // Array of objects containing card data
 const cardData = [
@@ -49,30 +50,15 @@ const Page = () => {
   const [isHovered3, setIsHovered3] = useState(false);
   const [isHovered4, setIsHovered4] = useState(false);
   // for accordian color
-  const [expanded, setExpanded] = useState(false);
   const [expanded1, setExpanded1] = useState(false);
   const [expanded2, setExpanded2] = useState(false);
 
-  const handleAccordionChange = (
-    event: any,
-    isExpanded: boolean | ((prevState: boolean) => boolean)
-  ) => {
-    setExpanded(isExpanded);
-  };
+  const [expanded, setExpanded] = useState<string | null>(null);
 
-  const handleAccordionChange1 = (
-    event: any,
-    isExpanded: boolean | ((prevState: boolean) => boolean)
-  ) => {
-    setExpanded1(isExpanded);
-  };
-
-  const handleAccordionChange2 = (
-    event: any,
-    isExpanded: boolean | ((prevState: boolean) => boolean)
-  ) => {
-    setExpanded2(isExpanded);
-  };
+  const handleAccordionChange =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : null);
+    };
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
@@ -478,101 +464,36 @@ const Page = () => {
               animate={controls2}
               transition={{ duration: 0.8 }}
             >
-              <Accordion
-                defaultExpanded
-                expanded={expanded}
-                onChange={handleAccordionChange}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1-content"
-                  id="panel1-header"
-                  style={{
-                    backgroundImage: expanded
-                      ? "linear-gradient(to right, #02f0f1, #024868)"
-                      : "none", // No gradient when collapsed
-                    backgroundColor: expanded ? "transparent" : "white", // White background when collapsed
-                    color: expanded ? "white" : "black", // Adjust text color based on state
-                  }}
-                  className="shadow-lg"
+              {FAQ_ACCORDIAN.map((item) => (
+                <Accordion
+                  key={item.id}
+                  expanded={expanded === item.id}
+                  onChange={handleAccordionChange(item.id)}
                 >
-                  <Typography>
-                    How do you ensure the quality of your software products?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography className="text-justify">
-                    Quality is at the core of our development process. We follow
-                    industry best practices, including agile development,
-                    continuous integration, and automated testing. Our dedicated
-                    quality assurance team rigorously tests each product at
-                    various stages of development to ensure it meets the highest
-                    standards of functionality, security, and performance.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              <Accordion expanded={expanded1} onChange={handleAccordionChange1}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2-content"
-                  id="panel2-header"
-                  style={{
-                    backgroundImage: expanded1
-                      ? "linear-gradient(to right, #02f0f1, #024868)"
-                      : "none", // No gradient when collapsed
-                    backgroundColor: expanded1 ? "transparent" : "white", // White background when collapsed
-                    color: expanded1 ? "white" : "black", // Adjust text color based on state
-                  }}
-                  className="shadow-lg"
-                >
-                  <Typography>
-                    What is your typical project timeline?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography className="text-justify">
-                    The timeline for a project varies depending on its scope and
-                    complexity. For smaller projects, the timeline might range
-                    from a few weeks to a couple of months. Larger or more
-                    complex projects could take several months to a year. We
-                    provide a detailed project plan and timeline during the
-                    initial consultation, and we work closely with you to meet
-                    agreed-upon deadlines.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              <Accordion expanded={expanded2} onChange={handleAccordionChange2}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2-content"
-                  id="panel2-header"
-                  style={{
-                    backgroundImage: expanded2
-                      ? "linear-gradient(to right, #02f0f1, #024868)"
-                      : "none", // No gradient when collapsed
-                    backgroundColor: expanded2 ? "transparent" : "white", // White background when collapsed
-                    color: expanded2 ? "white" : "black", // Adjust text color based on state
-                  }}
-                  className="shadow-lg"
-                >
-                  <Typography>
-                    How do you handle communication and project updates?
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography className="text-justify">
-                    Effective communication is vital for the success of any
-                    project. We assign a dedicated project manager to each
-                    client, who serves as the primary point of contact. We hold
-                    regular meetings and provide progress reports to keep you
-                    informed about the projects status. We also use project
-                    management tools that allow you to track progress in
-                    real-time.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls={`${item.id}-content`}
+                    id={`${item.id}-header`}
+                    style={{
+                      backgroundImage:
+                        expanded === item.id
+                          ? "linear-gradient(to right, #02f0f1, #024868)"
+                          : "none",
+                      backgroundColor:
+                        expanded === item.id ? "transparent" : "white",
+                      color: expanded === item.id ? "white" : "black",
+                    }}
+                    className="shadow-lg"
+                  >
+                    <Typography>{item.question}</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography className="text-justify">
+                      {item.answer}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              ))}
             </motion.div>
           </div>
         </div>
