@@ -29,7 +29,7 @@ const Footer = () => {
                 width={50}
                 height={30}
               />
-              <span className="text-white ml-3 text-2xl">Symetrix</span>
+              <span className="text-white ml-3 text-2xl">Naxiums</span>
             </Link>
             <p style={{lineHeight:1.7}} className="mt-2 pr-4 w-full text-sm text-gray-500">
               We believe in turning bold ideas into reality through innovative
