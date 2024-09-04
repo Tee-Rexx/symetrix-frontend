@@ -50,7 +50,8 @@ export default function RootLayout({
         {/* <!-- Ensure you have an appropriate image --> */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Naxiums" />
-        {/* <!-- Twitter Card Meta Tags (for Twitter sharing) --> */}
+
+        {/* Twitter share card meta tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -63,10 +64,30 @@ export default function RootLayout({
         <meta
           name="twitter:image"
           content="../../public/images/share_link_card_image/card_image.jpg"
-        />{" "}
-        {/* <!-- Ensure you have an appropriate image --> */}
+        />
         <meta name="twitter:site" content="@Naxiums" />
         <meta name="twitter:creator" content="@Naxiums" />
+        
+        
+        {/* Instagram share card meta tags */}
+        <meta name="instagram:card" content="summary_large_image" />
+        <meta
+          name="instagram:title"
+          content="Naxiums - Innovative IT Solutions"
+        />
+        <meta
+          name="instagram:description"
+          content="Naxiums provides advanced IT services, including mobile and web application development using Kotlin, React Native, Angular, React, Next.js, and Vue.js."
+        />
+        <meta
+          name="instagram:image"
+          content="../../public/images/share_link_card_image/card_image.jpg"
+        />
+        <meta name="instagram:site" content="@Naxiums" />
+        <meta name="instagram:creator" content="@Naxiums" />
+
+
+
         {/* <!-- Additional Meta Tags --> */}
         <meta name="robots" content="index, follow" />{" "}
         {/* <!-- Ensure search engines index your site and follow the links --> */}
