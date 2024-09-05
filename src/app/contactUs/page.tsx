@@ -69,7 +69,7 @@ const page = () => {
     const templateParams = {
       from_name: fname + ' ' + lname,
       from_email: email,
-      to_name: "Symmetrix Solution",
+      to_name: "Naxiums Limited",
       message: message,
     };
 

@@ -86,7 +86,7 @@ const Header = () => {
                   width={50}
                   height={30}
                 />
-                <span className="text-white ml-3 text-xl">Symetrix</span>
+                <span className="text-white ml-3 text-xl">Naxiums</span>
               </Link>
             </div>
 
@@ -209,7 +209,7 @@ const Header = () => {
                 width={50}
                 height={30}
               />
-              <span className="text-white ml-3 text-md">Symetrix</span>
+              <span className="text-white ml-3 text-md">Naxium</span>
             </span>
 
             <span onClick={() => handleLinkClick("")}>
