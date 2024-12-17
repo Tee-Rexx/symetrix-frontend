@@ -515,11 +515,11 @@ const Home = () => {
         </div>
 
         {/* Paragraph */}
-        <p className="text-center text-gray-700 px-4 mx-24 mb-4">
+        <p className="text-center text-gray-700 px-4 lg:mx-24 mb-4">
           We are proud to collaborate with our esteemed partners who help us
           achieve excellence and bring value to our community.
         </p>
-        <p className="text-center text-gray-700 px-4 mx-24 mb-4">
+        <p className="text-center text-gray-700 px-4 lg:mx-24 mb-4">
           Now more than ever, in a highly digital era, the onus falls on
           creating websites that look amazing but perform well. Here at Naxiums,
           we could not be proud to proclaim an exciting new partnership that
@@ -529,11 +529,11 @@ const Home = () => {
           measurable successes through our collaborative efforts.
         </p>
 
-        <h2 className="text-center font-semibold px-4 mx-24 mb-4">
+        <h2 className="text-center font-semibold px-4 lg:mx-24 mb-4">
           Why Data-Driven Design Matters ?
         </h2>
 
-        <p className="text-center text-gray-700 px-4 mx-24 mb-4">
+        <p className="text-center text-gray-700 px-4 lg:mx-24 mb-4">
           On the other hand, the data-driven web design relies so much on
           analytics and actionable insights into users behaviors but with a
           series of accountable performance indicators at the inception of all
@@ -546,11 +546,11 @@ const Home = () => {
           of users but also the attainment of critical business objectives.
         </p>
 
-        <h2 className="text-center font-semibold px-4 mx-24 mb-4">
+        <h2 className="text-center font-semibold px-4 lg:mx-24 mb-4">
           A Partnership Based on Innovation
         </h2>
 
-        <p className="text-center text-gray-700 px-4 mx-24 mb-4">
+        <p className="text-center text-gray-700 px-4 lg:mx-24 mb-4">
           Our collaboration with Blacksmith Agency combines their expertise in
           website maintenance services with Naxiums dedication to delivering
           cutting-edge digital strategies. According to Tyler Scott, a lead
@@ -566,7 +566,7 @@ const Home = () => {
             view product website.{" "}
           </Link>
         </p>
-        <p className="text-center text-gray-700 px-4 mx-24 mb-24">
+        <p className="text-center text-gray-700 px-4 lg:mx-24 mb-24">
           Looking Ahead Into the future, the collaboration of Naxiums and
           Blacksmith Agency will be the reason behind the shift in industry
           standards. Be it conversion improvement or insights to maintain a
