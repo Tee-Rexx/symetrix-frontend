@@ -1,12 +1,20 @@
 "use client";
 
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import emailjs from "@emailjs/browser";
+import { updateDocumentDescription } from "@/utils/header-titles";
+import { CONTACTUS_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 
-const page = () => {
+const ContactPage = () => {
+
+  useEffect(() => {
+    document.title = "Contact Us | Naxiums";
+    updateDocumentDescription(CONTACTUS_PAGE_DESCRIPTION)
+  }, []);
+  
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [fname, setFName] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -113,7 +121,7 @@ const page = () => {
 
   return (
       <section className="text-gray-600 body-font">
-      <div className="container-fluid mx-auto our-service-bg py-32 w-full items-center justify-center flex">
+      <div className="container-fluid mx-auto our-service-bg banner-bg-specs py-32 w-full items-center justify-center flex">
         <div className="text-left container relative w-full">
           <div className="flex ms-5 md:ms-0 items-center">
             <div
@@ -141,7 +149,7 @@ const page = () => {
           </div>
           <div className="flex flex-col w-full md:w-2/4">
             <div className="container w-full flex justify-center px-0 md:px-5 my-4 py-20 mx-auto">
-              <div className="lg:w-4/5 w-full md:w-2/3 p-7 rounded-lg bg-slate-300 ">
+              <div className="lg:w-4/5 w-full md:w-2/3 p-7 rounded-lg bg-gray-200 ">
                 <form
                   className="flex flex-col md:flex-row flex-wrap -m-2"
                   onSubmit={handleFormSubmit}
@@ -264,5 +272,5 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContactPage;
 

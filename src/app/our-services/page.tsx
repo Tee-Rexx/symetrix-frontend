@@ -5,6 +5,8 @@ import ClientReviews from "../sections/reviews";
 import React, { useState } from "react";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { updateDocumentDescription } from "@/utils/header-titles";
+import { OUR_SERVICES_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 
 interface Card {
   img: string;
@@ -53,6 +55,11 @@ const Page: React.FC = () => {
     triggerOnce: true,
   });
 
+  React.useEffect(() => {
+      document.title = "Our Services | Naxiums";
+          updateDocumentDescription(OUR_SERVICES_PAGE_DESCRIPTION)
+
+    }, []);
 
   return (
     <>

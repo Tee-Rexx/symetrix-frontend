@@ -9,6 +9,8 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FAQ_ACCORDIAN } from "@/utils/constants/accordian.constants";
+import { updateDocumentDescription } from "@/utils/header-titles";
+import { ABOUT_US_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 
 // Array of objects containing card data
 const cardData = [
@@ -37,6 +39,11 @@ const animationVariants = {
 };
 
 const Page = () => {
+  useEffect(() => {
+    document.title = "About Us | Naxiums";
+              updateDocumentDescription(ABOUT_US_PAGE_DESCRIPTION)
+    
+  }, []);
   const controls = useAnimation();
   const controls1 = useAnimation();
   const controls2 = useAnimation();

@@ -17,8 +17,9 @@ const Footer = () => {
   return (
     <div>
       <footer className="text-gray-600 body-font">
-        <div className="container py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-          <div className="md:w-96 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <div className="container py-24 mx-auto flex items-center lg:items-start lg:flex-row md:flex-nowrap flex-wrap flex-col">
+          <div className="w-100 lg:w-96 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+            <div className="flex w-full justify-center lg:justify-start lg:items-start">
             <Link
               href="/"
               className="flex title-font font-medium mb-6 items-center text-gray-900 "
@@ -29,8 +30,9 @@ const Footer = () => {
                 width={50}
                 height={30}
               />
-              <span className="text-white ml-3 text-2xl">Naxiums</span>
+              <span className="text-white pe-5 md:pe-0 ml-3 text-2xl">Naxiums</span>
             </Link>
+              </div>
             <p
               style={{ lineHeight: 1.7 }}
               className="mt-2 pr-4 w-full text-sm text-gray-500"
@@ -42,7 +44,7 @@ const Footer = () => {
               seamless, intuitive software.
             </p>
           </div>
-          <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+          <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 lg:mt-0 mt-10 md:text-left text-center">
             <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
               <h2 className="text-white mb-6  text-xl">Company Info</h2>
@@ -50,7 +52,7 @@ const Footer = () => {
                 <li className="text-gray-600 mb-2 hover:text-gray-800">
                   <Link
                     className="text-gray-600 hover:text-gray-800 cursor-pointer"
-                    href="/aboutUS"
+                    href="/about-us"
                     passHref
                   >
                     About
@@ -59,7 +61,16 @@ const Footer = () => {
                 <li className="mb-2">
                   <Link
                     className="text-gray-600 hover:text-gray-800 cursor-pointer"
-                    href="/contactUs"
+                    href="/blogs"
+                    passHref
+                  >
+                    Blogs
+                  </Link>
+                </li>
+                <li className="mb-2">
+                  <Link
+                    className="text-gray-600 hover:text-gray-800 cursor-pointer"
+                    href="/contact-us"
                     passHref
                   >
                     Contact Us
@@ -83,19 +94,19 @@ const Footer = () => {
                 <li className="mb-2">
                   <Link
                     className="text-gray-600 hover:text-gray-800 cursor-pointer"
-                    href="/ourServices"
+                    href="/contact-us"
                     passHref
                   >
-                    Our Services
+                    Contact Us
                   </Link>
                 </li>
                 <li className="mb-2">
                   <Link
                     className="text-gray-600 hover:text-gray-800 cursor-pointer"
-                    href="/contactUs"
+                    href="/our-services"
                     passHref
                   >
-                    Contact Us
+                    Our Services
                   </Link>
                 </li>
                 <li>

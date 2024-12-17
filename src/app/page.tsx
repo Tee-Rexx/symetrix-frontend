@@ -22,6 +22,9 @@ import ServiceProviderSection from "./sections/service-provide";
 import { motion, useAnimation } from "framer-motion";
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import Head from "next/head";
+import { updateDocumentDescription } from "@/utils/header-titles";
+import { HOME_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 
 const Data = [
   {
@@ -106,10 +109,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    updateDocumentDescription(HOME_PAGE_DESCRIPTION)
   }, []);
 
   const scrollToTop = () => {
@@ -441,7 +441,7 @@ const Home = () => {
               working with us.
             </p>
             <div className="flex w-full md:justify-start justify-center items-end">
-              <Link href="/contactUs" passHref>
+              <Link href="/contact-us" passHref>
                 <button
                   style={{
                     background: "linear-gradient(to right, #02f0f1, #024868)",
@@ -535,7 +535,7 @@ const Home = () => {
 
         <p className="text-center text-gray-700 px-4 mx-24 mb-4">
           On the other hand, the data-driven web design relies so much on
-          analytics and actionable insights into users' behaviors but with a
+          analytics and actionable insights into users behaviors but with a
           series of accountable performance indicators at the inception of all
           decisions. Focusing on real-world concrete data, the business shall
           introduce websites capable of increasing not just user engagement but
@@ -555,8 +555,8 @@ const Home = () => {
           website maintenance services with Naxiums dedication to delivering
           cutting-edge digital strategies. According to Tyler Scott, a lead
           developer at Blacksmith, tools like Figma changed how we work
-          together. "The ability to visualize and iterate designs in real-time
-          keeps our work aligned with client goals while embracing creativity,"
+          together. &quot;The ability to visualize and iterate designs in real-time
+          keeps our work aligned with client goals while embracing creativity,&quot;
           he said. This partnership also addresses one important concern
           businesses have, keeping up with the fast pace of changes in design
           trends. We will be able to provide customized solutions for each

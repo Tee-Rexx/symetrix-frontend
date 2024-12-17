@@ -146,15 +146,48 @@ html {
   right: 15px;
 }
 
-
-.our-service-bg {
-  background-image: url('/images/pngs/inner-bg.jpg');
-  background-origin: initial;
+.banner-bg-specs {
+    background-origin: initial;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.our-service-bg {
+  background-image: url('/images/pngs/inner-bg.jpg');
+}
+
+.blockchain-blog-bg {
+  background-image: url('/images/blog_card_imgs/blockchain-beyond-bitcoin.jpeg');
+}
+
+.cybersecurity-blog-bg {
+  background-image: url('/images/blog_card_imgs/cybersecurity-in-the-remote-work-era.jpg');
+}
+.data-blog-bg {
+  background-image: url('/images/blog_card_imgs/data-governance.png');
+}
+
+.demystifying-blog-bg {
+  background-image: url('/images/blog_card_imgs/demystifying-AI.png');
+}
+.digital-blog-bg {
+  background-image: url('/images/blog_card_imgs/digital-transformation.png');
+}
+
+.devops-blog-bg {
+  background-image: url('/images/blog_card_imgs/the-power-of-devops.jpg');
+}
+.future-blog-bg {
+  background-image: url('/images/blog_card_imgs/the-future-of-work.jpg');
+}
+
+.cloud-blog-bg {
+  background-image: url('/images/blog_card_imgs/navigating-the-cloud.jpeg');
+}
+.exploring-blog-bg {
+  background-image: url('/images/blog_card_imgs/exploring-edge-computing.png');
+}
 .projects-card {
   position: relative;
   padding: 1rem;
