@@ -51,7 +51,7 @@ const ServiceProviderSection = () => {
             alt="cloud-img"
           />
 
-          <h5 className="color-sub-heading font-bold text-md">
+          <h5 className="color-sub-heading text-nowrap font-bold text-md">
             Technology Solutions
           </h5>
 

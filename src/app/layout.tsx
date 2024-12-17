@@ -101,6 +101,7 @@ export default function RootLayout({
       </Head>
       <body style={{ backgroundColor: "#000" }} className={inter.className}>
         <Providers>
+        <NextTopLoader color="#2299DD" zIndex={1600} />
           <Header />
           {children}
           <Footer />

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Footer = () => {
   const { resolvedTheme } = useTheme();
-
+  const currentYear = new Date().getFullYear();
   const [theme, setTheme] = useState<any>();
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Footer = () => {
               </div>
             <p
               style={{ lineHeight: 1.7 }}
-              className="mt-2 pr-4 w-full text-sm text-gray-500"
+              className="mt-2 px-2 lg:px-0 lg:pr-4 w-full text-sm text-gray-500"
             >
               We believe in turning bold ideas into reality through innovative
               technology. We specialize in crafting tailored solutions that
@@ -151,7 +151,7 @@ const Footer = () => {
         <div className="bg-gray-100">
           <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
             <p className="text-gray-500 text-sm text-center sm:text-left">
-              COPYRIGHT©2024. All Rights Reserved
+              COPYRIGHT©{currentYear}. All Rights Reserved
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
               {/* <!-- Facebook --> */}
