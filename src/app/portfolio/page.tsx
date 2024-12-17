@@ -1,13 +1,21 @@
 "use client";
 
+import { updateDocumentDescription } from "@/utils/header-titles";
 import "../globals.css";
 import { motion, useAnimation } from "framer-motion";
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { PORTFOLIO_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 
 const Page = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  React.useEffect(() => {
+    document.title = "Portfolio | Naxiums";
+    updateDocumentDescription(PORTFOLIO_PAGE_DESCRIPTION)
+    
+  }, []);
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   React.useEffect(() => {
@@ -45,7 +53,7 @@ const Page = () => {
   return (
     <div style={{ overflowX: "hidden" }}>
       <section className="text-gray-600 body-font">
-      <div className="container-fluid mx-auto our-service-bg py-32 w-full items-center justify-center flex">
+      <div className="container-fluid mx-auto our-service-bg banner-bg-specs py-32 w-full items-center justify-center flex">
         <div className="text-left container relative w-full">
           <div className="flex ms-5 md:ms-0 items-center">
             <div
@@ -83,7 +91,7 @@ const Page = () => {
               secure. Our agile development process ensures flexibility and
               responsiveness, enabling us to adapt to changing requirements and
               deliver high-quality software on time and within budget. At
-              Naxiums, we are committed to building lasting partnerships with
+              Naxium Limited, we are committed to building lasting partnerships with
               our clients by providing continuous support and maintenance,
               ensuring your software evolves with your business. Explore our
               portfolio to discover how we have empowered businesses across

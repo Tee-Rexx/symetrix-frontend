@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import BlogCard from "./components/blogCard";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,13 +19,17 @@ import Link from "next/link";
 import ClientReviews from "./sections/reviews";
 import "./globals.css";
 import ServiceProviderSection from "./sections/service-provide";
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation } from "framer-motion";
 import React from "react";
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
+import Head from "next/head";
+import { updateDocumentDescription } from "@/utils/header-titles";
+import { HOME_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 
 const Data = [
   {
-    card_img: "/images/pngs/55-creative-marketing-ideas-for-your-product-or-business.png",
+    card_img:
+      "/images/pngs/55-creative-marketing-ideas-for-your-product-or-business.png",
     card_heading: "Creative Idea",
     card_text:
       "Innovative software solutions tailored for your business success.",
@@ -104,10 +109,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    updateDocumentDescription(HOME_PAGE_DESCRIPTION)
   }, []);
 
   const scrollToTop = () => {
@@ -187,14 +189,13 @@ const Home = () => {
     ],
   };
 
-
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   React.useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [controls, inView]);
 
@@ -282,7 +283,7 @@ const Home = () => {
               {someBlogs.map((data, index) => (
                 <div
                   key={index}
-                  className="mt-4 carousel-card relative drop-shadow-xl hover:bg-gray-300 duration-300 bg-white rounded-md"
+                  className="mt-4 carousel-card relative drop-shadow-xl hover:bg-gray-100 duration-300 bg-white rounded-md"
                 >
                   <span className="px-4 pt-4 content-between flex flex-col">
                     <span className="flex flex-col">
@@ -320,9 +321,7 @@ const Home = () => {
 
       <div className="w-full h-full py-10 relative flex-wrap flex justify-center items-center flex-col overflow-hidden">
         <div>
-          <h1
-            className="text-center color-sub-heading font-bold text-md my-6"
-          >
+          <h1 className="text-center color-sub-heading font-bold text-md my-6">
             Featured Services
           </h1>
           <h2 className="text-white text-center font-normal px-3 sm:px-0 text-3xl sm:text-4xl mt-4">
@@ -341,7 +340,7 @@ const Home = () => {
         </div>
       </div>
 
-      <ServiceProviderSection/>
+      <ServiceProviderSection />
 
       <div className="bg-white relative">
         <section className="text-gray-600 relative body-font">
@@ -406,59 +405,56 @@ const Home = () => {
         </section>
       </div>
 
-
-        <section className="bg-white relative body-font">
+      <section className="bg-white -z-20 relative body-font">
         {/* Wave Image */}
         <img
           style={{ width: "100vw" }}
           src="/images/pngs/waves1.png"
-          className="absolute waves hidden lg:block -bottom-18 h-[250px] opacity-50"
+          className="absolute waves hidden lg:block -z-10 -bottom-18 h-[250px] opacity-50"
           alt="Blue color Waves"
         />
 
-          <div className="container mx-auto flex px-5 pb-16 lg:py-24 lg:flex-row flex-col items-center">
-            <div className="lg:max-w-lg xl:w-full lg:w-1/2 w-5/6 mb-10 md:mb-0">
-              <img
-                className="object-cover relative object-center rounded"
-                alt="hero"
-                src="/images/svgs/picture_1.png"
-              />
-            </div>
-            <div className="lg:flex-grow lg:w-1/2 xl:pl-24 lg:pl-16 pt-5 lg:pt-0 flex flex-col md:items-start md:text-left items-center text-center">
-              <div className="flex flex-wrap justify-center mb-3 lg:mb-0 sm:justify-start items-center">
-
+        <div className="container mx-auto flex px-5 pb-16 lg:py-24 lg:flex-row flex-col items-center">
+          <div className="lg:max-w-lg xl:w-full lg:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img
+              className="object-cover relative object-center rounded"
+              alt="hero"
+              src="/images/svgs/picture_1.png"
+            />
+          </div>
+          <div className="lg:flex-grow lg:w-1/2 xl:pl-24 lg:pl-16 pt-5 lg:pt-0 flex flex-col md:items-start md:text-left items-center text-center">
+            <div className="flex flex-wrap justify-center mb-3 lg:mb-0 sm:justify-start items-center">
               <h1 className="title-font text-2xl sm:text-3xl pe-2 font-medium text-black">
                 Arrange a free{" "}
               </h1>
-                <h1
-                  className="font-bold text-2xl pt-1 color-sub-heading sm:text-3xl">
-                  {" "}
-                  Consultation{" "}
-                </h1>
-                    </div>
-              <p className="mb-8 leading-relaxed text-gray-600">
-                Unlock the full potential of your business with a complimentary
-                consultation. Our team of experts will provide valuable insights
-                and recommendations tailored to your specific needs. Don’t miss
-                out on this opportunity to take your business to the next level.
-                Schedule your free consultancy today and discover the benefits
-                of working with us.
-              </p>
-              <div className="flex w-full md:justify-start justify-center items-end">
-                <Link href="/contactUs" passHref>
-                  <button
-                    style={{
-                      background: "linear-gradient(to right, #02f0f1, #024868)",
-                    }}
-                    className="inline-flex text-white border-0 py-2 px-5 focus:outline-none rounded text-lg"
-                  >
-                    Start your journey to business success
-                  </button>
-                </Link>
-              </div>
+              <h1 className="font-bold text-2xl pt-1 color-sub-heading sm:text-3xl">
+                {" "}
+                Consultation{" "}
+              </h1>
+            </div>
+            <p className="mb-8 leading-relaxed text-gray-600">
+              Unlock the full potential of your business with a complimentary
+              consultation. Our team of experts will provide valuable insights
+              and recommendations tailored to your specific needs. Don’t miss
+              out on this opportunity to take your business to the next level.
+              Schedule your free consultancy today and discover the benefits of
+              working with us.
+            </p>
+            <div className="flex w-full md:justify-start justify-center items-end">
+              <Link href="/contact-us" passHref>
+                <button
+                  style={{
+                    background: "linear-gradient(to right, #02f0f1, #024868)",
+                  }}
+                  className="inline-flex text-white border-0 py-2 px-5 focus:outline-none rounded text-lg"
+                >
+                  Start your journey to business success
+                </button>
+              </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       <div className="flex flex-col items-center justify-center min-h-screen text-white mx-4 sm:mx-12 sm:px-6 lg:px-8">
         {/* Wave Image */}
@@ -479,9 +475,12 @@ const Home = () => {
         >
           Let’s get started
         </h1>
-        <p style={{
-          lineHeight:1.4
-        }} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-center">
+        <p
+          style={{
+            lineHeight: 1.4,
+          }}
+          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-center"
+        >
           Ready to embark on your technical journey ?
         </p>
         <p className="text-md sm:text-xl lg:text-md font-thin text-center">
@@ -496,39 +495,90 @@ const Home = () => {
         ></div>
       </div>
 
-      <motion.button
-        style={{
-          background: "linear-gradient(to right, #02f0f1, #024868)",
-          zIndex:10000
-        }}
-        onClick={scrollToTop}
-        className={`${
-          isVisible ? "block" : "hidden"
-        } fixed bottom-8 right-8 w-12 h-12 text-white rounded-full shadow-xl flex items-center justify-center`}
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          hidden: { opacity: 0, x: 50 },
-          visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
-        }}
-        whileHover={{ y: -10, transition: { type: 'spring', stiffness: 300 } }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 15l7-7 7 7"
+      {/* Partners Section */}
+
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        {/* Heading */}
+        <h1 className="text-3xl font-bold text-center mt-24 mb-10">
+          Our Partners
+        </h1>
+
+        {/* Logo */}
+        <div className="mb-6">
+          <Image
+            src="/images/pngs/1631330600833.jpeg" // Replace with your logo image path
+            alt="Partner Logo"
+            width={150}
+            height={150}
+            className="object-contain"
           />
-        </svg>
-      </motion.button>
+        </div>
+
+        {/* Paragraph */}
+        <p className="text-center text-gray-700 px-4 mx-24 mb-4">
+          We are proud to collaborate with our esteemed partners who help us
+          achieve excellence and bring value to our community.
+        </p>
+        <p className="text-center text-gray-700 px-4 mx-24 mb-4">
+          Now more than ever, in a highly digital era, the onus falls on
+          creating websites that look amazing but perform well. Here at Naxiums,
+          we could not be proud to proclaim an exciting new partnership that
+          will pursue value, innovation, and higher customer satisfaction: our
+          new partnership with Blacksmith Agency. Its objective will be to
+          ensure that businesses tap into data-driven website design for
+          measurable successes through our collaborative efforts.
+        </p>
+
+        <h2 className="text-center font-semibold px-4 mx-24 mb-4">
+          Why Data-Driven Design Matters ?
+        </h2>
+
+        <p className="text-center text-gray-700 px-4 mx-24 mb-4">
+          On the other hand, the data-driven web design relies so much on
+          analytics and actionable insights into users behaviors but with a
+          series of accountable performance indicators at the inception of all
+          decisions. Focusing on real-world concrete data, the business shall
+          introduce websites capable of increasing not just user engagement but
+          conversion rates for businesses. Implementing data-driven
+          transformations on a business website, within three months, the
+          user-engaging ratio increased by 35 %. In their purest form, this is
+          how designs have to be able to affect not only the inspiration point
+          of users but also the attainment of critical business objectives.
+        </p>
+
+        <h2 className="text-center font-semibold px-4 mx-24 mb-4">
+          A Partnership Based on Innovation
+        </h2>
+
+        <p className="text-center text-gray-700 px-4 mx-24 mb-4">
+          Our collaboration with Blacksmith Agency combines their expertise in
+          website maintenance services with Naxiums dedication to delivering
+          cutting-edge digital strategies. According to Tyler Scott, a lead
+          developer at Blacksmith, tools like Figma changed how we work
+          together. &quot;The ability to visualize and iterate designs in real-time
+          keeps our work aligned with client goals while embracing creativity,&quot;
+          he said. This partnership also addresses one important concern
+          businesses have, keeping up with the fast pace of changes in design
+          trends. We will be able to provide customized solutions for each
+          client by leveraging data and advanced web design tools,{" "}
+          <Link className="font-semibold" target="_blank" href="https://blacksmith.agency/" passHref>
+            {" "}
+            view product website.{" "}
+          </Link>
+        </p>
+        <p className="text-center text-gray-700 px-4 mx-24 mb-24">
+          Looking Ahead Into the future, the collaboration of Naxiums and
+          Blacksmith Agency will be the reason behind the shift in industry
+          standards. Be it conversion improvement or insights to maintain a
+          website; rest assured, it will add value with every step. For Rachel
+          Green, one of the clients who recently renovated her e-commerce
+          platform, it seemed like a game-changer for her business. The future
+          is bright for a company willing to take a huge leap into data-driven
+          innovations. Come explore the boundaries with Naxiums in collaboration
+          with Blacksmith Agency. Together, we will not just design websites
+          will build the future.
+        </p>
+      </div>
     </>
   );
 };

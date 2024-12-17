@@ -48,7 +48,7 @@ const Header = () => {
     <div className="container-fluid mb-5 w-full h-12 relative z-10 mx-auto drawer lg-hidden">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div
-        className={`drawer-content bg-black w-full shadow-2xl fixed flex flex-col`}
+        className={`drawer-content bg-black/80 backdrop-blur-md w-full shadow-2xl fixed flex flex-col`}
       >
         <header className="text-gray-600 relative body-font">
           <div className="container-fluid mx-auto container flex flex-wrap py-6 justify-between flex-row items-center">
@@ -92,10 +92,10 @@ const Header = () => {
 
             {/* <div className="lg:flex hidden">
               <nav className="md:ml-auto hidden lg:flex flex-wrap items-center text-base justify-center">
-                <Link href="/aboutUS" passHref>
+                <Link href="/about-us" passHref>
                   <div
                     className={`text-md text-white group relative ${
-                      pathname === "/aboutUS" ? "active" : ""
+                      pathname === "/about-us" ? "active" : ""
                     }`}
                   >
                     <span
@@ -108,7 +108,7 @@ const Header = () => {
                     ></span>
                   </div>
                 </Link>
-                <Link href="/ourServices" passHref>
+                <Link href="/our-services" passHref>
                   <div className="text-md text-white ml-7 group relative">
                     <span className="group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent">
                       Services
@@ -116,7 +116,7 @@ const Header = () => {
                     <span className="absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                   </div>
                 </Link>
-                <Link href="/contactUs" passHref>
+                <Link href="/contact-us" passHref>
                   <div className="text-md text-white ml-7 group relative">
                     <span className="group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent">
                       Contact
@@ -145,12 +145,12 @@ const Header = () => {
             <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'home' ? 'scale-x-100' : ''}`}></span>
           </div>
         </Link>
-        <Link href="/ourServices" passHref onClick={() => handleLinkClick1('ourServices')}>
-          <div className={`text-md text-white ml-7 group relative ${activeLink === 'ourServices' ? 'active' : ''}`}>
-            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'ourServices' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
+        <Link href="/our-services" passHref onClick={() => handleLinkClick1('our-services')}>
+          <div className={`text-md text-white ml-7 group relative ${activeLink === 'our-services' ? 'active' : ''}`}>
+            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'our-services' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
              Our Services
             </span>
-            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'ourServices' ? 'scale-x-100' : ''}`}></span>
+            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'our-services' ? 'scale-x-100' : ''}`}></span>
           </div>
         </Link>
         <Link href="/portfolio" passHref onClick={() => handleLinkClick1('portfolio')}>
@@ -161,20 +161,20 @@ const Header = () => {
             <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'portfolio' ? 'scale-x-100' : ''}`}></span>
           </div>
         </Link>
-        <Link href="/aboutUS" passHref onClick={() => handleLinkClick1('aboutUS')}>
-          <div className={`text-md text-white ml-7 group relative ${activeLink === 'aboutUS' ? 'active' : ''}`}>
-            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'aboutUS' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
+        <Link href="/about-us" passHref onClick={() => handleLinkClick1('about-us')}>
+          <div className={`text-md text-white ml-7 group relative ${activeLink === 'about-us' ? 'active' : ''}`}>
+            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'about-us' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
               About
             </span>
-            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'aboutUS' ? 'scale-x-100' : ''}`}></span>
+            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'about-us' ? 'scale-x-100' : ''}`}></span>
           </div>
         </Link>
-        <Link href="/contactUs" passHref onClick={() => handleLinkClick1('contactUs')}>
-          <div className={`text-md text-white ml-7 group relative ${activeLink === 'contactUs' ? 'active' : ''}`}>
-            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'contactUs' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
+        <Link href="/contact-us" passHref onClick={() => handleLinkClick1('contact-us')}>
+          <div className={`text-md text-white ml-7 group relative ${activeLink === 'contact-us' ? 'active' : ''}`}>
+            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'contact-us' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
               Contact
             </span>
-            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'contactUs' ? 'scale-x-100' : ''}`}></span>
+            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'contact-us' ? 'scale-x-100' : ''}`}></span>
           </div>
         </Link>
         
@@ -209,7 +209,7 @@ const Header = () => {
                 width={50}
                 height={30}
               />
-              <span className="text-white ml-3 text-md">Naxiums</span>
+              <span className="text-white ml-3 text-lg font-bold">Naxiums</span>
             </span>
 
             <span onClick={() => handleLinkClick("")}>

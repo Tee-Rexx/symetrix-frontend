@@ -5,9 +5,18 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import { updateDocumentDescription } from "@/utils/header-titles";
+import { FAQS_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 
-const page = () => {
+const FAQPage = () => {
+
+  useEffect(() => {
+      document.title = "FAQs | Naxiums";
+      updateDocumentDescription(FAQS_PAGE_DESCRIPTION)
+      
+    }, []);
+
   // for accordian color
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded, setExpanded] = useState(false);
@@ -337,4 +346,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default FAQPage;

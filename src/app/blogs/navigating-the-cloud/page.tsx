@@ -1,24 +1,34 @@
 "use client";
 
+import { useEffect } from "react";
 import { useTheme } from "next-themes";
+import { updateDocumentDescription } from "@/utils/header-titles";
+import { NAVIGATING_THE_CLOUD_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 
 const BlockchainBeyondBitcoin = () => {
   const { resolvedTheme } = useTheme();
-
+  useEffect(() => {
+    document.title = "Navigating The Cloud | Naxiums";
+              updateDocumentDescription(NAVIGATING_THE_CLOUD_PAGE_DESCRIPTION)
+    
+  }, []);
   return (
     <>
-      <section className=" flex w-full justify-center items-center">
-        <div className="container">
-          <div className="bg-gray-100 text-gray-800 leading-normal font-sans">
-            {/* <!-- Header --> */}
-            <header className="bg-white shadow">
-              <div className="container w-[800px]  flex py-4">
-                <h1 className="text-4xl font-bold">
-                  Navigating the Cloud: A Comprehensive Guide to Cloud Computing
+    <div className="container-fluid mx-auto cloud-blog-bg banner-bg-specs py-32 w-full items-center justify-center flex relative">
+    <div className="h-full w-full absolute bg-black/40 backdrop-blur-md"></div>
+    <div className="text-left container relative w-full">
+          <div className="flex ms-5 md:ms-0 w-full text-center justify-center items-center">
+            <h1 className="text-4xl font-bold ps-6 text-white">
+            Navigating the Cloud: A Comprehensive Guide to Cloud Computing
                   and Its Applications
                 </h1>
-              </div>
-            </header>
+          </div>
+        </div>
+      </div>
+
+      <section className=" bg-white flex w-full py-20 justify-center items-center">
+        <div className="container">
+          <div className="text-gray-800 leading-normal font-sans">
 
             {/* <!-- Main Content --> */}
             <div className="container mx-auto mt-6 px-6">
