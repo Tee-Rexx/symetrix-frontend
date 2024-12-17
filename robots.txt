@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/  # Example to block access to admin pages
+Disallow: /private/  # Example to block private sections
+Allow: /  # Allow all other pages
