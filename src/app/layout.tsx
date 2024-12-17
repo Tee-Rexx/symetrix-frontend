@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NextTopLoader from "nextjs-toploader";
+import ScrollToTopButton from "./components/scrollToTopButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <ScrollToTopButton />
         </Providers>
       </body>
     </html>

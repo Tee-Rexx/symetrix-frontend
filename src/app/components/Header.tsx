@@ -48,7 +48,7 @@ const Header = () => {
     <div className="container-fluid mb-5 w-full h-12 relative z-10 mx-auto drawer lg-hidden">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div
-        className={`drawer-content bg-black w-full shadow-2xl fixed flex flex-col`}
+        className={`drawer-content bg-black/80 backdrop-blur-md w-full shadow-2xl fixed flex flex-col`}
       >
         <header className="text-gray-600 relative body-font">
           <div className="container-fluid mx-auto container flex flex-wrap py-6 justify-between flex-row items-center">

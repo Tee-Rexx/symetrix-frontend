@@ -50,7 +50,7 @@ const Footer = () => {
                 <li className="text-gray-600 mb-2 hover:text-gray-800">
                   <Link
                     className="text-gray-600 hover:text-gray-800 cursor-pointer"
-                    href="/blogs"
+                    href="/aboutUS"
                     passHref
                   >
                     About

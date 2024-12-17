@@ -282,7 +282,7 @@ const Page = () => {
                 initial={initial}
                 animate={animate}
                 transition={{ duration: 0.7 }} // Staggered animation
-                className="flex mb-10 p-5 rounded border shadow-xl hover:bg-blue-900 hover:text-white transition duration-300 w-full md:w-80"
+                className="flex mb-10 p-5 rounded border shadow-xl hover:bg-gray-100 hover:text-white transition duration-300 w-full md:w-80"
               >
                 <div className="flex-shrink-0 mr-4 ">
                   <img
