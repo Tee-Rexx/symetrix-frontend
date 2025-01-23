@@ -73,7 +73,7 @@ const Page = () => {
               hidden: { opacity: 0, x: 800 },
               visible: { opacity: 1, x: 0, transition: { duration: 1.0 } },
             }}
-            className="text-justify px-3 sm:px-32 py-32"
+            className="text-justify text-gray-400 px-5 sm:px-32 py-32"
           >
             Welcome to Naxiums, where innovation meets excellence. As a leading
             software development company, we specialize in crafting bespoke
