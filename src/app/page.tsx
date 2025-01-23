@@ -405,34 +405,34 @@ const Home = () => {
         </section>
       </div>
 
-      <section className="bg-white -z-20 relative body-font">
+      <section className="bg-white relative body-font">
         {/* Wave Image */}
         <img
           style={{ width: "100vw" }}
           src="/images/pngs/waves1.png"
-          className="absolute waves hidden lg:block -z-10 -bottom-18 h-[250px] opacity-50"
+          className="absolute waves hidden lg:block z-10 -bottom-18 h-[250px] opacity-50"
           alt="Blue color Waves"
         />
 
-        <div className="container mx-auto flex px-5 pb-16 lg:py-24 lg:flex-row flex-col items-center">
+        <div className="container mx-auto flex z-30 px-5 pb-16 lg:py-24 lg:flex-row flex-col items-center">
           <div className="lg:max-w-lg xl:w-full lg:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              className="object-cover relative object-center rounded"
+              className="object-cover relative z-30 object-center rounded"
               alt="hero"
               src="/images/svgs/picture_1.png"
             />
           </div>
           <div className="lg:flex-grow lg:w-1/2 xl:pl-24 lg:pl-16 pt-5 lg:pt-0 flex flex-col md:items-start md:text-left items-center text-center">
             <div className="flex flex-wrap justify-center mb-3 lg:mb-0 sm:justify-start items-center">
-              <h1 className="title-font text-2xl sm:text-3xl pe-2 font-medium text-black">
+              <h1 className="title-font text-2xl z-30 sm:text-3xl pe-2 font-medium text-black">
                 Arrange a free{" "}
               </h1>
-              <h1 className="font-bold text-2xl pt-1 color-sub-heading sm:text-3xl">
+              <h1 className="font-bold text-2xl z-30 pt-1 color-sub-heading sm:text-3xl">
                 {" "}
                 Consultation{" "}
               </h1>
             </div>
-            <p className="mb-8 leading-relaxed text-gray-600">
+            <p className="mb-8 leading-relaxed z-30 text-gray-600">
               Unlock the full potential of your business with a complimentary
               consultation. Our team of experts will provide valuable insights
               and recommendations tailored to your specific needs. Don’t miss
@@ -441,16 +441,16 @@ const Home = () => {
               working with us.
             </p>
             <div className="flex w-full md:justify-start justify-center items-end">
-              <Link href="/contact-us" passHref>
-                <button
-                  style={{
-                    background: "linear-gradient(to right, #02f0f1, #024868)",
-                  }}
-                  className="inline-flex text-white border-0 py-2 px-5 focus:outline-none rounded text-lg"
-                >
-                  Start your journey to business success
-                </button>
-              </Link>
+              <Link
+        href="/contact-us"
+        style={{
+          background: "linear-gradient(to right, #02f0f1, #024868)",
+          zIndex:10000000
+        }}
+        className="inline-block text-center mt-8 w-fit px-8 py-3 text-white font-semibold text-md rounded-full shadow-lg focus:outline-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+      >
+        Start your journey to business success
+      </Link>
             </div>
           </div>
         </div>
