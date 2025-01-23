@@ -103,7 +103,7 @@ const Page = () => {
                   key={index}
                   className="card relative max-w-sm rounded overflow-hidden mb-5 shadow-lg group"
                   style={{
-                    backgroundImage: `url(${card.backgroundImage})`,
+                    backgroundImage: card.backgroundImage,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     boxShadow: "inset 0px 10px 15px rgba(0, 0, 0, 0.07)",
