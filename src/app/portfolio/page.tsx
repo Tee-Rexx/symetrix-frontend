@@ -6,6 +6,9 @@ import { motion, useAnimation } from "framer-motion";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { PORTFOLIO_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
+import Image from "next/image";
+import whiteLinesImg from "../../../public/images/pngs/white-design-lines.png";
+import Link from "next/link";
 
 const Page = () => {
   const controls = useAnimation();
@@ -47,7 +50,7 @@ const Page = () => {
   ];
 
   return (
-    <div style={{ overflowX: "hidden" }}>
+    <div style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <section className="text-gray-600 body-font">
         <div className="container-fluid mx-auto our-service-bg banner-bg-specs py-32 w-full items-center justify-center flex">
           <div className="text-left container relative w-full">
@@ -64,37 +67,41 @@ const Page = () => {
             </div>
           </div>
         </div>
+
         <div className="container w-full mx-auto">
-          <motion.p
-            ref={ref}
-            initial="hidden"
-            animate={controls}
-            variants={{
-              hidden: { opacity: 0, x: 800 },
-              visible: { opacity: 1, x: 0, transition: { duration: 1.0 } },
-            }}
-            className="text-justify text-gray-400 px-5 sm:px-32 py-32"
-          >
-            Welcome to Naxiums, where innovation meets excellence. As a leading
-            software development company, we specialize in crafting bespoke
-            digital solutions tailored to meet the unique needs of our diverse
-            clientele. Our team of experienced developers, designers, and
-            project managers work collaboratively to transform your vision into
-            reality, leveraging the latest technologies and industry best
-            practices. From intuitive mobile applications and robust web
-            platforms to complex enterprise software systems, we deliver
-            products that are not only functional but also scalable and secure.
-            Our agile development process ensures flexibility and
-            responsiveness, enabling us to adapt to changing requirements and
-            deliver high-quality software on time and within budget. At Naxium
-            Limited, we are committed to building lasting partnerships with our
-            clients by providing continuous support and maintenance, ensuring
-            your software evolves with your business. Explore our portfolio to
-            discover how we have empowered businesses across various industries
-            to achieve their digital transformation goals and stay ahead in the
-            competitive landscape. Let us help you unlock the full potential of
-            technology to drive growth and innovation in your organization.
-          </motion.p>
+          <div className="relative text-center px-5 sm:px-32 py-32  text-gray-100">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-100 mb-6">
+              Crafting Memorable User Experience for Business Success
+            </h2>
+
+            <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-300">
+              At <span className="font-bold">Naxiums</span>, we specialize in
+              crafting bespoke digital solutions tailored for your business,
+              enabling growth in a rapidly changing digital world.
+            </p>
+
+            <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-300">
+              Our expert team seamlessly integrates design, development, and
+              innovation to deliver mobile apps, web platforms, and enterprise
+              solutions that drive results.
+            </p>
+
+            <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-300">
+              With an agile approach, we ensure flexibility, responsiveness, and
+              on-time delivery while maintaining budget efficiency.
+            </p>
+
+            <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-300">
+              Let us build a lasting partnership through continuous support and
+              maintenance to evolve your solutions as your business grows.
+            </p>
+
+            <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-300">
+              Explore our portfolio and see how we've helped businesses achieve
+              their digital transformation goals. At Naxiums, we unlock the full
+              potential of technology for your growth and innovation.
+            </p>
+          </div>
 
           <div className="w-full mx-auto my-16">
             <div className="flex flex-col px-3 sm:px-0 lg:flex-row flex-wrap gap-8 items-center md:justify-between">
@@ -130,6 +137,44 @@ const Page = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        <div className="container mt-56 mb-32 w-full mx-auto">
+          <div className="relative flex w-full">
+            <div className="flex flex-col">
+              <div className="flex gap-2">
+                <span className="text-3xl sm:text-4xl mx-auto md:mx-0 text-center md:text-left font-extrabold text-gray-100">
+                  Have An Idea About Project?
+                </span>
+                {/* <Image height={30} width={30} alt="white star" src={whiteStar} /> */}
+              </div>
+
+              <span className=" w-full px-3 md:px-0 text-center sm:text-left sm:mx-0 lg:w-3/6 mt-12 mb-8 md:mt-7 md:mb-3 text-gray-100">
+                Turn your ideas into innovative solutions! Whether it's an app,
+                a website, or a custom digital product, our passionate team is
+                here to make it happen. With cutting-edge technology and a focus
+                on excellence, we’ll bring your vision to life and help it
+                thrive. Let’s build something extraordinary together!
+              </span>
+
+              <Link
+                href="/contact-us"
+                style={{
+                  background: "linear-gradient(to right, #02f0f1, #024868)",
+                }}
+                className="inline-block mx-auto md:mx-0 text-center mt-8 w-[260px] px-8 py-3 text-white font-semibold text-md rounded-full shadow-lg focus:outline-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+              >
+                Let's Work Together
+              </Link>
+            </div>
+
+            <img
+              src="/images/pngs/white-design-lines.png"
+              alt="white design lines"
+              width={400}
+              className="hidden lg:block lg:absolute right-4 -bottom-10 object-contain"
+            />
           </div>
         </div>
       </section>
