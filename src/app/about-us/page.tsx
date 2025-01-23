@@ -352,7 +352,7 @@ const Page = () => {
             >
               {/* First div with icon */}
               <motion.div
-                className="flex justify-center items-center w-12 bg-gray-200  rounded-full"
+                className="flex justify-center items-center w-12  rounded-full"
                 animate={isHovered3 ? { x: -10 } : { x: 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >
@@ -385,7 +385,7 @@ const Page = () => {
             >
               {/* First div with icon */}
               <motion.div
-                className="flex justify-center items-center bg-gray-200 w-12 rounded-full"
+                className="flex justify-center items-center w-12 rounded-full"
                 animate={isHovered4 ? { x: -10 } : { x: 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >
