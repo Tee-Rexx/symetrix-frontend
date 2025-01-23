@@ -97,7 +97,7 @@ const Page = () => {
             </p>
 
             <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-300">
-              Explore our portfolio and see how we've helped businesses achieve
+              Explore our portfolio and see how we&apos;ve helped businesses achieve
               their digital transformation goals. At Naxiums, we unlock the full
               potential of technology for your growth and innovation.
             </p>
@@ -151,7 +151,7 @@ const Page = () => {
               </div>
 
               <span className=" w-full px-3 md:px-0 text-center sm:text-left sm:mx-0 lg:w-3/6 mt-12 mb-8 md:mt-7 md:mb-3 text-gray-100">
-                Turn your ideas into innovative solutions! Whether it's an app,
+                Turn your ideas into innovative solutions! Whether it&apos;s an app,
                 a website, or a custom digital product, our passionate team is
                 here to make it happen. With cutting-edge technology and a focus
                 on excellence, we’ll bring your vision to life and help it
@@ -165,7 +165,7 @@ const Page = () => {
                 }}
                 className="inline-block mx-auto md:mx-0 text-center mt-8 w-[260px] px-8 py-3 text-white font-semibold text-md rounded-full shadow-lg focus:outline-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
               >
-                Let's Work Together
+                Let&apos;s Work Together
               </Link>
             </div>
 
