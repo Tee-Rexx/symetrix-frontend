@@ -497,14 +497,14 @@ const Home = () => {
 
       {/* Partners Section */}
 
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      {/* <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100"> */}
         {/* Heading */}
-        <h1 className="text-3xl font-bold text-center mt-24 mb-10">
+        {/* <h1 className="text-3xl font-bold text-center mt-24 mb-10">
           Our Partners
-        </h1>
+        </h1> */}
 
         {/* Logo */}
-        <div className="mb-6">
+        {/* <div className="mb-6">
           <Image
             src="/images/pngs/1631330600833.jpeg" // Replace with your logo image path
             alt="Partner Logo"
@@ -512,10 +512,10 @@ const Home = () => {
             height={150}
             className="object-contain"
           />
-        </div>
+        </div> */}
 
         {/* Paragraph */}
-        <p className="text-center text-gray-700 px-4 lg:mx-24 mb-4">
+        {/* <p className="text-center text-gray-700 px-4 lg:mx-24 mb-4">
           We are proud to collaborate with our esteemed partners who help us
           achieve excellence and bring value to our community.
         </p>
@@ -561,7 +561,7 @@ const Home = () => {
           businesses have, keeping up with the fast pace of changes in design
           trends. We will be able to provide customized solutions for each
           client by leveraging data and advanced web design tools,{" "}
-          <Link className="font-semibold" target="_blank" href="https://blacksmith.agency/" passHref>
+          <Link className="font-semibold" target="_blank" href="https://blacksmith.agency/website-maintenance-services/" passHref>
             {" "}
             view product website.{" "}
           </Link>
@@ -577,8 +577,8 @@ const Home = () => {
           innovations. Come explore the boundaries with Naxiums in collaboration
           with Blacksmith Agency. Together, we will not just design websites
           will build the future.
-        </p>
-      </div>
+        </p> */}
+      {/* </div> */}
     </>
   );
 };

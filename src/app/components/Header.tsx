@@ -3,46 +3,54 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { SetStateAction, useEffect, useState } from "react";
-import { SIDEBAR_MENU } from "@/utils/constants/header.constants";
-import Icon from "../../utils/Icons";
 import { usePathname } from "next/navigation";
+import Icon from "../../utils/Icons";
+import { SIDEBAR_MENU } from "@/utils/constants/header.constants";
+
+const NavLink = ({ path, label }: { path: string; label: string }) => {
+  const pathname = usePathname();
+  return (
+    <Link href={path} passHref>
+      <div
+        className={`text-md text-white ml-7 group relative ${
+          pathname === path ? "active" : ""
+        }`}
+      >
+        <span
+          className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${
+            pathname === path
+              ? "bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent"
+              : ""
+          }`}
+        >
+          {label}
+        </span>
+        <span
+          className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${
+            pathname === path ? "scale-x-100" : ""
+          }`}
+        ></span>
+      </div>
+    </Link>
+  );
+};
 
 const Header = () => {
   const { resolvedTheme } = useTheme();
-  const [theme, setTheme] = useState<any>();
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [bgColor, setBgColor] = useState("transparent");
-  const [activeLink, setActiveLink] = useState<string>("");
-  
-
-  const handleLinkClick1 = (link: SetStateAction<string>) => {
-    setActiveLink(link);
-  };
-
   const pathname = usePathname();
-
-  useEffect(() => {
-    setTheme(resolvedTheme);
-  }, [resolvedTheme]);
-
-  useEffect(() => {
-    getActiveLink();
-  }, []);
-
-  const getActiveLink = () => {
-    setActiveLink(window.location.pathname ?? "/");
-  };
 
   const handleLinkClick = (url: string) => {
     const checkbox = document.getElementById("my-drawer-3") as HTMLInputElement;
-    if (checkbox) {
-      checkbox.checked = false;
-    }
-    if (url) {
-      setActiveLink(url); // Set the active link when a link is clicked
-    }
+    if (checkbox) checkbox.checked = false;
   };
+
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/our-services", label: "Our Services" },
+    { path: "/portfolio", label: "Portfolio" },
+    { path: "/about-us", label: "About" },
+    { path: "/contact-us", label: "Contact" },
+  ];
 
   return (
     <div className="container-fluid mb-5 w-full h-12 relative z-10 mx-auto drawer lg-hidden">
@@ -90,99 +98,19 @@ const Header = () => {
               </Link>
             </div>
 
-            {/* <div className="lg:flex hidden">
-              <nav className="md:ml-auto hidden lg:flex flex-wrap items-center text-base justify-center">
-                <Link href="/about-us" passHref>
-                  <div
-                    className={`text-md text-white group relative ${
-                      pathname === "/about-us" ? "active" : ""
-                    }`}
-                  >
-                    <span
-                      className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent`}
-                    >
-                      About
-                    </span>
-                    <span
-                      className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}
-                    ></span>
-                  </div>
-                </Link>
-                <Link href="/our-services" passHref>
-                  <div className="text-md text-white ml-7 group relative">
-                    <span className="group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent">
-                      Services
-                    </span>
-                    <span className="absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  </div>
-                </Link>
-                <Link href="/contact-us" passHref>
-                  <div className="text-md text-white ml-7 group relative">
-                    <span className="group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent">
-                      Contact
-                    </span>
-                    <span className="absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  </div>
-                </Link>
-                <Link href="/portfolio" passHref>
-                  <div className="text-md text-white ml-7 group relative">
-                    <span className="group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent">
-                      Portfolio
-                    </span>
-                    <span className="absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  </div>
-                </Link>
-              </nav>
-            </div> */}
+            {/* Desktop navigation */}
             <div className="lg:flex hidden">
-      <nav className="md:ml-auto hidden lg:flex flex-wrap items-center text-base justify-center">
-        
-        <Link href="/" passHref onClick={() => handleLinkClick1('home')}>
-          <div className={`text-md text-white ml-7 group relative ${activeLink === 'home' ? 'active' : ''}`}>
-            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'home' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
-             Home
-            </span>
-            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'home' ? 'scale-x-100' : ''}`}></span>
-          </div>
-        </Link>
-        <Link href="/our-services" passHref onClick={() => handleLinkClick1('our-services')}>
-          <div className={`text-md text-white ml-7 group relative ${activeLink === 'our-services' ? 'active' : ''}`}>
-            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'our-services' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
-             Our Services
-            </span>
-            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'our-services' ? 'scale-x-100' : ''}`}></span>
-          </div>
-        </Link>
-        <Link href="/portfolio" passHref onClick={() => handleLinkClick1('portfolio')}>
-          <div className={`text-md text-white ml-7 group relative ${activeLink === 'portfolio' ? 'active' : ''}`}>
-            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'portfolio' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
-              Portfolio
-            </span>
-            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'portfolio' ? 'scale-x-100' : ''}`}></span>
-          </div>
-        </Link>
-        <Link href="/about-us" passHref onClick={() => handleLinkClick1('about-us')}>
-          <div className={`text-md text-white ml-7 group relative ${activeLink === 'about-us' ? 'active' : ''}`}>
-            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'about-us' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
-              About
-            </span>
-            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'about-us' ? 'scale-x-100' : ''}`}></span>
-          </div>
-        </Link>
-        <Link href="/contact-us" passHref onClick={() => handleLinkClick1('contact-us')}>
-          <div className={`text-md text-white ml-7 group relative ${activeLink === 'contact-us' ? 'active' : ''}`}>
-            <span className={`group-hover:bg-gradient-to-r group-hover:from-[#02f0f1] group-hover:to-[#024868] group-hover:bg-clip-text group-hover:text-transparent ${activeLink === 'contact-us' ? 'bg-gradient-to-r from-[#02f0f1] to-[#024868] bg-clip-text text-transparent' : ''}`}>
-              Contact
-            </span>
-            <span className={`absolute left-0 bottom-[-2px] h-[2px] w-full bg-gradient-to-r from-[#02f0f1] to-[#024868] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${activeLink === 'contact-us' ? 'scale-x-100' : ''}`}></span>
-          </div>
-        </Link>
-        
-      </nav>
-    </div>
+              <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                {navLinks.map((link) => (
+                  <NavLink key={link.path} {...link} />
+                ))}
+              </nav>
+            </div>
           </div>
         </header>
       </div>
+
+      {/* Mobile Sidebar */}
       <div className="drawer-side">
         <label
           htmlFor="my-drawer-3"
@@ -222,13 +150,12 @@ const Header = () => {
             </span>
           </div>
 
-          {/* Sidebar content here */}
-
+          {/* Sidebar Menu Items */}
           {SIDEBAR_MENU.map((menu, index) => (
             <li key={index}>
               <Link
                 className={`py-4 flex ${
-                  activeLink === menu.menu_url
+                  pathname === menu.menu_url
                     ? "bg-slate-700"
                     : "hover:bg-slate-500"
                 }`}
@@ -251,4 +178,5 @@ const Header = () => {
     </div>
   );
 };
+
 export default Header;
