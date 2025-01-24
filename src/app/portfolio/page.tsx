@@ -98,7 +98,7 @@ const Page = () => {
 
             <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-300">
               Explore our portfolio and see how we&apos;ve helped businesses achieve
-              their digital transformation goals. At Naxiums, we unlock the full
+              their digital transformation goals. At <span className="font-bold">Naxiums</span>, we unlock the full
               potential of technology for your growth and innovation.
             </p>
           </div>

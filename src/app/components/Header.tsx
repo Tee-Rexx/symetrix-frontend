@@ -53,7 +53,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="container-fluid mb-5 w-full h-12 relative z-10 mx-auto drawer lg-hidden">
+    <div className="container-fluid mb-5 w-full h-12 relative z-50 mx-auto drawer lg-hidden">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div
         className={`drawer-content bg-black/80 backdrop-blur-md w-full shadow-2xl fixed flex flex-col`}
