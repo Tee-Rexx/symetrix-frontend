@@ -445,9 +445,8 @@ const Home = () => {
         href="/contact-us"
         style={{
           background: "linear-gradient(to right, #02f0f1, #024868)",
-          zIndex:10000000
         }}
-        className="inline-block text-center mt-8 w-fit px-8 py-3 text-white font-semibold text-md rounded-full shadow-lg focus:outline-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+        className="inline-block z-30 text-center mt-8 w-fit px-8 py-3 text-white font-semibold text-md rounded-full shadow-lg focus:outline-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
       >
         Start your journey to business success
       </Link>

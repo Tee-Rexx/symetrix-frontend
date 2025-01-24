@@ -132,7 +132,7 @@ const Footer = () => {
               <nav className="list-none mb-10">
                 <li className="text-gray-600 mb-2 hover:text-gray-800">
                   <Link
-                    className="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/about-us"
                     passHref
                   >
@@ -141,7 +141,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    className="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/blogs"
                     passHref
                   >
@@ -150,7 +150,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    className="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/contact-us"
                     passHref
                   >
@@ -159,7 +159,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/faq"
                     passHref
                   >
@@ -174,7 +174,7 @@ const Footer = () => {
               <nav className="list-none mb-10">
                 <li className="mb-2">
                   <Link
-                    className="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/contact-us"
                     passHref
                   >
@@ -183,7 +183,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    className="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/our-services"
                     passHref
                   >
@@ -192,7 +192,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/portfolio"
                     passHref
                   >
@@ -207,7 +207,7 @@ const Footer = () => {
                 <li className="mb-2">
                   <a
                     href="tel:+923343739391"
-                    className="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                   >
                     (+92)334 3739391
                   </a>
@@ -215,13 +215,13 @@ const Footer = () => {
                 <li className="mb-2">
                   <a
                     href="mailto:nabeelshahzad752@gmail.com"
-                    className="text-gray-400 hover:text-gray-200 cursor-pointer"
+                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                   >
                     infonaxiums@gmail.com
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-400 hover:text-gray-200 cursor-pointer">
+                  <a className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer">
                     Islamabad,Pakistan
                   </a>
                 </li>
