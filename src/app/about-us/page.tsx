@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Discover Naxiums - Transforming Ideas into Digital Success",
