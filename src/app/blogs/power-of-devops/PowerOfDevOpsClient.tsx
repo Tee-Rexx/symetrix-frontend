@@ -2,17 +2,9 @@
 
 import { POWER_OF_DEVOPS_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 import { updateDocumentDescription } from "@/utils/header-titles";
-import { useTheme } from "next-themes";
 import { useEffect } from "react";
 
-const BlockchainBeyondBitcoin = () => {
-  const { resolvedTheme } = useTheme();
-  useEffect(() => {
-      document.title = "The Power Of Devops | Naxiums";
-                updateDocumentDescription(POWER_OF_DEVOPS_PAGE_DESCRIPTION)
-      
-    }, []);
-
+const PowerOfDevOpsClient = () => {
   return (
     <>
     <div className="container-fluid mx-auto devops-blog-bg banner-bg-specs py-32 w-full items-center justify-center flex relative">
@@ -374,7 +366,7 @@ const BlockchainBeyondBitcoin = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default BlockchainBeyondBitcoin;
+export default PowerOfDevOpsClient

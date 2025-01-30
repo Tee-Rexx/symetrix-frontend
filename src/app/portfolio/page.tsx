@@ -3,15 +3,43 @@ import { Metadata } from "next";
 import PortfolioClient from "./PortfolioClient";
 
 export const metadata: Metadata = {
-    title : "Portfolio",
+  title: "Portfolio",
+  description: PORTFOLIO_PAGE_DESCRIPTION.description,
+  keywords: PORTFOLIO_PAGE_DESCRIPTION.keywords,
+
+  openGraph: {
+    title: "Our Journey in Web & Mobile Development | Naxiums",
     description: PORTFOLIO_PAGE_DESCRIPTION.description,
-    keywords: PORTFOLIO_PAGE_DESCRIPTION.keywords
-  }
+    url: "https://naxiums.com/portfolio",
+    siteName: "Naxiums",
+    images: [
+      {
+        url: "https://c044-223-123-92-234.ngrok-free.app/images/share_link_card_image/dark-naxiums-large-og-image.jpg", // Change to your OG image URL
+        width: 1200,
+        height: 630,
+        alt: "Dark Naxiums Large OG Card Background",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Journey in Web & Mobile Development | Naxiums",
+    description: PORTFOLIO_PAGE_DESCRIPTION.description,
+    images: [
+      {
+        url: "https://c044-223-123-92-234.ngrok-free.app/images/share_link_card_image/dark-naxiums-large-og-image.jpg", // Change to your OG image URL
+        width: 1200,
+        height: 630,
+        alt: "Dark Naxiums Large OG Card Background",
+      },
+    ],
+  },
+};
 
 const Page = () => {
-  return (
-    <PortfolioClient/>
-  );
+  return <PortfolioClient />;
 };
 
 export default Page;

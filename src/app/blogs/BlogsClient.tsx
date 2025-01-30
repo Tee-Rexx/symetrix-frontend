@@ -45,7 +45,7 @@ const blogs = [
   {
     id: 6,
     heading: "Power Of Devops",
-    link: "/blogs/the-power-of-devops",
+    link: "/blogs/power-of-devops",
     imageUrl: "images/blog_card_imgs/the-power-of-devops.jpg",
     description:
       "DevOps fosters collaboration between development and operations teams to streamline workflows and improve software delivery. By automating processes and promoting continuous integration/continuous deployment (CI/CD), organizations achieve faster, more reliable releases.",
@@ -53,7 +53,7 @@ const blogs = [
   {
     id: 7,
     heading: "Future Of Work",
-    link: "/blogs/the-future-of-work",
+    link: "/blogs/future-of-work",
     imageUrl: "images/blog_card_imgs/the-future-of-work.jpg",
     description:
       "The future of work focuses on adaptability, remote collaboration, and the integration of advanced technologies like AI and automation. As businesses evolve, embracing flexible work models and empowering employees with innovative tools will shape a more efficient and productive workplace.",

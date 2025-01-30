@@ -109,7 +109,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    updateDocumentDescription(HOME_PAGE_DESCRIPTION)
+    updateDocumentDescription(HOME_PAGE_DESCRIPTION);
   }, []);
 
   const scrollToTop = () => {
@@ -442,14 +442,14 @@ const Home = () => {
             </p>
             <div className="flex w-full md:justify-start justify-center items-end">
               <Link
-        href="/contact-us"
-        style={{
-          background: "linear-gradient(to right, #02f0f1, #024868)",
-        }}
-        className="inline-block z-30 text-center mt-8 w-fit px-8 py-3 text-white font-semibold text-md rounded-full shadow-lg focus:outline-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
-      >
-        Start your journey to business success
-      </Link>
+                href="/contact-us"
+                style={{
+                  background: "linear-gradient(to right, #02f0f1, #024868)",
+                }}
+                className="inline-block z-30 text-center mt-8 w-fit px-8 py-3 text-white font-semibold text-md rounded-full shadow-lg focus:outline-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+              >
+                Start your journey to business success
+              </Link>
             </div>
           </div>
         </div>
@@ -497,13 +497,13 @@ const Home = () => {
       {/* Partners Section */}
 
       {/* <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100"> */}
-        {/* Heading */}
-        {/* <h1 className="text-3xl font-bold text-center mt-24 mb-10">
+      {/* Heading */}
+      {/* <h1 className="text-3xl font-bold text-center mt-24 mb-10">
           Our Partners
         </h1> */}
 
-        {/* Logo */}
-        {/* <div className="mb-6">
+      {/* Logo */}
+      {/* <div className="mb-6">
           <Image
             src="/images/pngs/1631330600833.jpeg" // Replace with your logo image path
             alt="Partner Logo"
@@ -513,8 +513,8 @@ const Home = () => {
           />
         </div> */}
 
-        {/* Paragraph */}
-        {/* <p className="text-center text-gray-700 px-4 lg:mx-24 mb-4">
+      {/* Paragraph */}
+      {/* <p className="text-center text-gray-700 px-4 lg:mx-24 mb-4">
           We are proud to collaborate with our esteemed partners who help us
           achieve excellence and bring value to our community.
         </p>
