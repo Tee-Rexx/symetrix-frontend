@@ -1,17 +1,8 @@
 "use client";
 
-import { FUTURE_OF_WORK_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
-import { updateDocumentDescription } from "@/utils/header-titles";
-import { useTheme } from "next-themes";
-import { useEffect } from "react";
+import React from 'react'
 
-const BlockchainBeyondBitcoin = () => {
-  const { resolvedTheme } = useTheme();
- useEffect(() => {
-      document.title = "The Future Of Work | Naxiums";
-                updateDocumentDescription(FUTURE_OF_WORK_PAGE_DESCRIPTION)
-      
-    }, []);
+const FutureOfWorkClient = () => {
   return (
     <>
     <div className="container-fluid mx-auto future-blog-bg banner-bg-specs py-32 w-full items-center justify-center flex relative">
@@ -281,7 +272,7 @@ const BlockchainBeyondBitcoin = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default BlockchainBeyondBitcoin;
+export default FutureOfWorkClient

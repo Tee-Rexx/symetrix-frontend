@@ -1,16 +1,15 @@
-import { CONTACTUS_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
+import { FUTURE_OF_WORK_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 import { Metadata } from "next";
-import ContactUsClient from "./ContactUsClient";
+import FutureOfWorkClient from "./FutureOfWorkClient";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: CONTACTUS_PAGE_DESCRIPTION.description,
-  keywords: CONTACTUS_PAGE_DESCRIPTION.keywords,
-
+  title: "Future Of Work Blog",
+  description: FUTURE_OF_WORK_PAGE_DESCRIPTION.description,
+  keywords: FUTURE_OF_WORK_PAGE_DESCRIPTION.keywords,
   openGraph: {
-    title: "Start Your Digital Journey - Reach Out to Naxiums",
-    description: CONTACTUS_PAGE_DESCRIPTION.description,
-    url: "https://naxiums.com/contact-us",
+    title: "The Future of Work: Preparing for a New Era of Business",
+    description: FUTURE_OF_WORK_PAGE_DESCRIPTION.description,
+    url: "https://naxiums.com/blogs/future-of-work",
     siteName: "Naxiums",
     images: [
       {
@@ -22,11 +21,10 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Start Your Digital Journey - Reach Out to Naxiums",
-    description: CONTACTUS_PAGE_DESCRIPTION.description,
+    title: "Revolutionizing the Future of Work: What to Expect",
+    description: FUTURE_OF_WORK_PAGE_DESCRIPTION.description,
     images: [
       {
         url: "https://c044-223-123-92-234.ngrok-free.app/images/share_link_card_image/dark-naxiums-large-og-image.jpg", // Change to your OG image URL
@@ -38,8 +36,8 @@ export const metadata: Metadata = {
   },
 };
 
-const ContactPage = () => {
-  return <ContactUsClient />;
+const FutureOfWork = () => {
+  return <FutureOfWorkClient />;
 };
 
-export default ContactPage;
+export default FutureOfWork;

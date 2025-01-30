@@ -1,16 +1,16 @@
-import { CONTACTUS_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
+import { POWER_OF_DEVOPS_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 import { Metadata } from "next";
-import ContactUsClient from "./ContactUsClient";
+import PowerOfDevOpsClient from "./PowerOfDevOpsClient";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: CONTACTUS_PAGE_DESCRIPTION.description,
-  keywords: CONTACTUS_PAGE_DESCRIPTION.keywords,
-
+  title: "Power Of Dev Ops Blog",
+  description: POWER_OF_DEVOPS_PAGE_DESCRIPTION.description,
+  keywords: POWER_OF_DEVOPS_PAGE_DESCRIPTION.keywords,
   openGraph: {
-    title: "Start Your Digital Journey - Reach Out to Naxiums",
-    description: CONTACTUS_PAGE_DESCRIPTION.description,
-    url: "https://naxiums.com/contact-us",
+    title:
+      "The Power of DevOps: Revolutionizing the Way Teams Build and Deploy",
+    description: POWER_OF_DEVOPS_PAGE_DESCRIPTION.description,
+    url: "https://naxiums.com/blogs/power-of-devops",
     siteName: "Naxiums",
     images: [
       {
@@ -22,11 +22,10 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Start Your Digital Journey - Reach Out to Naxiums",
-    description: CONTACTUS_PAGE_DESCRIPTION.description,
+    title: "DevOps: How It Revolutionizes Software Development and Deployment",
+    description: POWER_OF_DEVOPS_PAGE_DESCRIPTION.description,
     images: [
       {
         url: "https://c044-223-123-92-234.ngrok-free.app/images/share_link_card_image/dark-naxiums-large-og-image.jpg", // Change to your OG image URL
@@ -38,8 +37,8 @@ export const metadata: Metadata = {
   },
 };
 
-const ContactPage = () => {
-  return <ContactUsClient />;
+const PowerOfDevOps = () => {
+  return <PowerOfDevOpsClient />;
 };
 
-export default ContactPage;
+export default PowerOfDevOps;
