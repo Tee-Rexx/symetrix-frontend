@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Naxiums",
     images: [
       {
-        url: "https://c044-223-123-92-234.ngrok-free.app/images/share_link_card_image/dark-naxiums-large-og-image.jpg", // Change to your OG image URL
+        url: "https://naxiums.com/images/share_link_card_image/dark-naxiums-large-og-image.jpg", // Change to your OG image URL
         width: 1200,
         height: 630,
         alt: "Dark Naxiums Large OG Card Background",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: DIGITAL_TRANSFORMATION_PAGE_DESCRIPTION.description,
     images: [
       {
-        url: "https://c044-223-123-92-234.ngrok-free.app/images/share_link_card_image/dark-naxiums-large-og-image.jpg", // Change to your OG image URL
+        url: "https://naxiums.com/images/share_link_card_image/dark-naxiums-large-og-image.jpg", // Change to your OG image URL
         width: 1200,
         height: 630,
         alt: "Dark Naxiums Large OG Card Background",
