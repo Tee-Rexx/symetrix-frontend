@@ -89,7 +89,7 @@ const Header = () => {
                 className="flex title-font font-medium items-center text-gray-900 "
               >
                 <Image
-                  src="/images/website logo/logo.png"
+                  src="/images/website_logo/logo.png"
                   alt="Logo Image"
                   width={50}
                   height={30}
@@ -132,7 +132,7 @@ const Header = () => {
           <div className="flex ps-3 mb-12 mt-3 flex-row flex-nowrap justify-between items-center">
             <span className="flex items-center">
               <Image
-                src="/images/website logo/logo.png"
+                src="/images/website_logo/logo.png"
                 alt="Logo Image"
                 width={50}
                 height={30}
