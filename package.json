@@ -33,7 +33,8 @@
     "sitemap": "^8.0.0",
     "slick-carousel": "^1.8.1",
     "split-type": "^0.3.4",
-    "styled-component": "^2.8.0"
+    "styled-component": "^2.8.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@types/css-modules": "^1.0.5",
