@@ -19,6 +19,12 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Dark Naxiums Large OG Card Background",
       },
+      {
+        url: "https://naxiums.com/images/share_link_card_image/dark-naxiums-small-og-image.jpg", // Change to your OG image URL
+        width: 600,
+        height: 315,
+        alt: "Dark Naxiums Small OG Card Background",
+      },
     ],
     type: "website",
   },
@@ -32,6 +38,12 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Dark Naxiums Large OG Card Background",
+      },
+      {
+        url: "https://naxiums.com/images/share_link_card_image/dark-naxiums-small-og-image.jpg", // Change to your OG image URL
+        width: 600,
+        height: 315,
+        alt: "Dark Naxiums Small OG Card Background",
       },
     ],
   },

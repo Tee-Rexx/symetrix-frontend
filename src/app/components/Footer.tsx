@@ -104,7 +104,7 @@ const Footer = () => {
                 className="flex title-font font-medium mb-6 items-center text-gray-900 "
               >
                 <Image
-                  src="/images/website logo/logo.png"
+                  src="/images/website_logo/logo.png"
                   alt="Logo Image"
                   width={50}
                   height={30}
