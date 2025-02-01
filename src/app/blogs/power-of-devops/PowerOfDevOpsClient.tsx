@@ -1,10 +1,16 @@
 "use client";
 
-import { POWER_OF_DEVOPS_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
-import { updateDocumentDescription } from "@/utils/header-titles";
+import { SendPageDataToDataLayer } from "@/app/hooks/analyticsProvider";
 import { useEffect } from "react";
 
 const PowerOfDevOpsClient = () => {
+
+  // useEffect(() => {
+  //         setTimeout(() => {
+  //           SendPageDataToDataLayer();
+  //         }, 500);
+  //       }, []);
+
   return (
     <>
     <div className="container-fluid mx-auto devops-blog-bg banner-bg-specs py-32 w-full items-center justify-center flex relative">

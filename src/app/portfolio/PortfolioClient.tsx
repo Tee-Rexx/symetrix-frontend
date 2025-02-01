@@ -2,12 +2,18 @@
 
 import React from "react";
 import "../globals.css";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
-import whiteLinesImg from "../../../public/images/pngs/white-design-lines.png";
 import Link from "next/link";
+import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
 const PortfolioClient = () => {
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     SendPageDataToDataLayer();
+  //   }, 500);
+  // }, []);
+
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 

@@ -1,15 +1,21 @@
 "use client";
-
+import React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
+import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
 
 const FaqClient = () => {
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     SendPageDataToDataLayer();
+  //   }, 500);
+  // }, []);
 
-    // for accordian color
+  // for accordian color
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded, setExpanded] = useState(false);
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -29,44 +35,71 @@ const FaqClient = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [expanded8, setExpanded8] = useState(false);
 
-  const handleAccordionChange = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded(isExpanded);
   };
 
-  const handleAccordionChange1 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange1 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded1(isExpanded);
   };
 
-  const handleAccordionChange2 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange2 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded2(isExpanded);
   };
 
-  const handleAccordionChange3 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange3 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded3(isExpanded);
   };
 
-  const handleAccordionChange4 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange4 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded4(isExpanded);
   };
 
-  const handleAccordionChange5 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange5 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded5(isExpanded);
   };
 
-  const handleAccordionChange6 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange6 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded6(isExpanded);
   };
 
-  const handleAccordionChange7 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange7 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded7(isExpanded);
   };
 
-  const handleAccordionChange8 = (event: any, isExpanded: boolean | ((prevState: boolean) => boolean)) => {
+  const handleAccordionChange8 = (
+    event: any,
+    isExpanded: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setExpanded8(isExpanded);
   };
 
   return (
-     <div className="bg-white flex justify-center items-center">
+    <div className="bg-white flex justify-center items-center">
       <div className="w-1/2 py-12">
         <Accordion
           defaultExpanded
@@ -335,7 +368,7 @@ const FaqClient = () => {
         </Accordion>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FaqClient
+export default FaqClient;

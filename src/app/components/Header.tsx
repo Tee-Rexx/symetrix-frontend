@@ -6,11 +6,25 @@ import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import Icon from "../../utils/Icons";
 import { SIDEBAR_MENU } from "@/utils/constants/header.constants";
+import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
 
-const NavLink = ({ path, label }: { path: string; label: string }) => {
+const NavLink = ({
+  path,
+  label,
+  title,
+}: {
+  path: string;
+  label: string;
+  title: string;
+}) => {
   const pathname = usePathname();
+
+  const sendData = (path: string, title: string) => {
+    SendPageDataToDataLayer(path, title);
+  };
+
   return (
-    <Link href={path} passHref>
+    <Link href={path} onClick={() => sendData(path, title)} passHref>
       <div
         className={`text-md text-white ml-7 group relative ${
           pathname === path ? "active" : ""
@@ -39,17 +53,28 @@ const Header = () => {
   const { resolvedTheme } = useTheme();
   const pathname = usePathname();
 
-  const handleLinkClick = (url: string) => {
+  const handleLinkClick = (url: string, title: string) => {
     const checkbox = document.getElementById("my-drawer-3") as HTMLInputElement;
     if (checkbox) checkbox.checked = false;
+    if (url && title) {
+      SendPageDataToDataLayer(url, title);
+    }
   };
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/our-services", label: "Our Services" },
-    { path: "/portfolio", label: "Portfolio" },
-    { path: "/about-us", label: "About Us" },
-    { path: "/contact-us", label: "Contact Us" },
+    {
+      path: "/",
+      label: "Home",
+      title: "Innovative Solutions for Web & Mobile Apps | Naxiums",
+    },
+    {
+      path: "/our-services",
+      label: "Our Services",
+      title: "Our Services | Naxiums",
+    },
+    { path: "/portfolio", label: "Portfolio", title: "Portfolio | Naxiums" },
+    { path: "/about-us", label: "About Us", title: "About Us | Naxiums" },
+    { path: "/contact-us", label: "Contact Us", title: "Contact Us | Naxiums" },
   ];
 
   return (
@@ -85,7 +110,7 @@ const Header = () => {
 
               <Link
                 href="/"
-                onClick={() => handleLinkClick("/")}
+                onClick={() => handleLinkClick("/", 'Innovative Solutions for Web & Mobile Apps | Naxiums')}
                 className="flex title-font font-medium items-center text-gray-900 "
               >
                 <Image
@@ -140,7 +165,7 @@ const Header = () => {
               <span className="text-white ml-3 text-lg font-bold">Naxiums</span>
             </span>
 
-            <span onClick={() => handleLinkClick("")}>
+            <span onClick={() => handleLinkClick("", "")}>
               <Icon
                 iconName={"chevron_left"}
                 height={34}
@@ -161,7 +186,7 @@ const Header = () => {
                 }`}
                 href={menu.menu_url}
                 passHref
-                onClick={() => handleLinkClick(menu.menu_url)}
+                onClick={() => handleLinkClick(menu.menu_url, menu.menu)}
               >
                 <Icon
                   iconName={menu.icon}
