@@ -8,9 +8,7 @@ import NextTopLoader from "nextjs-toploader";
 import ScrollToTopButton from "./components/scrollToTopButton";
 import Head from "next/head";
 import { HOME_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
-import GTM from "./hooks/gtm";
 import AnalyticsProvider from "./hooks/analyticsProvider";
-import usePageAnalytics from "./hooks/usePageAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -165,7 +163,6 @@ export default function RootLayout({
       </Head>
       <body style={{ backgroundColor: "#000" }} className={inter.className}>
         <Providers>
-          {/* <GTM /> */}
           <AnalyticsProvider /> 
           <NextTopLoader color="#2299DD" zIndex={1600} />
           <Header />
