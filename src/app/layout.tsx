@@ -162,8 +162,8 @@ export default function RootLayout({
         </script>
       </Head>
       <body style={{ backgroundColor: "#000" }} className={inter.className}>
-        <Providers>
           <AnalyticsProvider /> 
+        <Providers>
           <NextTopLoader color="#2299DD" zIndex={1600} />
           <Header />
           {children}
