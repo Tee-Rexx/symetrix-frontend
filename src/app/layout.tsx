@@ -8,11 +8,14 @@ import NextTopLoader from "nextjs-toploader";
 import ScrollToTopButton from "./components/scrollToTopButton";
 import Head from "next/head";
 import { HOME_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
+import GTM from "./hooks/gtm";
+import AnalyticsProvider from "./hooks/analyticsProvider";
+import usePageAnalytics from "./hooks/usePageAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Naxiums",
+    default: "Innovative Solutions for Web & Mobile Apps | Naxiums",
     template: "%s | Naxiums",
   },
   description: HOME_PAGE_DESCRIPTION.description,
@@ -142,6 +145,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="uGCL4ABi-ogOn9cCTFy0Nzv5UEpOJ_oMixjP9Cq7wZw"
         />
+        <meta name="robots" content="max-image-preview:large" />
         {/* <!-- Additional Meta Tags --> */}
         <meta name="robots" content="index, follow" />{" "}
         {/* <!-- Ensure search engines index your site and follow the links --> */}
@@ -151,17 +155,18 @@ export default function RootLayout({
         />{" "}
         {/* <!-- Provides more control over snippets shown in search results --> */}
         <meta name="googlebot" content="index, follow" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}{" "}
+        </script>
+        <script type="application/ld+json">
+          {" "}
+          {JSON.stringify(breadcrumbSchema)}{" "}
+        </script>
       </Head>
       <body style={{ backgroundColor: "#000" }} className={inter.className}>
         <Providers>
+          {/* <GTM /> */}
+          <AnalyticsProvider /> 
           <NextTopLoader color="#2299DD" zIndex={1600} />
           <Header />
           {children}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import BlogCard from "./components/blogCard";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -22,9 +22,7 @@ import ServiceProviderSection from "./sections/service-provide";
 import { motion, useAnimation } from "framer-motion";
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import Head from "next/head";
-import { updateDocumentDescription } from "@/utils/header-titles";
-import { HOME_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
+import { SendPageDataToDataLayer } from "./hooks/analyticsProvider";
 
 const Data = [
   {
@@ -99,6 +97,12 @@ const Home = () => {
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     SendPageDataToDataLayer();
+  //   }, 500);
+  // }, []);
+
   const handleScroll = () => {
     const scrollTop = window.scrollY;
     if (scrollTop > 200) {
@@ -107,10 +111,6 @@ const Home = () => {
       setIsVisible(false);
     }
   };
-
-  useEffect(() => {
-    updateDocumentDescription(HOME_PAGE_DESCRIPTION);
-  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -201,6 +201,29 @@ const Home = () => {
 
   return (
     <>
+      {/* <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "mainEntityOfPage": "https://naxiums.com/",
+              "headline": "Naxiums - Innovating Digital Experiences",
+              "description": "Naxiums is a web and mobile app development company...",
+              "video": {
+                "@type": "VideoObject",
+                "name": "Hero Video",
+                "description": "This is the hero video on the Naxiums homepage.",
+                "thumbnailUrl": "https://naxiums.com/images/video-thumbnail.jpg",  // Replace with actual thumbnail URL
+                "contentUrl": "https://naxiums.com/gif/hero.mp4", // The direct URL to your video
+                "uploadDate": "2025-01-01",  // Replace with the actual upload date if applicable
+              },
+            }),
+          }}
+        />
+      </Head> */}
+
       <section className="h-[90vh] lg:h-screen w-full relative flex items-center justify-center overflow-hidden">
         <div className="rounded-full sphere absolute top-0 start5 md:start-20 bg-violet-600 opacity-15"></div>
         <div className="rounded-full sphere absolute bottom-0 end-14 lg:top-10 lg:end-72 bg-violet-600 opacity-15"></div>

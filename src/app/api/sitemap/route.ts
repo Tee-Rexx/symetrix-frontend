@@ -22,18 +22,37 @@ export async function GET() {
     { loc: 'https://naxiums.com/blogs/navigating-the-cloud', lastmod: currentDate, priority: 0.5 },
     { loc: 'https://naxiums.com/blogs/exploring-edge-computing', lastmod: currentDate, priority: 0.5 },
     { loc: 'https://naxiums.com/blogs/blockchain-beyond-bitcoin', lastmod: currentDate, priority: 0.5 },
+    { loc: 'https://naxiums.com/video-page', lastmod: currentDate, priority: 0.7, video: true },
     // Add any other pages that should be included in the sitemap here
   ];
 
   // Convert the pages to a format that xml2js can work with
   const urlset = {
     urlset: {
-      $: { xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9' },
-      url: pages.map(page => ({
-        loc: page.loc,
-        lastmod: page.lastmod,
-        priority: page.priority,
-      })),
+      $: { xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9', 'xmlns:video': 'http://www.google.com/schemas/sitemap-video/1.1' },
+      url: pages.map(page => {
+        const urlEntry:any = {
+          loc: page.loc,
+          lastmod: page.lastmod,
+          priority: page.priority,
+        };
+
+        // If this is a video page, add the video details
+        if (page.video) {
+          urlEntry['video:video'] = [
+            {
+              'video:title': 'Your Video Title', // Replace with your video title
+              'video:description': 'Description of the video', // Replace with a description
+              'video:thumbnail_loc': 'https://naxiums.com/images/video-thumbnail.jpg', // Replace with your thumbnail URL
+              'video:content_loc': 'https://naxiums.com/gif/hero.mp4', // Replace with the actual URL of the video
+              'video:duration': 'PT1M30S', // Example duration (adjust to match your video)
+              'video:publication_date': currentDate, // Set the actual upload date
+            }
+          ];
+        }
+
+        return urlEntry;
+      }),
     },
   };
 

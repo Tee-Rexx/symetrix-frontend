@@ -9,6 +9,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FAQ_ACCORDIAN } from "@/utils/constants/accordian.constants";
+import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
 
 // Array of objects containing card data
 const cardData = [
@@ -37,6 +38,12 @@ const animationVariants = {
 };
 
 const AboutUsClient = () => {
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     SendPageDataToDataLayer();
+  //   }, 500);
+  // }, []);
+
   const controls = useAnimation();
   const controls1 = useAnimation();
   const controls2 = useAnimation();

@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+import React from "react";
+import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
 
 const blogs = [
   {
@@ -77,6 +79,11 @@ const blogs = [
 ];
 
 const BlogsClient = () => {
+  // React.useEffect(() => {
+  //         setTimeout(() => {
+  //           SendPageDataToDataLayer();
+  //         }, 500);
+  //       }, []);
   return (
     <div>
       <div className="container-fluid mx-auto our-service-bg banner-bg-specs py-32 w-full items-center justify-center flex">

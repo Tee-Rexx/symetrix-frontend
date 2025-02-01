@@ -4,6 +4,7 @@ type MenuItem = {
     menu_url: string;
     menu: string;
     icon: ICONS_NAME; // Ensure this matches one of the defined literals
+    title:string
   };
 
 export interface IDocument {
@@ -12,12 +13,12 @@ export interface IDocument {
 }
 
 export const SIDEBAR_MENU : MenuItem [] = [
-    { menu : 'Home', menu_url : '/', icon : 'home' },
-    { menu : 'Blogs', menu_url : '/blogs' , icon : 'blog' },
-    { menu : 'Our Services', menu_url : '/our-services', icon : 'laptop_mobile' },
-    { menu : 'Portfolio', menu_url : '/portfolio', icon : 'briefcase' },
-    { menu : 'About Us', menu_url : '/about-us', icon : 'group' },
-    { menu : 'Contact Us', menu_url : '/contact-us', icon : 'contact_us' },
+    { menu : 'Home', menu_url : '/', icon : 'home', title: 'Innovative Solutions for Web & Mobile Apps | Naxiums', },
+    { menu : 'Blogs', menu_url : '/blogs' , icon : 'blog', title: "Bolgs| Naxiums"  },
+    { menu : 'Our Services', menu_url : '/our-services', icon : 'laptop_mobile', title: "Our Services | Naxiums" },
+    { menu : 'Portfolio', menu_url : '/portfolio', icon : 'briefcase', title: "Portfolio | Naxiums" },
+    { menu : 'About Us', menu_url : '/about-us', icon : 'group', title: "About Us | Naxiums"  },
+    { menu : 'Contact Us', menu_url : '/contact-us', icon : 'contact_us', title: "Contact Us | Naxiums"  },
 ]
 
 export const PORTFOLIO_PAGE_DESCRIPTION = {

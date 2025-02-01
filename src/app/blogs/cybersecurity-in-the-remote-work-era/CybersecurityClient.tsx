@@ -1,6 +1,12 @@
+import { SendPageDataToDataLayer } from '@/app/hooks/analyticsProvider';
 import React from 'react'
 
 const CybersecurityClient = () => {
+  // React.useEffect(() => {
+  //         setTimeout(() => {
+  //           SendPageDataToDataLayer();
+  //         }, 500);
+  //       }, []);
   return (
     <>
         <div className="container-fluid mx-auto cybersecurity-blog-bg banner-bg-specs py-32 w-full items-center justify-center flex relative">

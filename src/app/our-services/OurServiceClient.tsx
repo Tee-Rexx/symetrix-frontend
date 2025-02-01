@@ -6,7 +6,7 @@ import ClientReviews from "../sections/reviews";
 import React, { useState } from "react";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { updateDocumentDescription } from "@/utils/header-titles";
+import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
 
 interface Card {
   img: string;
@@ -126,6 +126,11 @@ const OurServiceClient = () => {
 
   const [isHovered, setIsHovered] = useState(false);
 
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     SendPageDataToDataLayer();
+  //   }, 500);
+  // }, []);
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,

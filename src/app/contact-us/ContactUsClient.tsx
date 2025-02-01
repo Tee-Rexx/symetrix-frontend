@@ -1,11 +1,19 @@
 "use client";
 
+import React from "react";
 import { SetStateAction, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import emailjs from "@emailjs/browser";
+import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
 
 const ContactUsClient = () => {
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     SendPageDataToDataLayer();
+  //   }, 500);
+  // }, []);
+
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [fname, setFName] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
