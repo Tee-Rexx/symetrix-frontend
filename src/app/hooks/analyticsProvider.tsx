@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation"; // Using next/navigation
+import { sendGTMEvent } from "@next/third-parties/google";
 
 // Function to track page load
 let hasRun = false; // ✅ Track if the effect has already run
@@ -25,14 +26,16 @@ export const SendPageDataToDataLayer = (path: string, title: string) => {
     user_device = "tablet";
   }
 
-  window.dataLayer.push({
+  sendGTMEvent({
     event: "pageview",
     page_url: path ? window.location.origin + "/" + path : window.location.href,
     page_title: title ? title : document.title,
     device: user_device,
     referrer: document.referrer,
     timestamp: new Date().toISOString(),
-  });
+  })
+  // window?.dataLayer?.push({
+  // });
 };
 
 // const GTM_ID = "G-JDZLE3WYN2"; // Your Mesurement ID
