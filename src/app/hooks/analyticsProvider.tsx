@@ -80,7 +80,7 @@ const injectNoScriptFallback = (gtmId: string) => {
 // PageAnalytics component
 const PageAnalytics = () => {
   useEffect(() => {
-    if(window?.dataLayer && window?.dataLayer[0]?.event === 'gtm.js') return
+    // if(window?.dataLayer && window?.dataLayer[0]?.event === 'gtm.js') return
     LoadGTM(GTM_ID);
   }, []); // ✅ Runs only once when the website loads
 
