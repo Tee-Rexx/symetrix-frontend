@@ -10,7 +10,7 @@ import Head from "next/head";
 import { HOME_PAGE_DESCRIPTION } from "@/utils/constants/header.constants";
 import AnalyticsProvider from "./hooks/analyticsProvider";
 const inter = Inter({ subsets: ["latin"] });
-
+import { GoogleTagManager } from '@next/third-parties/google'
 export const metadata: Metadata = {
   title: {
     default: "Innovative Solutions for Web & Mobile Apps | Naxiums",
@@ -162,7 +162,7 @@ export default function RootLayout({
         </script>
       </Head>
       <body style={{ backgroundColor: "#000" }} className={inter.className}>
-          <AnalyticsProvider /> 
+      <GoogleTagManager gtmId="GTM-MWM7235V" />
         <Providers>
           <NextTopLoader color="#2299DD" zIndex={1600} />
           <Header />
