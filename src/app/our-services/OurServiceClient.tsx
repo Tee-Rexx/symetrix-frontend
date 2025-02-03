@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
+import TechStack from "../sections/tech_stack";
 
 interface Card {
   img: string;
@@ -159,7 +160,7 @@ const OurServiceClient = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className=" w-5/6 sm:w-full py-6 min-h-[280px] mx-auto rounded-lg bg-gray-200 border-opacity-60 text-center"
+              className=" w-5/6 sm:w-full py-6 min-h-[280px] mx-auto rounded-xl bg-gray-200 border-opacity-60 text-center"
             >
               <div className="w-12 inline-flex items-center justify-center rounded-full text-gray-900 mt-5 flex-shrink-0">
                 {card.icon}
@@ -174,6 +175,11 @@ const OurServiceClient = () => {
           ))}
         </div>
       </div>
+
+<div className="mt-40">
+      <TechStack />
+</div>
+
 
       <div className="flex flex-col items-center justify-center pt-64 pb-36 text-white px-4 sm:px-6 lg:px-8">
         <img

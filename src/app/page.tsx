@@ -225,8 +225,8 @@ const Home = () => {
       </Head> */}
 
       <section className="h-[90vh] lg:h-screen w-full relative flex items-center justify-center overflow-hidden">
-        <div className="rounded-full sphere absolute top-0 start5 md:start-20 bg-violet-600 opacity-15"></div>
-        <div className="rounded-full sphere absolute bottom-0 end-14 lg:top-10 lg:end-72 bg-violet-600 opacity-15"></div>
+        <div className="rounded-full h-[300px] w-[300px] sphere absolute top-0 start5 md:start-20 bg-violet-600 opacity-15"></div>
+        <div className="rounded-full h-[300px] w-[300px] sphere absolute bottom-0 end-14 lg:top-10 lg:end-72 bg-violet-600 opacity-15"></div>
         <div className="h-screen w-[90%] block lg:hidden bg-black absolute opacity-15"></div>
         <div className="container px-3 lg:px-0 flex relative justify-center items-center lg:items-start h-100 flex-col">
           <span
@@ -306,7 +306,7 @@ const Home = () => {
               {someBlogs.map((data, index) => (
                 <div
                   key={index}
-                  className="mt-4 carousel-card relative drop-shadow-xl hover:bg-gray-100 duration-300 bg-white rounded-md"
+                  className="mt-4 carousel-card relative drop-shadow-xl hover:bg-gray-100 duration-300 bg-white rounded-xl"
                 >
                   <span className="px-4 pt-4 content-between flex flex-col">
                     <span className="flex flex-col">

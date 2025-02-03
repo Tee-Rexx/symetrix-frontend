@@ -97,8 +97,11 @@ const Footer = () => {
   return (
     <div>
       <footer className="text-gray-600 body-font">
-        <div className="container py-24 mx-auto flex items-center lg:items-start lg:flex-row md:flex-nowrap flex-wrap flex-col">
-          <div className="w-100 lg:w-96 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <div className="xl:container-fluid 2xl:container relative py-24 mx-auto flex items-center lg:items-start lg:flex-row md:flex-nowrap flex-wrap flex-col overflow-hidden">
+          <div className="rounded-full sphere h-[300px] w-[300px] absolute top-14 lg:bottom-5 -start-10 lg:start-8 sm:start-16 2xl:start-16 bg-violet-600 opacity-15"></div>
+          <div className="rounded-full sphere h-[450px] w-[450px] absolute -bottom-32 lg:-bottom-44 -end-12 sm:end-14 lg:end-0 2xl:end-16 bg-violet-600 opacity-15"></div>
+
+          <div className="md:w-[60%] lg:w-96 z-10 flex-shrink-0 px-8 sm:px-0 lg:ps-20 text-center md:text-left">
             <div className="flex w-full justify-center lg:justify-start lg:items-start">
               <Link
                 href="/"
@@ -126,14 +129,16 @@ const Footer = () => {
               seamless, intuitive software.
             </p>
           </div>
-          <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 lg:mt-0 mt-10 md:text-left text-center">
+          <div className="flex-grow flex z-10 flex-wrap md:pl-20 -mb-10 lg:mt-0 mt-10 md:text-left text-center">
             <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
               {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
               <h2 className="text-white mb-6  text-xl">Company Info</h2>
               <nav className="list-none mb-10">
                 <li className="text-gray-600 mb-2 hover:text-gray-800">
                   <Link
-                    onClick={() => SendPageDataToDataLayer('/about-us', 'About Us | Naxiums')}
+                    onClick={() =>
+                      SendPageDataToDataLayer("/about-us", "About Us | Naxiums")
+                    }
                     className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/about-us"
                     passHref
@@ -143,7 +148,9 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    onClick={() => SendPageDataToDataLayer('/blogs', 'Blogs | Naxiums')}
+                    onClick={() =>
+                      SendPageDataToDataLayer("/blogs", "Blogs | Naxiums")
+                    }
                     className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/blogs"
                     passHref
@@ -153,7 +160,12 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    onClick={() => SendPageDataToDataLayer('/contact-us', 'Contact Us | Naxiums')}
+                    onClick={() =>
+                      SendPageDataToDataLayer(
+                        "/contact-us",
+                        "Contact Us | Naxiums"
+                      )
+                    }
                     className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/contact-us"
                     passHref
@@ -163,7 +175,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    onClick={() => SendPageDataToDataLayer('/faq', 'Faq | Naxiums')}
+                    onClick={() =>
+                      SendPageDataToDataLayer("/faq", "Faq | Naxiums")
+                    }
                     className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/faq"
                     passHref
@@ -179,7 +193,12 @@ const Footer = () => {
               <nav className="list-none mb-10">
                 <li className="mb-2">
                   <Link
-                    onClick={() => SendPageDataToDataLayer('/contact-us', 'Contact Us | Naxiums')}
+                    onClick={() =>
+                      SendPageDataToDataLayer(
+                        "/contact-us",
+                        "Contact Us | Naxiums"
+                      )
+                    }
                     className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/contact-us"
                     passHref
@@ -189,7 +208,12 @@ const Footer = () => {
                 </li>
                 <li className="mb-2">
                   <Link
-                    onClick={() => SendPageDataToDataLayer('/our-services', 'Our Services | Naxiums')}
+                    onClick={() =>
+                      SendPageDataToDataLayer(
+                        "/our-services",
+                        "Our Services | Naxiums"
+                      )
+                    }
                     className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/our-services"
                     passHref
@@ -199,7 +223,12 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    onClick={() => SendPageDataToDataLayer('/portfolio', 'Portfolio | Naxiums')}
+                    onClick={() =>
+                      SendPageDataToDataLayer(
+                        "/portfolio",
+                        "Portfolio | Naxiums"
+                      )
+                    }
                     className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
                     href="/portfolio"
                     passHref

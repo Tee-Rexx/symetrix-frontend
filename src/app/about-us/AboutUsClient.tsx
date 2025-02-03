@@ -2,7 +2,7 @@
 
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FAQ_ACCORDIAN } from "@/utils/constants/accordian.constants";
 import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
+
 
 // Array of objects containing card data
 const cardData = [
@@ -122,7 +123,7 @@ const AboutUsClient = () => {
             }}
           >
             <img
-              className="object-cover object-center rounded-md shadow-2xl"
+              className="object-cover object-center rounded-xl shadow-2xl"
               alt="hero"
               src="/images/svgs/it solutions.jpeg"
             />
@@ -275,7 +276,7 @@ const AboutUsClient = () => {
                 initial={initial}
                 animate={animate}
                 transition={{ duration: 0.7 }} // Staggered animation
-                className="flex mb-10 p-5 rounded border shadow-xl hover:bg-gray-100 hover:text-white transition duration-300 w-full md:w-80"
+                className="flex mb-10 p-5 border rounded-xl shadow-xl hover:bg-gray-100 hover:text-white transition duration-300 w-full md:w-80"
               >
                 <div className="flex-shrink-0 mr-4 ">
                   <img
@@ -419,7 +420,7 @@ const AboutUsClient = () => {
             }}
           >
             <img
-              className="object-cover object-center rounded-md shadow-2xl"
+              className="object-cover object-center rounded-xl shadow-2xl"
               alt="hero"
               src="/images/svgs/colabration.svg"
             />
@@ -427,11 +428,11 @@ const AboutUsClient = () => {
         </div>
       </section>
 
-      <section className="text-gray-600 body-font">
-        <div className="container mr-14 flex  py-24 md:flex-row flex-col items-center">
+      <section className="text-gray-600 w-100 body-font">
+        <div className="container mx-auto flex py-24 md:flex-row justify-center flex-col items-center">
           <div className="lg:max-w-lg lg:w-screen md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              className="object-cover object-center rounded-md shadow-2xl"
+              className="object-cover object-center rounded-xl shadow-2xl"
               alt="hero"
               src="/images/svgs/faq.svg"
             />
