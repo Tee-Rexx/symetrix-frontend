@@ -50,8 +50,6 @@ html {
 }
 
 .sphere {
-  height: 300px;
-  width: 300px;
   filter: blur(80px);
 }
 

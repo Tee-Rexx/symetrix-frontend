@@ -127,7 +127,7 @@ const BlogsClient = () => {
         <section className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
           {blogs.map((blog) => (
             <div key={blog.id} className="p-4">
-              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-xl overflow-hidden shadow-lg">
                 <img
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src={blog.imageUrl}

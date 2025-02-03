@@ -102,7 +102,7 @@ const ServiceProviderSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-center md:justify-between w-full">
 
         {service_provider_card_data.map((card, index) => (
-            <div key={index} className="bg-white hover:bg-slate-100 transition mx-auto lg:mx-0 w-[95%] lg:w-full ease-in-out duration-200 flex flex-col lg:flex-row items-center lg:items-start group service-provider-card relative shadow-lg rounded-md py-5 px-2 sm:px-10">
+            <div key={index} className="bg-white hover:bg-slate-100 transition mx-auto lg:mx-0 w-[95%] lg:w-full ease-in-out duration-200 flex flex-col lg:flex-row items-center lg:items-start group service-provider-card relative shadow-lg rounded-xl py-5 px-2 sm:px-10">
                 <>
             <div className={`h-auto absolute left-0 w-1 rounded-tl-md rounded-bl-md inset-0 transition-opacity opacity-0 group-hover:opacity-100 ${card.strip_color}`}></div>
 

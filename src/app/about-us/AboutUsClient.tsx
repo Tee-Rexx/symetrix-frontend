@@ -11,6 +11,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FAQ_ACCORDIAN } from "@/utils/constants/accordian.constants";
 import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
 
+
 // Array of objects containing card data
 const cardData = [
   {
@@ -107,66 +108,6 @@ const AboutUsClient = () => {
     }
   }, [controls2, inView2]);
 
-  const counterRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  const [projects, setProjects] = useState(0);
-  const [clientRepetence, setClientRepetence] = useState(0);
-  const [clientReview, setClientReview] = useState(0);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect(); // Stops observing once visible
-        }
-      },
-      { threshold: 0.5 } // Trigger when 50% of the div is in view
-    );
-
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (isVisible) {
-      // Projects Counter: Start slow, then speed up, then slow down
-      const projectInterval = setInterval(() => {
-        setProjects((prev) => {
-          if (prev < 50) {
-            // Adjust speed based on progress
-            let newSpeed = prev < 10 ? 100 : prev < 30 ? 50 : 30;
-            return prev + 1;
-          }
-          return 50;
-        });
-      }, 60); // Initial slow speed, adjusted by counter value
-
-      // Client Repetence (constant speed)
-      const clientInterval = setInterval(() => {
-        setClientRepetence((prev) => (prev < 100 ? prev + 1 : 100));
-      }, 15);
-
-      // Client Review (start slow, increase speed)
-      const reviewInterval = setInterval(() => {
-        setClientReview((prev) => {
-          const newSpeed = prev < 1 ? 100 : prev < 3 ? 60 : 30;
-          return prev < 4.9 ? parseFloat((prev + 0.1).toFixed(1)) : 4.9;
-        });
-      }, 45);
-
-      return () => {
-        clearInterval(projectInterval);
-        clearInterval(clientInterval);
-        clearInterval(reviewInterval);
-      };
-    }
-  }, [isVisible]);
-
   return (
     <div className="bg-white overflow-x-hidden overflow-y-hidden">
       <section className="text-gray-600 body-font">
@@ -182,7 +123,7 @@ const AboutUsClient = () => {
             }}
           >
             <img
-              className="object-cover object-center rounded-md shadow-2xl"
+              className="object-cover object-center rounded-xl shadow-2xl"
               alt="hero"
               src="/images/svgs/it solutions.jpeg"
             />
@@ -335,7 +276,7 @@ const AboutUsClient = () => {
                 initial={initial}
                 animate={animate}
                 transition={{ duration: 0.7 }} // Staggered animation
-                className="flex mb-10 p-5 rounded border shadow-xl hover:bg-gray-100 hover:text-white transition duration-300 w-full md:w-80"
+                className="flex mb-10 p-5 border rounded-xl shadow-xl hover:bg-gray-100 hover:text-white transition duration-300 w-full md:w-80"
               >
                 <div className="flex-shrink-0 mr-4 ">
                   <img
@@ -479,7 +420,7 @@ const AboutUsClient = () => {
             }}
           >
             <img
-              className="object-cover object-center rounded-md shadow-2xl"
+              className="object-cover object-center rounded-xl shadow-2xl"
               alt="hero"
               src="/images/svgs/colabration.svg"
             />
@@ -491,7 +432,7 @@ const AboutUsClient = () => {
         <div className="container mx-auto flex py-24 md:flex-row justify-center flex-col items-center">
           <div className="lg:max-w-lg lg:w-screen md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              className="object-cover object-center rounded-md shadow-2xl"
+              className="object-cover object-center rounded-xl shadow-2xl"
               alt="hero"
               src="/images/svgs/faq.svg"
             />
@@ -565,48 +506,6 @@ const AboutUsClient = () => {
           </div>
         </div>
       </section>
-
-      <div ref={counterRef} className="bg-slate-900 w-full p-5">
-        <div className="container w-full mx-auto flex items-center justify-between">
-          <span className="text-3xl font-bold text-gray-100 text-wrap">
-            Technologies & Tools We Work With
-          </span>
-
-          <div className="flex md:flex-row flex-col gap-x-3 items-center"></div>
-        </div>
-
-        <div className="container border-t-4 border-l-0 border-r-0 border-b-0 py-7 border border-white mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-x-4 items-center">
-          <span className="text-3xl text-center lg:pt-0 pt-5 lg:pb-0 pb-10 lg:text-left font-bold text-gray-100">
-            Our web development journey, by the numbers
-          </span>
-
-          <div className="flex lg:flex-row items-center lg:items-start lg:justify-end flex-col lg:gap-x-3 gap-y-9 lg:gap-y-0">
-            {/* Total Projects */}
-            <div className="text-7xl lg:text-6xl lg:w-[180px] text-center lg:text-left font-bold">
-              <span className="text-gray-400">{projects}+ </span>
-              <p className="text-xl lg:text-sm text-gray-200 mt-3 lg:mt-2">
-                Delivering excellence in web development
-              </p>
-            </div>
-
-            {/* Client Repetence */}
-            <div className="text-7xl lg:text-6xl lg:w-[180px] text-center lg:text-left font-bold">
-              <span className="text-gray-400">{clientRepetence}% </span>
-              <p className="text-xl lg:text-sm text-gray-200 mt-3 lg:mt-2 lg:ms-1">
-                Client loyalty rate
-              </p>
-            </div>
-
-            {/* Overall Client Review */}
-            <div className="text-7xl lg:text-6xl lg:w-[180px] text-center lg:text-left font-bold">
-              <span className="text-gray-400"> {clientReview} </span>
-              <p className="text-xl lg:text-sm text-gray-200 mt-3 lg:mt-2">
-                Authenticated customer satisfaction scores
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

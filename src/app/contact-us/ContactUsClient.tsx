@@ -148,7 +148,7 @@ const ContactUsClient = () => {
         </div>
         <div className="flex flex-col w-full md:w-2/4">
           <div className="container w-full flex justify-center px-0 md:px-5 my-4 py-20 mx-auto">
-            <div className="lg:w-4/5 w-full md:w-2/3 p-7 rounded-lg bg-gray-200 ">
+            <div className="lg:w-4/5 w-full md:w-2/3 p-7 rounded-xl bg-gray-200 ">
               <form
                 className="flex flex-col md:flex-row flex-wrap -m-2"
                 onSubmit={handleFormSubmit}
