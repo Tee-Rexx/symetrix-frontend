@@ -98,8 +98,8 @@ const Footer = () => {
     <div>
       <footer className="text-gray-600 body-font">
         <div className="xl:container-fluid 2xl:container relative py-24 mx-auto flex items-center lg:items-start lg:flex-row md:flex-nowrap flex-wrap flex-col overflow-hidden">
-          <div className="rounded-full sphere h-[300px] w-[300px] absolute top-14 lg:bottom-5 -start-10 lg:start-8 sm:start-16 2xl:start-16 bg-violet-600 opacity-15"></div>
-          <div className="rounded-full sphere h-[450px] w-[450px] absolute -bottom-32 lg:-bottom-44 -end-12 sm:end-14 lg:end-0 2xl:end-16 bg-violet-600 opacity-15"></div>
+          <div className="rounded-full sphere h-[300px] w-[300px] absolute top-14 lg:bottom-5 -start-10 lg:start-8 sm:start-16 2xl:start-16 bg-violet-600 opacity-20"></div>
+          <div className="rounded-full sphere h-[450px] w-[450px] absolute -bottom-32 lg:-bottom-44 -end-12 sm:end-14 lg:end-0 2xl:end-16 bg-violet-600 opacity-25"></div>
 
           <div className="md:w-[60%] lg:w-96 z-10 flex-shrink-0 px-8 sm:px-0 lg:ps-20 text-center md:text-left">
             <div className="flex w-full justify-center lg:justify-start lg:items-start">
