@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FAQ_ACCORDIAN } from "@/utils/constants/accordian.constants";
 import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
-
+import Image from "next/image";
 
 // Array of objects containing card data
 const cardData = [
@@ -18,16 +18,19 @@ const cardData = [
     logo: "/images/pngs/Highly-Customizable-7.png",
     heading: "Business Goals",
     text: "Align objectives to drive growth and profitability",
+    alt: "Icon of a document with a gradient purple to blue background, symbolizing digital documents or online content.",
   },
   {
     logo: "/images/pngs/Content-Strategy-1-7.png",
     heading: "Coding & Design",
     text: "Integrate seamless functionality with creative design.",
+    alt: "Icon of a document with a folded corner, featuring a gradient from purple to blue, representing file management or documentation.",
   },
   {
     logo: "/images/pngs/Technology-1-7.png",
     heading: "Technology",
     text: "Leverage innovation to enhance operational efficiency.",
+    alt: "A stylized icon depicting a gear with a wrench symbol, representing tools, technology, and engineering concepts.",
   },
 ];
 
@@ -122,10 +125,13 @@ const AboutUsClient = () => {
               visible: { opacity: 1, x: 0, transition: { duration: 0.9 } },
             }}
           >
-            <img
+            <Image
               className="object-cover object-center rounded-xl shadow-2xl"
-              alt="hero"
+              alt="A woman gestures towards a computer screen while discussing with a man in a modern office, surrounded by documents and coffee cups."
               src="/images/svgs/it solutions.jpeg"
+              width={600} // Set the width based on your image dimensions
+              height={150} // Set the height based on your image dimensions
+              draggable="false"
             />
           </motion.div>
           <div className="lg:flex-grow px-3 sm:px-5 lg:w-1/2 xl:pl-24 lg:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
@@ -192,14 +198,16 @@ const AboutUsClient = () => {
             >
               {/* First div with icon */}
               <motion.div
-                className="flex justify-center items-center w-12 bg-gray-200 rounded-full"
+                className="flex justify-center items-center w-13 bg-gray-200 rounded-full"
                 animate={isHovered ? { x: -5 } : { x: 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >
-                <img
+                <Image
                   draggable="false"
-                  src="images/pngs/tick-7.png"
-                  alt="Tick Icon"
+                  src="/images/pngs/tick-7.png"
+                  alt="Blue gradient background with a white checkmark icon, symbolizing approval or completion."
+                  width={53.5} // Set the width based on your image dimensions
+                  height={53.5} // Set the height based on your image dimensions
                 />
               </motion.div>
 
@@ -238,7 +246,13 @@ const AboutUsClient = () => {
                 animate={isHovered2 ? { x: -10 } : { x: 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >
-                <img draggable="false" src="images/pngs/tick-7.png" />
+                <Image
+                  draggable="false"
+                  src="/images/pngs/tick-7.png"
+                  alt="Blue gradient background with a white checkmark icon, symbolizing approval or completion."
+                  width={60} // Set the width based on your image dimensions
+                  height={60} // Set the height based on your image dimensions
+                />
               </motion.div>
 
               {/* Second div with heading and text */}
@@ -279,14 +293,19 @@ const AboutUsClient = () => {
                 className="flex mb-10 p-5 group rounded-xl shadow-xl bg-black/30 bg-opacity-15 hover:bg-white/60 transition duration-300 w-full md:w-80"
               >
                 <div className="flex-shrink-0 mr-4 ">
-                  <img
+                  <Image
                     src={card.logo}
-                    alt={`Logo ${index + 1}`}
+                    alt={card.alt}
                     className="max-w-[40px]"
+                    width={40} // Adjust width as needed
+                    height={40} // Adjust height to maintain aspect ratio
+                    draggable="false"
                   />
                 </div>
                 <div className="flex flex-col justify-center  text-gray-300">
-                  <h1 className="text-sm font-bold group-hover:text-black m-0">{card.heading}</h1>
+                  <h1 className="text-sm font-bold group-hover:text-black m-0">
+                    {card.heading}
+                  </h1>
                   <p className="text-xs font-medium group-hover:text-black text-gray-300 m-0 mt-2">
                     {card.text}
                   </p>
@@ -357,9 +376,12 @@ const AboutUsClient = () => {
                 animate={isHovered3 ? { x: -10 } : { x: 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >
-                <img
+                <Image
                   draggable="false"
-                  src="images/pngs/Ban14-7-pi6e3awnsoup6tee1emvs21jpfo2yy07g35lva0nns.png"
+                  src="/images/pngs/Ban14-7-pi6e3awnsoup6tee1emvs21jpfo2yy07g35lva0nns.png"
+                  alt="A vibrant blue circular logo set against a white background, featuring a stylized design that suggests movement and innovation." // Provide a suitable alt text for accessibility
+                  width={20} // Set the width based on your image dimensions
+                  height={20} // Set the height based on your image dimensions
                 />
               </motion.div>
 
@@ -390,9 +412,12 @@ const AboutUsClient = () => {
                 animate={isHovered4 ? { x: -10 } : { x: 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >
-                <img
+                <Image
                   draggable="false"
-                  src="images/pngs/Ban14-7-pi6e3awnsoup6tee1emvs21jpfo2yy07g35lva0nns.png"
+                  src="/images/pngs/Ban14-7-pi6e3awnsoup6tee1emvs21jpfo2yy07g35lva0nns.png"
+                  alt="A vibrant blue circular logo set against a white background, featuring a stylized design that suggests movement and innovation." // Provide a suitable alt text for accessibility
+                  width={20} // Set the width based on your image dimensions
+                  height={20} // Set the height based on your image dimensions
                 />
               </motion.div>
 
@@ -419,10 +444,13 @@ const AboutUsClient = () => {
               visible: { opacity: 1, x: 0, transition: { duration: 0.9 } },
             }}
           >
-            <img
+            <Image
               className="object-cover object-center rounded-xl shadow-2xl"
-              alt="hero"
+              alt="A diverse group of people join their hands together in a circle, symbolizing unity and teamwork from a low-angle perspective."
               src="/images/svgs/colabration.svg"
+              width={600} // Set the width based on your image dimensions
+              height={150} // Set the height based on your image dimensions
+              draggable="false"
             />
           </motion.div>
         </div>
@@ -431,10 +459,13 @@ const AboutUsClient = () => {
       <section className="text-gray-300 w-100 body-font">
         <div className="container mx-auto flex py-24 md:flex-row justify-center flex-col items-center">
           <div className="lg:max-w-lg lg:w-screen md:w-1/2 w-5/6 mb-10 md:mb-0">
-            <img
+            <Image
               className="object-cover object-center rounded-xl shadow-2xl"
-              alt="hero"
+              alt="women is sitting and typing something on laptop"
               src="/images/svgs/faq.svg"
+              width={600} // Set the width based on your image dimensions
+              height={150} // Set the height based on your image dimensions
+              draggable="false"
             />
           </div>
           <div
@@ -489,7 +520,7 @@ const AboutUsClient = () => {
                           : "none",
                       backgroundColor:
                         expanded === item.id ? "transparent" : "#474646",
-                      color: "white"
+                      color: "white",
                     }}
                     className="shadow-lg"
                   >

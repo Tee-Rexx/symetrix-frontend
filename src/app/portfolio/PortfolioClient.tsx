@@ -169,7 +169,7 @@ const PortfolioClient = () => {
 
             <Image
               src="/images/pngs/white-design-lines.png"
-              alt="white design lines"
+              alt="A minimalist black and white geometric design featuring four curved shapes and central bright stars, creating a symmetrical pattern."
               width={400}
               height={100}
               className="hidden lg:block lg:absolute right-4 -bottom-10 object-contain"

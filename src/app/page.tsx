@@ -1,12 +1,6 @@
 "use client";
-
-import { useState, useEffect, useRef } from "react";
-import BlogCard from "./components/blogCard";
-
-import Link from "next/link";
 import ClientReviews from "./sections/reviews";
 import "./globals.css";
-import ServiceProviderSection from "./sections/service-provide";
 import React from "react";
 import Hero from "./sections/hero";
 import Specialization from "./sections/specialization";
@@ -41,22 +35,14 @@ const Home = () => {
           }}
         />
       </Head> */}
-
-      <Hero />  {/* First impression, captures attention */}
-  
-  <TechSolution />  {/* Explains what you offer */}
-  
-  <Specialization />  {/* Showcases expertise & skills */}
-  
-  <FeaturedService />  {/* Reinforces value with key offerings */}
-  
-  <CorporateIdeas />  {/* Highlights business insights & strategy */}
-  
-  <ClientReviews />  {/* Social proof, builds trust */}
-  
-  <ArrangeConsultation />  {/* Encourages action */}
-  
-  <GetStarted />  {/* Motivational closing, final CTA */}
+      <Hero /> {/* First impression, captures attention */}
+      <TechSolution /> {/* Explains what you offer */}
+      <Specialization /> {/* Showcases expertise & skills */}
+      <FeaturedService /> {/* Reinforces value with key offerings */}
+      <CorporateIdeas /> {/* Highlights business insights & strategy */}
+      <ClientReviews /> {/* Social proof, builds trust */}
+      <ArrangeConsultation /> {/* Encourages action */}
+      <GetStarted /> {/* Motivational closing, final CTA */}
     </>
   );
 };

@@ -6,20 +6,23 @@ const FeaturedService = () => {
     const Data = [
       {
         card_img:
-          "/images/pngs/55-creative-marketing-ideas-for-your-product-or-business.png",
+          "url(/images/pngs/55-creative-marketing-ideas-for-your-product-or-business.png)",
         card_heading: "Creative Idea",
         card_text:
           "Innovative software solutions tailored for your business success.",
+        card_alt:'A diverse group of four people collaborate around a smartphone, engaged in discussion in a bright, open workspace.'
       },
       {
-        card_img: "/images/svgs/700600p546EDNmainimg-project-success.jpg",
+        card_img: "url(/images/svgs/700600p546EDNmainimg-project-success.jpg)",
         card_heading: "Successful Project",
         card_text: "Delivering successful projects that exceed expectations.",
+        card_alt:'A diverse group of people join their fists together in a circle, symbolizing unity and teamwork from a low-angle perspective.'
       },
       {
-        card_img: "/images/svgs/time-management.svg",
+        card_img: "url(/images/svgs/time-management.svg)",
         card_heading: "Time Management",
         card_text: "Efficient time management to meet every deadline.",
+        card_alt:'Time Management written on two hands'
       },
     ];
 
@@ -40,6 +43,7 @@ const FeaturedService = () => {
               card_heading={item.card_heading}
               card_text={item.card_text}
               card_img={item.card_img}
+              card_alt={item.card_alt}
             />
           ))}
         </div>

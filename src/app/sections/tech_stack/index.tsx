@@ -17,12 +17,12 @@ const TechStack = () => {
   const [clientReview, setClientReview] = useState(0);
 
   const tech_stack = [
-    { id: 1, src: Angular, alt: "Angular" },
-    { id: 2, src: ReactJs, alt: "React" },
-    { id: 3, src: NextJs, alt: "Next" },
-    { id: 4, src: NodeJs, alt: "Node" },
-    { id: 5, src: P_H_P, alt: "Php" },
-    { id: 6, src: MySQL, alt: "MySQL" },
+    { id: 1, src: Angular, alt: "Angular, Abstract logo featuring layered geometric shapes in a gradient of pink and purple hues" },
+    { id: 2, src: ReactJs, alt: "React, React Native, A turquoise atom logo with a central nucleus and three elliptical orbits, symbolizing science and technology." },
+    { id: 3, src: NextJs, alt: "Logo of Next.js, a popular React framework for building server-side rendered applications, featuring the word 'NEXT' in stylized text." },
+    { id: 4, src: NodeJs, alt: "Node.js logo with 'node' in black letters, featuring a green hexagonal 'o.' Below, a green hexagon with 'JS' inside, conveying a tech theme." },
+    { id: 5, src: P_H_P, alt: "PHP logo featuring bold white letters 'php' on a dark blue oval background, conveying a professional and modern tone." },
+    { id: 6, src: MySQL, alt: "MySQL logo featuring stylized blue text 'My' and orange 'SQL' with a blue dolphin outline above, conveying a dynamic and modern tone." },
   ];
 
   useEffect(() => {

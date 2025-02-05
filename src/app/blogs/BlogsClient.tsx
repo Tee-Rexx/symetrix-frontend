@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
+import Image from "next/image";
 
 const blogs = [
   {
@@ -9,81 +9,85 @@ const blogs = [
     heading: "Blockchain Beyond Bitcoin",
     description:
       "Blockchain extends far beyond Bitcoin, offering a decentralized approach to secure transactions, data management, and trust. Its applications are revolutionizing industries such as finance, supply chain, healthcare, and more, enabling transparency, security, and efficiency.",
-    imageUrl: "images/blog_card_imgs/blockchain-beyond-bitcoin.jpeg",
+    imageUrl: "/images/blog_card_imgs/blockchain-beyond-bitcoin.jpeg",
     link: "/blogs/blockchain-beyond-bitcoin",
+    alt:"Digital network representation of Bitcoin transactions connecting multiple laptops and servers with a central Bitcoin symbol."
   },
   {
     id: 2,
     heading: "Cybersecurity In The Remote Work Era",
     link: "/blogs/cybersecurity-in-the-remote-work-era",
-    imageUrl: "images/blog_card_imgs/cybersecurity-in-the-remote-work-era.jpg",
+    imageUrl: "/images/blog_card_imgs/cybersecurity-in-the-remote-work-era.jpg",
     description:
       "With the rise of remote work, cybersecurity has become more critical than ever to protect sensitive data and systems. Businesses must adopt robust security measures to safeguard against cyber threats and ensure a secure digital workspace.",
-  },
+      alt:'A person typing on a laptop with graphic overlays of lock icons and digital elements, symbolizing cybersecurity and data protection.'
+    },
   {
     id: 3,
     heading: "Data Governance",
     link: "/blogs/data-governance",
-    imageUrl: "images/blog_card_imgs/data-governance.png",
+    imageUrl: "/images/blog_card_imgs/data-governance.png",
     description:
       "Data governance ensures that data is managed, protected, and used effectively across an organization. By implementing clear policies and processes, businesses can maintain data quality, compliance, and security while driving informed decision-making.",
-  },
+      alt:'Infographic illustrating key elements of data governance, including data quality, access, classification, lifecycle, principles, and users.'
+    },
   {
     id: 4,
     heading: "Demystifying AI",
     link: "/blogs/demystifying-AI",
-    imageUrl: "images/blog_card_imgs/demystifying-AI.png",
+    imageUrl: "/images/blog_card_imgs/demystifying-AI.png",
     description:
       "AI is transforming industries, but understanding its capabilities and limitations is key to harnessing its power. By breaking down complex concepts, businesses can leverage AI to drive innovation, efficiency, and smarter decision-making.",
-  },
+      alt:'A businessman interacts with a digital globe displaying "AI," surrounded by icons representing technology and data connections.'
+    },
   {
     id: 5,
     heading: "Digital Transformation",
     link: "/blogs/digital-transformation",
-    imageUrl: "images/blog_card_imgs/digital-transformation.png",
+    imageUrl: "/images/blog_card_imgs/digital-transformation.png",
     description:
       "Digital transformation enables businesses to adopt innovative technologies to improve efficiency, enhance customer experiences, and stay competitive. By integrating digital solutions, organizations can streamline processes and achieve sustainable growth.",
-  },
+      alt:'Diagram illustrating components of digital transformation: communication, analytics, AI, cloud, data lake, and mobile platforms.'
+    },
   {
     id: 6,
     heading: "Power Of Devops",
     link: "/blogs/power-of-devops",
-    imageUrl: "images/blog_card_imgs/the-power-of-devops.jpg",
+    imageUrl: "/images/blog_card_imgs/the-power-of-devops.jpg",
     description:
       "DevOps fosters collaboration between development and operations teams to streamline workflows and improve software delivery. By automating processes and promoting continuous integration/continuous deployment (CI/CD), organizations achieve faster, more reliable releases.",
-  },
+      alt:'Infographic depicting the DevOps cycle: coding, building, testing, planning, releasing, deploying, monitoring, and operating in a continuous loop.'
+    },
   {
     id: 7,
     heading: "Future Of Work",
     link: "/blogs/future-of-work",
-    imageUrl: "images/blog_card_imgs/the-future-of-work.jpg",
+    imageUrl: "/images/blog_card_imgs/the-future-of-work.jpg",
     description:
       "The future of work focuses on adaptability, remote collaboration, and the integration of advanced technologies like AI and automation. As businesses evolve, embracing flexible work models and empowering employees with innovative tools will shape a more efficient and productive workplace.",
-  },
+      alt:'A futuristic robot sits on a pedestal, surrounded by digital icons symbolizing technology and the evolving workplace.'
+    },
   {
     id: 8,
     heading: "Navigating The Cloud",
     link: "/blogs/navigating-the-cloud",
-    imageUrl: "images/blog_card_imgs/navigating-the-cloud.jpeg",
+    imageUrl: "/images/blog_card_imgs/navigating-the-cloud.jpeg",
     description:
       "Navigating the cloud involves managing, securing, and optimizing cloud infrastructure to meet business needs. With scalable resources, flexibility, and cost efficiency, organizations can streamline operations, enhance collaboration, and drive innovation in a cloud-centric environment.",
-  },
+      alt:'A digital network illustration with glowing cloud icons and interconnected lines, symbolizing cloud data transfer and connectivity.'
+    },
   {
     id: 9,
     heading: "Exploring Edge Computing",
     link: "/blogs/exploring-edge-computing",
-    imageUrl: "images/blog_card_imgs/exploring-edge-computing.png",
+    imageUrl: "/images/blog_card_imgs/exploring-edge-computing.png",
     description:
       "Edge computing brings data processing closer to where it's needed, reducing latency and enhancing real-time performance. It is revolutionizing industries by enabling faster decision-making, improved user experiences, and efficient resource utilization at the edge of networks.",
-  },
+      alt:'Infographic illustrating components of edge computing: Distributed Computing, Application, Device Nodes, Data Volume, Traffic, and Costs.'
+    },
 ];
 
 const BlogsClient = () => {
-  // React.useEffect(() => {
-  //         setTimeout(() => {
-  //           SendPageDataToDataLayer();
-  //         }, 500);
-  //       }, []);
   return (
     <div>
       <div className="container-fluid mx-auto our-service-bg banner-bg-specs py-32 w-full items-center justify-center flex">
@@ -127,45 +131,47 @@ const BlogsClient = () => {
         <section className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
           {blogs.map((blog) => (
             <div key={blog.id} className="p-4">
-            <div className="h-full border-gray-200 transform transition duration-300 ease-in-out hover:scale-105 border-opacity-60 rounded-xl overflow-hidden shadow-lg">
-              <div className="overflow-hidden">
-                <img
-                  className="lg:h-48 md:h-36 w-full object-cover object-center  "
-                  src={blog.imageUrl}
-                  alt={blog.heading}
-                />
-              </div>
-              <div className="p-6 bg-black/20 h-full">
-                <h1 className="title-font text-lg font-medium text-gray-300 mb-3">
-                  {blog.heading}
-                </h1>
-                <p className="leading-relaxed mb-3 text-gray-300">
-                  {blog.description}
-                </p>
-                <div className="flex items-center">
-                  <Link
-                    href={blog.link}
-                    className="text-indigo-500 inline-flex items-center hover:underline"
-                  >
-                    Read More
-                    <svg
-                      className="w-4 h-4 ml-2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+              <div className="h-full border-gray-200 transform transition duration-300 ease-in-out hover:scale-105 border-opacity-60 rounded-xl overflow-hidden shadow-lg">
+                <div className="overflow-hidden">
+                  <Image
+                    className="lg:h-48 md:h-36 w-full object-cover object-center"
+                    alt={blog.alt}
+                    src={blog.imageUrl}
+                    width={500} // Set the width based on your image dimensions
+                    height={300} // Set the height based on your image dimensions
+                    draggable="false"
+                  />
+                </div>
+                <div className="p-6 bg-black/20 h-full">
+                  <h1 className="title-font text-lg font-medium text-gray-300 mb-3">
+                    {blog.heading}
+                  </h1>
+                  <p className="leading-relaxed mb-3 text-gray-300">
+                    {blog.description}
+                  </p>
+                  <div className="flex items-center">
+                    <Link
+                      href={blog.link}
+                      className="text-indigo-500 inline-flex items-center hover:underline"
                     >
-                      <path d="M5 12h14"></path>
-                      <path d="M12 5l7 7-7 7"></path>
-                    </svg>
-                  </Link>
+                      Read More
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          
           ))}
         </section>
       </main>

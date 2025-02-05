@@ -6,9 +6,8 @@ import ClientReviews from "../sections/reviews";
 import React, { useState } from "react";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
 import TechStack from "../sections/tech_stack";
-
+import Image from "next/image";
 interface Card {
   img: string;
   title: string;
@@ -181,13 +180,17 @@ const OurServiceClient = () => {
 </div>
 
 
-      <div className="flex flex-col items-center justify-center pt-64 pb-36 text-white px-4 sm:px-6 lg:px-8">
-        <img
-          style={{ width: "100vw" }}
-          src="/images/pngs/waves.png"
-          className="absolute -z-8 waves hidden lg:block -bottom-18 h-[250px] opacity-20"
-          alt="Blue color Waves"
-        />
+      <div className="flex flex-col items-center justify-center w-full h-full pt-64 pb-36 text-white px-4 sm:px-6 lg:px-8">
+        
+         <Image
+                src="/images/pngs/waves.png"
+                alt="A dynamic design featuring intertwining, waved lines in shades of gray against a black background, creating an abstract flow."
+                width={1600}
+                height={400}
+                className="absolute -z-8 waves hidden lg:block -bottom-18 h-[250px] opacity-20"
+                priority
+                draggable="false"
+              />
         <h1
           className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 pb-4"
           style={{

@@ -89,7 +89,7 @@ const ClientReviews = () => {
         <div className="flex flex-col ms-16 md:ms-16  w-full relative">
           <Image 
           src={BlockQuoteImg}
-          alt="Orange blockquote"
+          alt="A large, stylized turquoise quotation mark symbol, suggesting a focus on communication or a notable quote."
           className="absolute -z-10 -top-5 -start-12"
           style={{filter:'brightness(0.75)'}}
           height={55}
