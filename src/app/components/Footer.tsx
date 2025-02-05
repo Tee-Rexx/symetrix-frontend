@@ -45,7 +45,7 @@ const Footer = () => {
         </svg>
       ),
       title: "X (Twitter)",
-      colorClass: "ml-3 text-gray-500 hover:text-black",
+      colorClass: "ml-3 text-gray-500 hover:text-white",
     },
     {
       href: "https://www.instagram.com/naxiums?igsh=cWN4aXl5Nm41YTky",
@@ -95,180 +95,178 @@ const Footer = () => {
   }, [resolvedTheme]);
 
   return (
-    <div>
-      <footer className="text-gray-600 body-font">
-        <div className="xl:container-fluid 2xl:container relative py-24 mx-auto flex items-center lg:items-start lg:flex-row md:flex-nowrap flex-wrap flex-col overflow-hidden">
-          <div className="rounded-full sphere h-[300px] w-[300px] absolute top-14 lg:bottom-5 -start-10 lg:start-8 sm:start-16 2xl:start-16 bg-violet-600 opacity-20"></div>
-          <div className="rounded-full sphere h-[450px] w-[450px] absolute -bottom-32 lg:-bottom-44 -end-12 sm:end-14 lg:end-0 2xl:end-16 bg-violet-600 opacity-25"></div>
-
-          <div className="md:w-[60%] lg:w-96 z-10 flex-shrink-0 px-8 sm:px-0 lg:ps-20 text-center md:text-left">
-            <div className="flex w-full justify-center lg:justify-start lg:items-start">
-              <Link
-                href="/"
-                className="flex title-font font-medium mb-6 items-center text-gray-900 "
-              >
-                <Image
-                  src="/images/website_logo/logo.png"
-                  alt="Logo Image"
-                  width={50}
-                  height={30}
-                />
-                <span className="text-white pe-5 md:pe-0 ml-3 text-2xl">
-                  Naxiums
-                </span>
-              </Link>
-            </div>
-            <p
-              style={{ lineHeight: 1.7 }}
-              className="mt-2 px-2 lg:px-0 lg:pr-4 w-full text-sm text-gray-400"
+    <footer className="xl:container-fluid bg-black 2xl:container relative mx-auto flex items-center flex-col overflow-hidden">
+      <div className="rounded-full sphere h-[300px] w-[300px] absolute top-14 lg:bottom-5 -start-10 lg:start-8 sm:start-16 2xl:start-16 bg-violet-600 opacity-20"></div>
+      <div className="rounded-full sphere h-[450px] w-[450px] absolute -bottom-32 lg:-bottom-44 -end-12 sm:end-14 lg:end-0 2xl:end-16 bg-violet-600 opacity-25"></div>
+ 
+      <div className="lg:items-start lg:flex-row w-full flex-col items-center flex py-24 flex-wrap">
+        <div className="md:w-[60%] lg:w-96 z-10 px-8 sm:px-0 lg:ps-20 text-center md:text-left">
+          <div className="flex w-full justify-center lg:justify-start lg:items-start">
+            <Link
+              href="/"
+              className="flex title-font font-medium mb-6 items-center text-gray-900 "
             >
-              We believe in turning bold ideas into reality through innovative
-              technology. We specialize in crafting tailored solutions that
-              drive efficiency, enhance user experience, and empower businesses
-              to reach new heights. We transform complex challenges into
-              seamless, intuitive software.
-            </p>
+              <Image
+                src="/images/website_logo/logo.png"
+                alt="Logo Image"
+                width={50}
+                height={30}
+              />
+              <span className="text-white pe-5 md:pe-0 ml-3 text-2xl">
+                Naxiums
+              </span>
+            </Link>
           </div>
-          <div className="flex-grow flex z-10 flex-wrap md:pl-20 -mb-10 lg:mt-0 mt-10 md:text-left text-center">
-            <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
-              {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
-              <h2 className="text-white mb-6  text-xl">Company Info</h2>
-              <nav className="list-none mb-10">
-                <li className="text-gray-600 mb-2 hover:text-gray-800">
-                  <Link
-                    onClick={() =>
-                      SendPageDataToDataLayer("/about-us", "About Us | Naxiums")
-                    }
-                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
-                    href="/about-us"
-                    passHref
-                  >
-                    About
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    onClick={() =>
-                      SendPageDataToDataLayer("/blogs", "Blogs | Naxiums")
-                    }
-                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
-                    href="/blogs"
-                    passHref
-                  >
-                    Blogs
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    onClick={() =>
-                      SendPageDataToDataLayer(
-                        "/contact-us",
-                        "Contact Us | Naxiums"
-                      )
-                    }
-                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
-                    href="/contact-us"
-                    passHref
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    onClick={() =>
-                      SendPageDataToDataLayer("/faq", "Faq | Naxiums")
-                    }
-                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
-                    href="/faq"
-                    passHref
-                  >
-                    FAQs
-                  </Link>
-                </li>
-              </nav>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
-              {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
-              <h2 className="text-white mb-6  text-xl">Quick Links</h2>
-              <nav className="list-none mb-10">
-                <li className="mb-2">
-                  <Link
-                    onClick={() =>
-                      SendPageDataToDataLayer(
-                        "/contact-us",
-                        "Contact Us | Naxiums"
-                      )
-                    }
-                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
-                    href="/contact-us"
-                    passHref
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    onClick={() =>
-                      SendPageDataToDataLayer(
-                        "/our-services",
-                        "Our Services | Naxiums"
-                      )
-                    }
-                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
-                    href="/our-services"
-                    passHref
-                  >
-                    Our Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    onClick={() =>
-                      SendPageDataToDataLayer(
-                        "/portfolio",
-                        "Portfolio | Naxiums"
-                      )
-                    }
-                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
-                    href="/portfolio"
-                    passHref
-                  >
-                    Portfolio
-                  </Link>
-                </li>
-              </nav>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
-              <h2 className="text-white mb-6  text-xl">Contact</h2>
-              <nav className="list-none mb-10">
-                <li className="mb-2">
-                  <a
-                    href="tel:+923343739391"
-                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
-                  >
-                    (+92)334 3739391
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a
-                    href="mailto:nabeelshahzad752@gmail.com"
-                    className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer"
-                  >
-                    infonaxiums@gmail.com
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-300 cursor-pointer">
-                    Islamabad,Pakistan
-                  </a>
-                </li>
-              </nav>
-            </div>
+          <p
+            style={{ lineHeight: 1.7 }}
+            className="mt-2 px-2 lg:px-0 lg:pr-4 w-full text-wrap text-sm text-gray-400"
+          >
+            We believe in turning bold ideas into reality through innovative
+            technology. We specialize in crafting tailored solutions that drive
+            efficiency, enhance user experience, and empower businesses to reach
+            new heights. We transform complex challenges into seamless,
+            intuitive software.
+          </p>
+        </div>
+        
+        <div className="flex-grow flex z-10 flex-wrap md:pl-20 -mb-10 lg:mt-0 mt-10 md:text-left text-center">
+          <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
+            {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
+            <h2 className="text-white mb-6  text-xl">Company Info</h2>
+            <nav className="list-none mb-10">
+              <li className="text-gray-600 mb-2 hover:text-gray-800">
+                <Link
+                  onClick={() =>
+                    SendPageDataToDataLayer("/about-us", "About Us | Naxiums")
+                  }
+                  className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer"
+                  href="/about-us"
+                  passHref
+                >
+                  About
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link
+                  onClick={() =>
+                    SendPageDataToDataLayer("/blogs", "Blogs | Naxiums")
+                  }
+                  className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer"
+                  href="/blogs"
+                  passHref
+                >
+                  Blogs
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link
+                  onClick={() =>
+                    SendPageDataToDataLayer(
+                      "/contact-us",
+                      "Contact Us | Naxiums"
+                    )
+                  }
+                  className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer"
+                  href="/contact-us"
+                  passHref
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={() =>
+                    SendPageDataToDataLayer("/faq", "Faq | Naxiums")
+                  }
+                  className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer"
+                  href="/faq"
+                  passHref
+                >
+                  FAQs
+                </Link>
+              </li>
+            </nav>
+          </div>
+          <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
+            {/* <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"> */}
+            <h2 className="text-white mb-6  text-xl">Quick Links</h2>
+            <nav className="list-none mb-10">
+              <li className="mb-2">
+                <Link
+                  onClick={() =>
+                    SendPageDataToDataLayer(
+                      "/contact-us",
+                      "Contact Us | Naxiums"
+                    )
+                  }
+                  className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer"
+                  href="/contact-us"
+                  passHref
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link
+                  onClick={() =>
+                    SendPageDataToDataLayer(
+                      "/our-services",
+                      "Our Services | Naxiums"
+                    )
+                  }
+                  className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer"
+                  href="/our-services"
+                  passHref
+                >
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={() =>
+                    SendPageDataToDataLayer("/portfolio", "Portfolio | Naxiums")
+                  }
+                  className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer"
+                  href="/portfolio"
+                  passHref
+                >
+                  Portfolio
+                </Link>
+              </li>
+            </nav>
+          </div>
+          <div className="lg:w-1/4 md:w-1/2 w-full sm:px-4">
+            <h2 className="text-white mb-6  text-xl">Contact</h2>
+            <nav className="list-none mb-10">
+              <li className="mb-2">
+                <a
+                  href="tel:+923343739391"
+                  className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer"
+                >
+                  (+92)334 3739391
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  href="mailto:nabeelshahzad752@gmail.com"
+                  className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer"
+                >
+                  infonaxiums@gmail.com
+                </a>
+              </li>
+              <li>
+                <a className="text-gray-400 hover:text-gray-200 transition ease-in-out duration-200 cursor-pointer">
+                  Islamabad,Pakistan
+                </a>
+              </li>
+            </nav>
           </div>
         </div>
-        <div className="bg-gray-100">
+      </div>
+
+      <div className="bg-black/60 w-full bg-opacity-20">
           <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p className="text-gray-500 text-sm text-center sm:text-left">
+            <p className="text-gray-400 text-sm text-center sm:text-left">
               COPYRIGHT©{currentYear}. All Rights Reserved
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
@@ -277,7 +275,7 @@ const Footer = () => {
                   key={index}
                   href={href}
                   target="_blank"
-                  className={`${colorClass}`}
+                  className={`${colorClass} z-10 duration-200 ease-in-out`}
                   title={title}
                 >
                   {icon}
@@ -286,8 +284,7 @@ const Footer = () => {
             </span>
           </div>
         </div>
-      </footer>
-    </div>
+    </footer>
   );
 };
 export default Footer;

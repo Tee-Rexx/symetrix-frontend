@@ -28,13 +28,13 @@ const ServiceProviderSection = () => {
 
   return (
     <>
-      <section className="flex flex-col -z-10 relative pt-32 bg-white container-fluid w-full items-center justify-center">
-        <img
+      <section className="flex flex-col -z-10 relative pt-32 container-fluid w-full items-center justify-center">
+        {/* <img
           draggable="false"
           className="absolute object-contain top-4 right-0"
           width="280"
           src="images/pngs/leftblob.png"
-        />
+        /> */}
 
         <div className="container relative z-20 flex flex-col items-center w-full">
           <img
@@ -55,11 +55,11 @@ const ServiceProviderSection = () => {
             Technology Solutions
           </h5>
 
-          <h3 className="font-extrabold text-center px-3 sm:px-0 mt-5 text-2xl sm:text-3xl">
+          <h3 className="font-extrabold text-center px-3 text-gray-300 sm:px-0 mt-5 text-2xl sm:text-3xl">
             We provide software & IT Solutions
           </h3>
 
-          <p className="text-gray-700 text-xs font-medium z-20 w-full px-3 sm:px-0 sm:w-[60vw] text-center  mt-7 ">
+          <p className="text-gray-300 text-[14px] font-medium z-20 w-full px-3 sm:px-0 sm:w-[60vw] text-center  mt-7 ">
             We offer comprehensive software and IT solutions designed to
             optimize your business processes, enhance productivity. Our expert
             team delivers customized strategies and cutting-edge technology to
@@ -89,7 +89,7 @@ const ServiceProviderSection = () => {
         </div>
       </section>
 
-      <section className="flex flex-col relative pt-40 pb-10 bg-white container-fluid w-full items-center justify-center">
+      <section className="flex flex-col relative pt-40 pb-10 container-fluid w-full items-center justify-center">
         <img
           draggable="false"
           className="absolute object-contain top-10 left-0"
@@ -102,9 +102,9 @@ const ServiceProviderSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-center md:justify-between w-full">
 
         {service_provider_card_data.map((card, index) => (
-            <div key={index} className="bg-white hover:bg-slate-100 transition mx-auto lg:mx-0 w-[95%] lg:w-full ease-in-out duration-200 flex flex-col lg:flex-row items-center lg:items-start group service-provider-card relative shadow-lg rounded-xl py-5 px-2 sm:px-10">
+            <div key={index} className="bg-black/80 hover:bg-white/60 group z-30 transition mx-auto lg:mx-0 w-[95%] lg:w-full ease-in-out duration-200 flex flex-col lg:flex-row items-center lg:items-start service-provider-card relative shadow-lg rounded-xl py-5 px-2 sm:px-10">
                 <>
-            <div className={`h-auto absolute left-0 w-1 rounded-tl-md rounded-bl-md inset-0 transition-opacity opacity-0 group-hover:opacity-100 ${card.strip_color}`}></div>
+            <div className={`h-auto absolute start-[0.4px] w-[8px] rounded-tl-xl rounded-bl-xl inset-0 transition-opacity opacity-0 group-hover:opacity-100 ${card.strip_color}`}></div>
 
                 {card.card_head === "Business Collaboration" ? (
                   <svg className="mb-5 lg:mb-0 w-[80px] h-[80px] lg:w-[135px] lg:h-[135px] xl:w-[105px] xl:h-[105px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#6329af"><path d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z"/></svg>
@@ -128,8 +128,8 @@ const ServiceProviderSection = () => {
                 )}
                 <div className="ps-5">
 
-                <h4>{card.card_head}</h4>
-                <p className="text-gray-500 text-xs pt-2 font-medium">{card.card_para}</p>
+                <h4 className="text-gray-300 group-hover:text-black font-semibold">{card.card_head}</h4>
+                <p className="text-gray-300 group-hover:text-black text-[14px] pt-2 font-medium">{card.card_para}</p>
                 </div>
             </>
             </div>

@@ -49,35 +49,35 @@ const someBlogs = [
     id: 1,
     heading: "Blockchain Beyond Bitcoin",
     route: "blockchain-beyond-bitcoin",
-    para: "Blockchain technology, initially popularized by Bitcoin, has transcended its origins ...",
+    para: "Blockchain technology, initially popularized by Bitcoin, has transcended its origins as a cryptocurrency backbone. While Bitcoin remains the most recognizable use case of blockchain, the technology itself holds immense potential far beyond the realm of digital currencies. From supply chain management to healthcare, blockchain is reshaping industries by enhancing security, transparency, and efficiency.",
     icon_name: FiBox,
   },
   {
     id: 2,
     heading: "Cybersecurity In The Remote Work Era",
     route: "cybersecurity-in-the-remote-work-era",
-    para: "In recent years, remote work has transformed the landscape, shifting traditional office ...",
+    para: "In recent years, the landscape of work has undergone a significant transformation with the rise of remote work. Enabled by advances in technology and driven by factors such as globalization and the COVID-19 pandemic, remote work has become the new norm for millions of employees worldwide. While remote work offers numerous benefits, including increased flexibility and productivity",
     icon_name: FiGlobe,
   },
   {
     id: 3,
     heading: "Data Governance",
     route: "data-governance",
-    para: "Data emerges as a paramount asset, driving organizational strategies across diverse ...",
+    para: "In today&apos;s digital age, data has become one of the most valuable assets for organizations across all industries. From customer information and financial records to product inventory and market insights, organizations rely on data to make informed decisions, drive innovation, and gain a competitive edge in the marketplace. However, the increasing volume, velocity, and variety of data present significant challenges for organizations in terms of data management, privacy, security, and compliance.",
     icon_name: FiCpu,
   },
   {
     id: 4,
     heading: "Demystifying AI",
     route: "demystifying-AI",
-    para: "Artificial Intelligence (AI) is heralded as a transformative force, with the potential to ...",
+    para: "In recent years, Artificial Intelligence (AI) has emerged as a transformative technology with the potential to revolutionize industries, reshape economies, and redefine the way we live and work. Despite its increasing prevalence and impact, AI remains a concept that is often misunderstood and shrouded in mystery for many.",
     icon_name: FiDatabase,
   },
   {
     id: 5,
     heading: "Digital Transformation",
     route: "digital-transformation",
-    para: "In today's dynamic business landscape, marked by rapid change and innovation, digital transformation ...",
+    para: "In today&apos;s rapidly evolving business landscape, digital transformation has become a critical imperative for organizations seeking to remain competitive, agile, and innovative. From adopting new technologies to reimagining business processes and customer experiences, digital transformation represents a fundamental shift in how businesses operate and deliver value in the digital age.",
     icon_name: FiCloud,
   },
 ];
@@ -103,21 +103,6 @@ const Home = () => {
   //   }, 500);
   // }, []);
 
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    if (scrollTop > 200) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // Optional: smooth scrolling animation
-    });
-  };
 
   useEffect(() => {
     const type = () => {
@@ -224,7 +209,7 @@ const Home = () => {
         />
       </Head> */}
 
-      <section className="h-[90vh] lg:h-screen w-full relative flex items-center justify-center overflow-hidden">
+      <section className="h-[90vh] bg-black lg:h-screen w-full relative flex items-center justify-center overflow-hidden">
         <div className="rounded-full h-[300px] w-[300px] sphere absolute top-0 start5 md:start-20 bg-violet-600 opacity-15"></div>
         <div className="rounded-full h-[300px] w-[300px] sphere absolute bottom-0 end-14 lg:top-10 lg:end-72 bg-violet-600 opacity-15"></div>
         <div className="h-screen w-[90%] block lg:hidden bg-black absolute opacity-15"></div>
@@ -273,10 +258,10 @@ const Home = () => {
         />
       </section>
 
-      <section className="h-[530px] lg:h-[550px] 2xl:h-[550px] w-full mt-22 bg-gray-50 relative flex justify-center">
+      <section className="h-[530px] lg:h-[550px] 2xl:h-[550px] w-full mt-22 relative flex justify-center">
         <div className="w-full items-center flex flex-col ">
           <div className="w-full grid grid-cols-1 lg:grid-cols-2 container mt-16 ">
-            <h4 className=" text-2xl px-3 sm:text-4xl sm:px-3 text-center lg:text-left font-bold ">
+            <h4 className=" text-2xl text-white px-3 sm:text-4xl sm:px-3 text-center lg:text-left font-bold ">
               We specialize in providing cutting-edge technology solutions to a
               variety of industries
             </h4>
@@ -289,7 +274,7 @@ const Home = () => {
                 }}
               ></div>
 
-              <p className="text-lg w-[92%] mt-10">
+              <p className="text-lg w-[92%] text-white mt-10">
                 Facilitating our clients journey towards realizing their
                 aspirations through the deployment of innovative solutions
                 tailored to their unique requirements, thus paving the way for
@@ -318,12 +303,12 @@ const Home = () => {
                           <data.icon_name />
                         </span>
                       </span>
-                      <p className="pt-4 text-sm">{data.para}</p>
+                      <p className="pt-4 text-sm line-clamp-6">{data.para}</p>
                     </span>
 
                     <Link
                       href={"/blogs/" + data.route}
-                      className="flex absolute items-center bottom-8 cursor-pointer duration-100 top-36"
+                      className="flex absolute items-center bottom-8 cursor-pointer duration-100"
                     >
                       <p className="border-b-2 border-black text-sm mt-12">
                         Read More
@@ -365,9 +350,9 @@ const Home = () => {
 
       <ServiceProviderSection />
 
-      <div className="bg-white relative">
+      <div className="relative">
         <section className="text-gray-600 relative body-font">
-          <div className="container mx-auto flex lg:px-5 py-24 lg:flex-row flex-col items-center">
+          <div className="container mx-auto flex lg:px-5 py-20 mt-12 lg:flex-row flex-col items-center">
             <div className="lg:max-w-sm lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
               <img
                 className="object-cover object-center rounded"
@@ -386,12 +371,12 @@ const Home = () => {
                   color: "transparent", // Set the text color as transparent
                 }}
               >
-                Corporate Ideas
+                Corporate Ideas 
               </h1>
-              <h1 className="title-font font-semibold sm:text-4xl text-xl mb-4 text-gray-900">
+              <h1 className="title-font font-semibold sm:text-4xl text-xl mb-4 text-gray-300">
                 Perfect Technology solution for all medium business
               </h1>
-              <p className="text-xs">
+              <p className="text-[14px] text-gray-300">
                 Discover the perfect technology solution designed to streamline
                 operations and boost efficiency for medium-sized businesses. Our
                 tailored services ensure seamless integration and scalable
@@ -399,7 +384,7 @@ const Home = () => {
               </p>
               <div className="container1">
                 <div className="skill-box">
-                  <span className="title">Business Goal</span>
+                  <span className="title text-gray-300">Business Goal</span>
                   <div className="skill-bar">
                     <span className="skill-per html">
                       <span className="tooltip">85%</span>
@@ -407,7 +392,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="skill-box">
-                  <span className="title">Traffic Growth</span>
+                  <span className="title text-gray-300">Traffic Growth</span>
                   <div className="skill-bar">
                     <span className="skill-per css">
                       <span className="tooltip">90%</span>
@@ -415,7 +400,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="skill-box">
-                  <span className="title">Competitor Research</span>
+                  <span className="title text-gray-300">Competitor Research</span>
                   <div className="skill-bar">
                     <span className="skill-per javascript">
                       <span className="tooltip">75%</span>
@@ -428,16 +413,17 @@ const Home = () => {
         </section>
       </div>
 
-      <section className="bg-white relative body-font">
+      <section className="relative body-font">
         {/* Wave Image */}
-        <img
+        {/* <img
           style={{ width: "100vw" }}
           src="/images/pngs/waves1.png"
           className="absolute waves hidden lg:block z-10 -bottom-18 h-[250px] opacity-50"
           alt="Blue color Waves"
-        />
+        /> */}
 
-        <div className="container mx-auto flex z-30 px-5 pb-16 lg:py-24 lg:flex-row flex-col items-center">
+        <div className="container relative overflow-hidden mx-auto flex z-30 px-5 pb-16 lg:py-14 lg:flex-row flex-col items-center">
+          <div className="rounded-full sphere h-[450px] w-[450px] absolute top-56 md:-top-32 lg:-top-36 -end-12 sm:end-14 lg:end-0 2xl:end-16 bg-violet-600 opacity-25"></div>
           <div className="lg:max-w-lg xl:w-full lg:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
               className="object-cover relative z-30 object-center rounded"
@@ -445,9 +431,10 @@ const Home = () => {
               src="/images/svgs/picture_1.png"
             />
           </div>
-          <div className="lg:flex-grow lg:w-1/2 xl:pl-24 lg:pl-16 pt-5 lg:pt-0 flex flex-col md:items-start md:text-left items-center text-center">
+          <div className="lg:flex-grow relative lg:w-1/2 xl:pl-24 lg:pl-16 pt-5 lg:pt-0 flex flex-col md:items-start md:text-left items-center text-center">
+            
             <div className="flex flex-wrap justify-center mb-3 lg:mb-0 sm:justify-start items-center">
-              <h1 className="title-font text-2xl z-30 sm:text-3xl pe-2 font-medium text-black">
+              <h1 className="font-bold text-2xl z-30 sm:text-3xl pe-2 text-gray-300">
                 Arrange a free{" "}
               </h1>
               <h1 className="font-bold text-2xl z-30 pt-1 color-sub-heading sm:text-3xl">
@@ -455,7 +442,7 @@ const Home = () => {
                 Consultation{" "}
               </h1>
             </div>
-            <p className="mb-8 leading-relaxed z-30 text-gray-600">
+            <p className="mb-8 mt-4 leading-relaxed z-30 text-gray-300">
               Unlock the full potential of your business with a complimentary
               consultation. Our team of experts will provide valuable insights
               and recommendations tailored to your specific needs. Don’t miss

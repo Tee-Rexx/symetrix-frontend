@@ -161,7 +161,7 @@ export default function RootLayout({
           {JSON.stringify(breadcrumbSchema)}{" "}
         </script>
       </Head>
-      <body style={{ backgroundColor: "#000" }} className={inter.className}>
+      <body className={inter.className}>
       <GoogleTagManager gtmId="GTM-MWM7235V" />
         <Providers>
           <NextTopLoader color="#2299DD" zIndex={1600} />

@@ -4,6 +4,8 @@ import {
   FeedbackNextButton,
 } from "@/app/components/carouselButtons";
 import Slider from "react-slick";
+import BlockQuoteImg from '../../../../public/images/pngs/blockquote_2.png'
+import Image from "next/image";
 
 const settings = {
   dots: false,
@@ -81,40 +83,49 @@ const client_reviews_arr = [
 
 const ClientReviews = () => {
   return (
-    <section className="h-full mt-64 relative lg:mt-64 xl:mt-56 bg-white">
-      <div className="flex flex-row w-full relative items-center justify-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          className="inline-block absolute mt-40 w-8 h-8 text-gray-400 mb-8"
-          viewBox="0 0 975.036 975.036"
-        >
-          <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-        </svg>
-      </div>
-      <Slider className="flex flex-col" {...settings}>
-        {client_reviews_arr?.map((data, index): any => (
-          <div key={index} className="flex flex-col items-center">
-            <section className="text-gray-600 body-font flex flex-col">
-              <div className="container px-5 mt-24 mb-20 mx-auto">
-                <div className="xl:w-1/2 lg:w-3/4 w-full flex flex-col items-center mx-auto text-center">
-                  <p className="leading-relaxed w-[80%] md:w-full text-lg">{data.review}</p>
-                  <span
-                    className="w-10 h-[6px] my-2 rounded-xl"
-                    style={{
-                      background: "linear-gradient(to right, #02f0f1, #024868)",
-                    }}
-                  ></span>
-                  <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
-                    {data.client_name}
-                  </h2>
-                  <p className="text-gray-500">{data.client_company}</p>
+    <section className="h-full container-fluid flex items-center justify-center overflow-hidden pt-64 relative lg:pt-64 xl:pt-56">
+      <div className="container relative">
+        <div className="flex flex-col ms-16 md:ms-16  w-full relative">
+          <Image 
+          src={BlockQuoteImg}
+          alt="Orange blockquote"
+          className="absolute -z-10 -top-5 -start-12"
+          style={{filter:'brightness(0.75)'}}
+          height={55}
+          />
+          <h1 className="text-gray-200 font-extrabold md:text-4xl text-4xl">
+            Our Client Words
+          </h1>
+
+          <p className="mt-5 text-gray-300 w-[70%] md:w-[90%] text-wrap font-normal">Hear what our clients have to say about their experience with us. Their feedback drives our commitment to excellence.</p>
+        </div>
+        <Slider className="flex flex-col" {...settings}>
+          {client_reviews_arr?.map((data, index): any => (
+            <div key={index} className="flex flex-col items-center">
+              <section className="text-gray-600 body-font flex flex-col">
+                <div className="container px-5 mt-8 mb-20 mx-auto">
+                  <div className="xl:w-1/2 lg:w-3/4 w-full flex flex-col gradient-border me-16 ms-12 py-10 rounded-xl items-center mx-auto text-center">
+                    <p className="leading-relaxed text-gray-300 w-[80%] px-5 md:w-full text-lg">
+                      {data.review}
+                    </p>
+                    <span
+                      className="w-10 h-[6px] my-2 rounded-xl"
+                      style={{
+                        background:
+                          "linear-gradient(to right, #02f0f1, #024868)",
+                      }}
+                    ></span>
+                    <h2 className="text-gray-400 font-medium title-font tracking-wider text-sm">
+                      {data.client_name}
+                    </h2>
+                    <p className="text-gray-300">{data.client_company}</p>
+                  </div>
                 </div>
-              </div>
-            </section>
-          </div>
-        ))}
-      </Slider>
+              </section>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </section>
   );
 };

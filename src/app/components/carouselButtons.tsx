@@ -63,11 +63,11 @@ export const FeedbackPreviousButton = ({ onClick }: carousel) => {
     style={{
       zIndex:1
     }}
-      className="absolute rounded-full start-3 lg:start-3 md:start-3 sm:start-3 top-36 "
+      className="absolute rounded-full start-0 lg:start-0 md:start-0 sm:start-0 top-56 sm:top-48 md:top-40 lg:top-32"
       onClick={onClick}
     >
-      <div className="  duration-200 h-[50px] w-[50px] rounded-full grid place-items-center cursor-pointer">
-        <IoIosArrowBack />
+      <div className="group h-[50px] w-[50px] rounded-full grid place-items-center cursor-pointer">
+        <IoIosArrowBack className="text-[#9ca3af] group-hover:text-gray-200 duration-200 ease-in-out" />
       </div>
     </div>
   );
@@ -76,11 +76,11 @@ export const FeedbackPreviousButton = ({ onClick }: carousel) => {
 export const FeedbackNextButton = ({ onClick }: carousel) => {
   return (
     <div
-      className="absolute rounded-full left-[85vw] md:left-[94vw] sm:left-[91vw] top-36 bottom-6"
+      className="absolute rounded-full end-3 lg:end-3 md:end-3 sm:end-3 top-56 sm:top-48 md:top-40 lg:top-32"
       onClick={onClick}
     >
-      <div className="duration-200 h-[50px] w-[50px] rounded-full grid place-items-center cursor-pointer">
-        <IoIosArrowForward />
+      <div className="h-[50px] w-[50px] rounded-full group grid place-items-center cursor-pointer">
+        <IoIosArrowForward className="text-[#9ca3af] group-hover:text-gray-200 duration-200 ease-in-out" />
       </div>
     </div>
   );
