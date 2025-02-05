@@ -1,4 +1,6 @@
 "use client";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import {
   FeedbackPreviousButton,
   FeedbackNextButton,
@@ -6,7 +8,6 @@ import {
 import Slider from "react-slick";
 import BlockQuoteImg from '../../../../public/images/pngs/blockquote_2.png'
 import Image from "next/image";
-
 const settings = {
   dots: false,
   infinite: true,
@@ -83,8 +84,8 @@ const client_reviews_arr = [
 
 const ClientReviews = () => {
   return (
-    <section className="h-full container-fluid flex items-center justify-center overflow-hidden pt-64 relative lg:pt-64 xl:pt-56">
-      <div className="container relative">
+    <section className="h-full container-fluid flex items-center justify-center overflow-hidden relative md:mb-64 lg:mb-64 xl:mb-40">
+      <div className="container pt-5 relative">
         <div className="flex flex-col ms-16 md:ms-16  w-full relative">
           <Image 
           src={BlockQuoteImg}
@@ -104,8 +105,8 @@ const ClientReviews = () => {
             <div key={index} className="flex flex-col items-center">
               <section className="text-gray-600 body-font flex flex-col">
                 <div className="container px-5 mt-8 mb-20 mx-auto">
-                  <div className="xl:w-1/2 lg:w-3/4 w-full flex flex-col gradient-border me-16 ms-12 py-10 rounded-xl items-center mx-auto text-center">
-                    <p className="leading-relaxed text-gray-300 w-[80%] px-5 md:w-full text-lg">
+                  <div className="xl:w-1/2 lg:w-3/4 w-full flex flex-col gradient-border me-14 ms-12 py-10 rounded-xl items-center mx-auto text-center">
+                    <p className="leading-relaxed text-gray-300 w-[80%] md:px-5 md:w-full text-lg">
                       {data.review}
                     </p>
                     <span

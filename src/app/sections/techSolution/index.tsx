@@ -1,7 +1,6 @@
-"use client";
+import React from 'react'
 
-const ServiceProviderSection = () => {
-
+const TechSolution = () => {
     const service_provider_card_data = [
         {
             strip_color : 'bg-[#6329af]',
@@ -28,7 +27,7 @@ const ServiceProviderSection = () => {
 
   return (
     <>
-      <section className="flex flex-col -z-10 relative pt-32 container-fluid w-full items-center justify-center">
+      <section className="flex flex-col -z-10 relative  container-fluid w-full items-center justify-center">
         {/* <img
           draggable="false"
           className="absolute object-contain top-4 right-0"
@@ -39,14 +38,14 @@ const ServiceProviderSection = () => {
         <div className="container relative z-20 flex flex-col items-center w-full">
           <img
             draggable="false"
-            className="absolute object-contain top-60 left-0"
+            className="absolute object-contain hidden lg:block top-60 left-0"
             src="images/pngs/16-7.png"
             alt="cloud-img"
           />
 
           <img
             draggable="false"
-            className="absolute object-contain top-36 right-14"
+            className="absolute object-contain top-36 hidden lg:block right-14"
             src="images/pngs/15-7.png"
             alt="cloud-img"
           />
@@ -68,31 +67,31 @@ const ServiceProviderSection = () => {
 
           <img
             draggable="false"
-            className="object-contain h-[350px] rounded-xl shadow-2xl z-30 mt-14"
+            className="object-contain w-[90%] md:max-w-[70%] lg:max-w-[50%] rounded-xl shadow-2xl z-30 mt-14"
             src="images/svgs/Top-10-Retail-Software-Development-Companies-for-2021.jpg"
             alt="service-provide-main-img"
           />
 
           <img
             draggable="false"
-            className="object-contain hidden lg:flex left-8 absolute bottom-2"
+            className="object-contain hidden lg:flex right-8 ld:left-8 absolute lg:bottom-2"
             src="images/pngs/13-7.png"
             alt="service-provide-main-img"
           />
 
           <img
             draggable="false"
-            className="object-contain hidden md:flex right-12 absolute -bottom-12"
+            className="object-contain hidden lg:flex right-12 absolute -bottom-12"
             src="images/pngs/14.png"
             alt="service-provide-main-img"
           />
         </div>
       </section>
 
-      <section className="flex flex-col relative pt-40 pb-10 container-fluid w-full items-center justify-center">
+      <section className="flex flex-col relative pt-20 lg:pt-40 md:mb-40 lg:mb-20 xl:mb-20 container-fluid w-full items-center justify-center">
         <img
           draggable="false"
-          className="absolute object-contain top-10 left-0"
+          className="absolute object-contain lg:block hidden top-10 left-0"
           width="620"
           src="images/pngs/rightblob.png"
         />
@@ -142,6 +141,6 @@ const ServiceProviderSection = () => {
       </section>
     </>
   );
-};
+}
 
-export default ServiceProviderSection;
+export default TechSolution

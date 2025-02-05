@@ -109,8 +109,8 @@ const AboutUsClient = () => {
   }, [controls2, inView2]);
 
   return (
-    <div className="bg-white overflow-x-hidden overflow-y-hidden">
-      <section className="text-gray-600 body-font">
+    <div className=" text-gray-300 overflow-x-hidden overflow-y-hidden">
+      <section className="text-gray-300 body-font">
         <div className="container mx-auto flex lg:px-5 py-10 md:py-24 lg:flex-row flex-col items-center">
           <motion.div
             className="lg:max-w-sm lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0"
@@ -148,7 +148,7 @@ const AboutUsClient = () => {
               About Company
             </motion.h1>
             <motion.h1
-              className="font-semibold text-3xl mb-4 text-gray-900"
+              className="font-semibold text-3xl mb-4 text-gray-300"
               ref={ref}
               initial={{ y: "90%", opacity: 0 }}
               animate={controls}
@@ -205,10 +205,10 @@ const AboutUsClient = () => {
 
               {/* Second div with heading and text */}
               <div className="flex flex-col justify-center text-center md:text-left">
-                <h2 className="text-sm font-bold text-black mb-2">
+                <h2 className="text-sm font-bold text-gray-300 mb-2">
                   Seamless Management
                 </h2>
-                <p className="text-gray-600 text-xs">
+                <p className="text-gray-300 text-xs">
                   Effortlessly streamline operations with integrated tools for
                   smooth and efficient management. Enhance productivity through
                   consistent and cohesive processes that minimize disruptions.
@@ -243,10 +243,10 @@ const AboutUsClient = () => {
 
               {/* Second div with heading and text */}
               <div className="flex flex-col justify-center text-center md:text-left">
-                <h2 className="text-sm font-bold text-black mb-2">
+                <h2 className="text-sm font-bold text-gray-300 mb-2">
                   Flawless Incorporation
                 </h2>
-                <p className="text-gray-600 text-xs">
+                <p className="text-gray-300 text-xs">
                   Achieve seamless integration of new systems and practices with
                   precision and ease. Ensure every element aligns perfectly for
                   a unified and effective implementation.
@@ -276,7 +276,7 @@ const AboutUsClient = () => {
                 initial={initial}
                 animate={animate}
                 transition={{ duration: 0.7 }} // Staggered animation
-                className="flex mb-10 p-5 border rounded-xl shadow-xl hover:bg-gray-100 hover:text-white transition duration-300 w-full md:w-80"
+                className="flex mb-10 p-5 group rounded-xl shadow-xl bg-black/30 bg-opacity-15 hover:bg-white/60 transition duration-300 w-full md:w-80"
               >
                 <div className="flex-shrink-0 mr-4 ">
                   <img
@@ -285,9 +285,9 @@ const AboutUsClient = () => {
                     className="max-w-[40px]"
                   />
                 </div>
-                <div className="flex flex-col justify-center text-black">
-                  <h1 className="text-sm font-bold m-0">{card.heading}</h1>
-                  <p className="text-xs font-medium text-gray-500 m-0 mt-2">
+                <div className="flex flex-col justify-center  text-gray-300">
+                  <h1 className="text-sm font-bold group-hover:text-black m-0">{card.heading}</h1>
+                  <p className="text-xs font-medium group-hover:text-black text-gray-300 m-0 mt-2">
                     {card.text}
                   </p>
                 </div>
@@ -297,7 +297,7 @@ const AboutUsClient = () => {
         </div>
       </section>
 
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-300 body-font">
         <div
           ref={ref1}
           className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
@@ -318,7 +318,7 @@ const AboutUsClient = () => {
               Our History
             </motion.h1>
             <motion.h1
-              className="font-semibold text-3xl mb-4 text-gray-900"
+              className="font-semibold text-3xl mb-4 text-gray-300"
               ref={ref1}
               initial="hidden"
               animate={controls1}
@@ -365,10 +365,10 @@ const AboutUsClient = () => {
 
               {/* Second div with heading and text */}
               <div className="flex flex-col items-start ">
-                <h2 className="text-sm font-bold w-full text-center md:text-left text-black mb-2">
+                <h2 className="text-sm font-bold w-full text-center md:text-left text-gray-300 mb-2">
                   Technical Assessment
                 </h2>
-                <p className="text-gray-600 text-xs">
+                <p className="text-gray-300 text-xs">
                   A thorough evaluation designed to assess technical skills,
                   knowledge, and problem-solving abilities, often used in hiring
                   and development processes.
@@ -398,10 +398,10 @@ const AboutUsClient = () => {
 
               {/* Second div with heading and text */}
               <div className="flex flex-col text-center md:text-left">
-                <h2 className="text-sm font-bold text-black mb-2">
+                <h2 className="text-sm font-bold text-gray-300 mb-2">
                   Joint Collaboration
                 </h2>
-                <p className="text-gray-600 text-xs">
+                <p className="text-gray-300 text-xs">
                   A partnership where multiple parties work together, sharing
                   resources and expertise to achieve a common goal, fostering
                   innovation and mutual growth.
@@ -428,7 +428,7 @@ const AboutUsClient = () => {
         </div>
       </section>
 
-      <section className="text-gray-600 w-100 body-font">
+      <section className="text-gray-300 w-100 body-font">
         <div className="container mx-auto flex py-24 md:flex-row justify-center flex-col items-center">
           <div className="lg:max-w-lg lg:w-screen md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
@@ -457,7 +457,7 @@ const AboutUsClient = () => {
               Any Query
             </motion.h1>
             <motion.h1
-              className="title-font text-3xl mb-4 font-semibold text-gray-900"
+              className="title-font text-3xl mb-4 font-semibold text-gray-300"
               ref={ref2}
               initial={{ y: "100%", opacity: 0 }}
               animate={controls2}
@@ -488,14 +488,14 @@ const AboutUsClient = () => {
                           ? "linear-gradient(to right, #02f0f1, #024868)"
                           : "none",
                       backgroundColor:
-                        expanded === item.id ? "transparent" : "white",
-                      color: expanded === item.id ? "white" : "black",
+                        expanded === item.id ? "transparent" : "#474646",
+                      color: "white"
                     }}
                     className="shadow-lg"
                   >
                     <Typography>{item.question}</Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails className="bg-[#474646] text-gray-200">
                     <Typography className="text-justify">
                       {item.answer}
                     </Typography>

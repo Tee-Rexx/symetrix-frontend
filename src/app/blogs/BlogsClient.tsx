@@ -101,11 +101,11 @@ const BlogsClient = () => {
           </div>
         </div>
       </div>
-      <main className="bg-gray-50 min-h-screen py-10 px-5">
+      <main className="min-h-screen py-10 px-5">
         {/* Blog Header */}
 
         <section className="max-w-7xl mx-auto mb-12">
-          <p className="text-gray-600 mt-4 text-lg">
+          <p className="text-gray-300 mt-4 text-lg">
             Our blog covers the latest insights, trends, and practical tips in
             web design, development, and technology. From in-depth discussions
             on cutting-edge tools and frameworks to expert advice on user
@@ -113,7 +113,7 @@ const BlogsClient = () => {
             blockchain, we provide content to help you stay informed and ahead
             of the curve.
           </p>
-          <p className="text-gray-600 mt-4 text-lg">
+          <p className="text-gray-300 mt-4 text-lg">
             Discover actionable strategies, industry best practices, and
             creative ideas designed to drive innovation, enhance performance,
             and deliver measurable results. Whether you&apos;re a developer,
@@ -127,42 +127,45 @@ const BlogsClient = () => {
         <section className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
           {blogs.map((blog) => (
             <div key={blog.id} className="p-4">
-              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-xl overflow-hidden shadow-lg">
+            <div className="h-full border-gray-200 transform transition duration-300 ease-in-out hover:scale-105 border-opacity-60 rounded-xl overflow-hidden shadow-lg">
+              <div className="overflow-hidden">
                 <img
-                  className="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center  "
                   src={blog.imageUrl}
                   alt={blog.heading}
                 />
-                <div className="p-6">
-                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                    {blog.heading}
-                  </h1>
-                  <p className="leading-relaxed mb-3 text-gray-600">
-                    {blog.description}
-                  </p>
-                  <div className="flex items-center">
-                    <Link
-                      href={blog.link}
-                      className="text-indigo-500 inline-flex items-center hover:underline"
+              </div>
+              <div className="p-6 bg-black/20 h-full">
+                <h1 className="title-font text-lg font-medium text-gray-300 mb-3">
+                  {blog.heading}
+                </h1>
+                <p className="leading-relaxed mb-3 text-gray-300">
+                  {blog.description}
+                </p>
+                <div className="flex items-center">
+                  <Link
+                    href={blog.link}
+                    className="text-indigo-500 inline-flex items-center hover:underline"
+                  >
+                    Read More
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
-                      Read More
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M5 12h14"></path>
-                        <path d="M12 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>
+          </div>
+          
           ))}
         </section>
       </main>
