@@ -6,7 +6,6 @@ import BlogCard from "./components/blogCard";
 import Link from "next/link";
 import ClientReviews from "./sections/reviews";
 import "./globals.css";
-import ServiceProviderSection from "./sections/service-provide";
 import React from "react";
 import Hero from "./sections/hero";
 import Specialization from "./sections/specialization";
