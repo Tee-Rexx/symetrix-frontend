@@ -63,15 +63,17 @@ const FaqClient = () => {
   const [expandedSupportManagement, setExpandedSupportManagement] =
     useState(null);
 
-  const handleWorkProcessChange = (panel:any) => (event:any, isExpanded:any) => {
-    setExpandedWorkProcess(isExpanded ? panel : null);
-    setExpandedSupportManagement(isExpanded ? panel : null);
-  };
+  const handleWorkProcessChange =
+    (panel: any) => (event: any, isExpanded: any) => {
+      setExpandedWorkProcess(isExpanded ? panel : null);
+      setExpandedSupportManagement(null); // Close Support & Management section
+    };
 
-  const handleSupportManagementChange = (panel:any) => (event:any, isExpanded:any) => {
-    setExpandedSupportManagement(isExpanded ? panel : null);
-    setExpandedWorkProcess(isExpanded ? panel : null);
-  };
+  const handleSupportManagementChange =
+    (panel: any) => (event: any, isExpanded: any) => {
+      setExpandedSupportManagement(isExpanded ? panel : null);
+      setExpandedWorkProcess(null); // Close Work & Process section
+    };
 
   return (
     <div className="container-fluid flex items-center justify-center">
