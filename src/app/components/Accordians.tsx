@@ -18,7 +18,7 @@ type AccordionItem = {
   answer: string;
 };
 
-const Accordians = ({ data, expandedIndex, onAccordionChange }) => {
+const Accordians: React.FC<AccordiansProps> = ({ data, expandedIndex, onAccordionChange }) => {
   return (
     <>
       {data.map((faq, index) => (
