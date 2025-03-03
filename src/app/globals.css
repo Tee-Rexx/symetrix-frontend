@@ -111,7 +111,8 @@ html {
   border: 0;
   color: #fff;
   text-transform: capitalize;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: '__Inter_d65c78', '__Inter_Fallback_d65c78' !important;
+  font-style: normal;
   font-size: 15px;
   letter-spacing: 3px;
   position: relative;
@@ -483,4 +484,8 @@ html {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.MuiAccordion-root {
+  background-color: #191919;
 }
