@@ -23,7 +23,7 @@ const Accordians: React.FC<AccordiansProps> = ({ data, expandedIndex, onAccordio
     <>
       {data.map((faq, index) => (
         <Accordion
-          key={expandedIndex}
+          key={index}
           className="mb-4 shadow-lg overflow-hidden transition-all"
           expanded={expandedIndex === index}
           onChange={onAccordionChange(index)}
