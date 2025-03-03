@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import emailjs from "@emailjs/browser";
 import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
+import ContactUsSections from "../sections/contactUs";
 
 const ContactUsClient = () => {
   // React.useEffect(() => {
@@ -135,138 +136,8 @@ const ContactUsClient = () => {
           </div>
         </div>
       </div>
-      <div className="container flex flex-wrap px-5 py-24 mx-auto  items-center">
-        <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
-            Gateway to seamless solutions
-          </h1>
-          <p className="leading-relaxed text-base text-gray-400">
-            Whether you have a query, opportunity, or just want to explore your
-            options, our team is here to support you every step. Connect with us
-            today and pave the path to success
-          </p>
-        </div>
-        <div className="flex flex-col w-full md:w-2/4">
-          <div className="container w-full flex justify-center px-0 md:px-5 my-4 py-20 mx-auto">
-            <div className="lg:w-4/5 w-full md:w-2/3 p-7 rounded-xl bg-gray-200 ">
-              <form
-                className="flex flex-col md:flex-row flex-wrap -m-2"
-                onSubmit={handleFormSubmit}
-              >
-                <div className="p-2 w-full md:w-1/2">
-                  <TextField
-                    id="standard-basic"
-                    label="First Name"
-                    variant="standard"
-                    className="w-full"
-                    sx={{
-                      "& .MuiInputBase-input": {
-                        color: "black", // Set color of input text
-                        fontSize: "18px", // Set color of input text
-                      },
-                      "& .MuiInputLabel-root": {
-                        color: "black", // Set color of input text
-                        fontSize: "18px", // Set color of input label
-                      },
-                    }}
-                    value={fname}
-                    onChange={(e) => setFName(e.target.value)}
-                  />
-                </div>
-                <div className="p-2 w-full md:w-1/2">
-                  <TextField
-                    id="standard-basic"
-                    label="Last Name"
-                    variant="standard"
-                    className="w-full"
-                    sx={{
-                      "& .MuiInputBase-input": {
-                        color: "black", // Set color of input text
-                        fontSize: "18px", // Set color of input text
-                      },
-                      "& .MuiInputLabel-root": {
-                        color: "black", // Set color of input text
-                        fontSize: "18px", // Set color of input label
-                      },
-                    }}
-                    value={lname}
-                    onChange={(e) => setLName(e.target.value)}
-                  />
-                </div>
-                <div className="p-2 w-full">
-                  <div className="relative">
-                    <TextField
-                      id="email"
-                      label="Your email"
-                      value={email}
-                      onChange={handleEmailChange}
-                      error={Boolean(emailError)}
-                      helperText={emailError}
-                      variant="standard"
-                      className="w-full"
-                      sx={{
-                        "& .MuiInputBase-input": {
-                          color: "black", // Set color of input text
-                          fontSize: "18px", // Set color of input text
-                        },
-                        "& .MuiInputLabel-root": {
-                          color: "black", // Set color of input text
-                          fontSize: "18px", // Set color of input label
-                        },
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="p-2 w-full">
-                  <div className="relative w-full">
-                    <TextField
-                      id="standard-multiline-static"
-                      label="How we can help you? (optional)"
-                      multiline
-                      rows={4}
-                      variant="standard"
-                      className="w-full"
-                      sx={{
-                        "& .MuiInputBase-input": {
-                          color: "black", // Set color of input text
-                          fontSize: "18px", // Set color of input text
-                        },
-                        "& .MuiInputLabel-root": {
-                          color: "black", // Set color of input text
-                          fontSize: "18px", // Set color of input label
-                        },
-                      }}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="p-2 mt-2">
-                  {/* Button for form submission */}
-                  <Button
-                    className="w-full title-font submit-btn"
-                    variant="contained"
-                    type="submit"
-                  >
-                    Send
-                  </Button>
-                  {!formComplete && (
-                    <p
-                      style={{
-                        color: "red",
-                        backgroundColor: "lightpink",
-                        padding: "8px",
-                      }}
-                    >
-                      Kindly fill all fields.
-                    </p>
-                  )}
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <ContactUsSections showSideText={true} />
     </section>
   );
 };

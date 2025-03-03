@@ -21,9 +21,9 @@ const NavigatingTheCloudClient = () => {
         </div>
       </div>
 
-      <section className=" bg-white flex w-full py-20 justify-center items-center">
+      <section className="  flex w-full py-20 justify-center items-center">
         <div className="container">
-          <div className="text-gray-800 leading-normal font-sans">
+          <div className="text-gray-300 leading-normal font-sans">
 
             {/* <!-- Main Content --> */}
             <div className="container mx-auto mt-6 px-6">
