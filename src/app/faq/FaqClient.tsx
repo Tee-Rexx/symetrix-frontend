@@ -63,12 +63,12 @@ const FaqClient = () => {
   const [expandedSupportManagement, setExpandedSupportManagement] =
     useState(null);
 
-  const handleWorkProcessChange = (panel) => (event, isExpanded) => {
+  const handleWorkProcessChange = (panel:any) => (event:any, isExpanded:any) => {
     setExpandedWorkProcess(isExpanded ? panel : null);
     setExpandedSupportManagement(isExpanded ? panel : null);
   };
 
-  const handleSupportManagementChange = (panel) => (event, isExpanded) => {
+  const handleSupportManagementChange = (panel:any) => (event:any, isExpanded:any) => {
     setExpandedSupportManagement(isExpanded ? panel : null);
     setExpandedWorkProcess(isExpanded ? panel : null);
   };

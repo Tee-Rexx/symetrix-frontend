@@ -106,7 +106,7 @@ const AboutUsClient = () => {
 
   const [accordianIndex, setAccordianIndex] = useState(null);
 
-  const handleAccordionChange = (panel) => (event, isExpanded) => {
+  const handleAccordionChange = (panel:any) => (event:any, isExpanded:any) => {
     setAccordianIndex(isExpanded ? panel : null);
   };
 
