@@ -10,7 +10,8 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FAQ_ACCORDIAN } from "@/utils/constants/accordian.constants";
 import { SendPageDataToDataLayer } from "../hooks/analyticsProvider";
-
+import Accordians from "../components/Accordians";
+import Link from "next/link";
 
 // Array of objects containing card data
 const cardData = [
@@ -63,11 +64,6 @@ const AboutUsClient = () => {
 
   const [expanded, setExpanded] = useState<string | null>(null);
 
-  const handleAccordionChange =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : null);
-    };
-
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (inView) {
@@ -107,6 +103,12 @@ const AboutUsClient = () => {
       });
     }
   }, [controls2, inView2]);
+
+  const [accordianIndex, setAccordianIndex] = useState(null);
+
+  const handleAccordionChange = (panel) => (event, isExpanded) => {
+    setAccordianIndex(isExpanded ? panel : null);
+  };
 
   return (
     <div className=" text-gray-300 overflow-x-hidden overflow-y-hidden">
@@ -286,7 +288,9 @@ const AboutUsClient = () => {
                   />
                 </div>
                 <div className="flex flex-col justify-center  text-gray-300">
-                  <h1 className="text-sm font-bold group-hover:text-black m-0">{card.heading}</h1>
+                  <h1 className="text-sm font-bold group-hover:text-black m-0">
+                    {card.heading}
+                  </h1>
                   <p className="text-xs font-medium group-hover:text-black text-gray-300 m-0 mt-2">
                     {card.text}
                   </p>
@@ -472,36 +476,51 @@ const AboutUsClient = () => {
               animate={controls2}
               transition={{ duration: 0.8 }}
             >
-              {FAQ_ACCORDIAN.map((item) => (
-                <Accordion
-                  key={item.id}
-                  expanded={expanded === item.id}
-                  onChange={handleAccordionChange(item.id)}
+              <Accordians
+                data={FAQ_ACCORDIAN}
+                expandedIndex={accordianIndex}
+                onAccordionChange={handleAccordionChange}
+              />
+
+              <div className="flex ps-1.5 items-center">
+                <Link
+                  href={"./faq"}
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, #02f0f1, #024868)",
+                    WebkitTextFillColor: "transparent", // Hide default text color
+                    WebkitBackgroundClip: "text", // Clip the gradient to the text
+                    color: "transparent", // Set the text color as transparent
+                  }}
+                  className="inline-flex items-center hover:underline"
                 >
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls={`${item.id}-content`}
-                    id={`${item.id}-header`}
-                    style={{
-                      backgroundImage:
-                        expanded === item.id
-                          ? "linear-gradient(to right, #02f0f1, #024868)"
-                          : "none",
-                      backgroundColor:
-                        expanded === item.id ? "transparent" : "#474646",
-                      color: "white"
-                    }}
-                    className="shadow-lg"
+                  See More
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                    stroke="url(#gradient)" // Apply gradient here
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
-                    <Typography>{item.question}</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails className="bg-[#474646] text-gray-200">
-                    <Typography className="text-justify">
-                      {item.answer}
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>
-              ))}
+                    <defs>
+                      <linearGradient
+                        id="gradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="0%"
+                      >
+                        <stop offset="0%" stopColor="#02f0f1" />
+                        <stop offset="100%" stopColor="#024868" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>

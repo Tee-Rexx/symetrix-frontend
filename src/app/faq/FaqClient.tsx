@@ -1,12 +1,8 @@
 "use client";
 import React from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import ContactUsSections from "../sections/contactUs";
+import Accordians from "../components/Accordians";
 
 const FaqClient = () => {
   const faqs = [
@@ -69,10 +65,12 @@ const FaqClient = () => {
 
   const handleWorkProcessChange = (panel) => (event, isExpanded) => {
     setExpandedWorkProcess(isExpanded ? panel : null);
+    setExpandedSupportManagement(isExpanded ? panel : null);
   };
 
   const handleSupportManagementChange = (panel) => (event, isExpanded) => {
     setExpandedSupportManagement(isExpanded ? panel : null);
+    setExpandedWorkProcess(isExpanded ? panel : null);
   };
 
   return (
@@ -107,46 +105,16 @@ const FaqClient = () => {
           {/* Sticky Heading */}
           <div className="md:sticky top-0 z-10 py-4">
             <span className="text-[35px] text-white text-center md:text-left block">
-              Support & Management: Post-Launch, Pricing & Maintenance
+              Work & Process: Development, Communication & Security
             </span>
           </div>
 
           <div className="w-full max-w-lg mt-10 md:mt-0 mx-auto">
-            {faqs.slice(0, 6).map((faq, index) => (
-              <Accordion
-                key={index}
-                className="mb-4 shadow-lg overflow-hidden transition-all"
-                expanded={expandedWorkProcess === index}
-                onChange={handleWorkProcessChange(index)}
-                style={{ borderRadius: "25px", backgroundColor: "#181818" }}
-              >
-                <AccordionSummary
-                  expandIcon={
-                    <ExpandMoreIcon
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(to right, #02f0f1, #024868)",
-                      }}
-                      className="p-[0.8px] text-white rounded-full shadow-lg transition-transform"
-                    />
-                  }
-                  aria-controls={`panel-work-${index}-content`}
-                  id={`panel-work-${index}-header`}
-                  className="px-6 py-1 text-white font-semibold text-lg flex items-center justify-between"
-                  style={{ borderRadius: "25px", backgroundColor: "#181818" }}
-                >
-                  <Typography className="text-white pe-3">
-                    {faq.question}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails
-                  style={{ backgroundColor: "#181818" }}
-                  className="px-6 py-4 text-white rounded-b-[25px] transition-all"
-                >
-                  <Typography>{faq.answer}</Typography>
-                </AccordionDetails>
-              </Accordion>
-            ))}
+            <Accordians
+              data={faqs.slice(0, 6)}
+              expandedIndex={expandedWorkProcess}
+              onAccordionChange={handleWorkProcessChange}
+            />
           </div>
         </div>
 
@@ -160,45 +128,19 @@ const FaqClient = () => {
           </div>
 
           <div className="w-full max-w-lg mt-10 md:mt-0 mx-auto">
-            {faqs.slice(6, 10).map((faq, index) => (
-              <Accordion
-                key={index}
-                className="mb-4 shadow-lg overflow-hidden transition-all"
-                expanded={expandedSupportManagement === index}
-                onChange={handleSupportManagementChange(index)}
-                style={{ borderRadius: "25px", backgroundColor: "#181818" }}
-              >
-                <AccordionSummary
-                  expandIcon={
-                    <ExpandMoreIcon
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(to right, #02f0f1, #024868)",
-                      }}
-                      className="p-[0.8px] text-white rounded-full shadow-lg transition-transform"
-                    />
-                  }
-                  aria-controls={`panel-support-${index}-content`}
-                  id={`panel-support-${index}-header`}
-                  className="px-6 py-1 text-white font-semibold text-lg flex items-center justify-between"
-                  style={{ borderRadius: "25px", backgroundColor: "#181818" }}
-                >
-                  <Typography className="text-white pe-3">
-                    {faq.question}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails
-                  style={{ backgroundColor: "#181818" }}
-                  className="px-6 py-4 text-white rounded-b-[25px] transition-all"
-                >
-                  <Typography>{faq.answer}</Typography>
-                </AccordionDetails>
-              </Accordion>
-            ))}
+            <Accordians
+              data={faqs.slice(6, 10)}
+              expandedIndex={expandedSupportManagement}
+              onAccordionChange={handleSupportManagementChange}
+            />
           </div>
         </div>
 
-        <ContactUsSections showSideText={true} sideHeading="Need Further Assistance?" sidePara="Our support team is here to provide you with the answers you need. Drop us a message, and we'll get back to you as soon as possible." />
+        <ContactUsSections
+          showSideText={true}
+          sideHeading="Need Further Assistance?"
+          sidePara="Our support team is here to provide you with the answers you need. Drop us a message, and we'll get back to you as soon as possible."
+        />
       </div>
     </div>
   );
